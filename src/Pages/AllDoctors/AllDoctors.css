@@ -1,0 +1,31 @@
+.fullshowdoctorcont{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card{
+    border: 2px solid rgb(78, 106, 118);
+    width: 220px;
+    height: 270px;
+    margin-left: 50px;
+    margin-bottom: 22px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: translateY(30px);
+    transition: transform 0.7s ease;
+    cursor: pointer;
+
+}
+.card:hover{
+   transform: translateY(0);
+}
+.card img{
+    height: 150px;
+
+}
+.top{
+  height: 60%;
+  background: rgb(203, 232, 244);
+}

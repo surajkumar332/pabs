@@ -1,0 +1,176 @@
+/* section startred 1 */
+.main-container{
+    height: 80%;
+    width: 94%;
+    padding: 20px;
+    background: rgb(54, 93, 222);
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 20px;
+}
+.text{
+  width: 600px;
+  padding: 80px;
+  text-align: left;
+
+}
+.text h1{
+     line-height: 60px;
+     font-weight: 700;
+     
+}
+.doctor-image{
+    position: relative;
+    top: 26px;
+}
+#ba {
+    background: white;
+    padding: 10px;
+    color: rgb(86, 81, 81);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+#ba:hover{
+  transform: scale(1.1);
+}
+
+/* section 1 ended */
+
+
+/* section2 stated */
+.txt h2{
+    font-size: 50px;
+    margin-top: 30px;
+    color: rgb(50, 49, 49);
+}
+.txt p{
+    color: rgb(50, 49, 49);
+
+}
+.doctors-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+    color: rgb(50, 49, 49);
+}
+.box img {
+    transition: transform 0.3s ease; 
+    display: block;
+}
+.box button:hover img {
+    transform: translateY(-10px);
+}
+
+
+/* section2 endde */
+
+
+/* sectino 3 started */
+.section3 .txt1{
+    color: rgb(50, 49, 49);
+}
+.halfshowdoctorcon{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card{
+    border: 2px solid rgb(78, 106, 118);
+    width: 220px;
+    height: 270px;
+    margin-left: 50px;
+    margin-bottom: 22px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform: translateY(30px);
+    transition: transform 0.7s ease;
+    cursor: pointer;
+
+}
+.card:hover{
+   transform: translateY(0);
+}
+.card img{
+    height: 150px;
+
+}
+.top{
+  height: 60%;
+  background: rgb(203, 232, 244);
+}
+
+.bottom{
+  height: 40%;
+  padding: 20px;
+}
+ /* home page button */
+#more-btn{
+    margin-top: 30px;
+    margin-left: 45%;
+    width: 100px;
+    padding: 16px; 
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background:  rgb(53, 53, 242);
+    border: 2px solid  rgb(145, 132, 132);
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+#more-btn:active{
+    background: white;
+    color: black;
+    border: 2px solid rgb(53,53,242);
+}
+/* section3 eneded */
+
+/* sectino 4 statred */
+.section4cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    background-color: rgb(53,53,242);
+    padding: 40px;
+    margin-top: 30px;
+    height: 440px;
+    border-radius: 30px;
+}
+
+.txtandbtn{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    line-height: 1;
+}
+.txtandbtn #ca{
+    margin-left: 80px;
+    background: white;
+    color: rgb(70, 69, 69);
+    padding: 10px;
+    font-size: 20px;
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 40px ;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+}
+#ca:hover{
+    transform: scale(1.1);
+}
+#girl img{
+    width: 300px;
+}
