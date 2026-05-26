@@ -39,16 +39,16 @@ app.use("/appointment", appointmentRouter);
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "surajk71621@gmail.com",
-        pass: "ymabephykttbmlik"
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     }
 });
 const sendEmail = (to, subject, text) => {
     const mailOptions = {
-        from: "surajk71621@mail.com",
+        from: process.env.EMAIL_FROM,
         to,
         subject,
-        text
+        text,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {
