@@ -11,7 +11,7 @@ function RelatedDoctor({ specialization, id }) {
     const getRelated = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/doctor/related/${specialization}/${id}`
+          `${import.meta.env.VITE_API_URL}/doctor/related/${specialization}/${id}`
         );
 
         const data = await res.json();

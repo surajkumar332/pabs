@@ -94,7 +94,7 @@ function Slots({ id }) {
                 return;
             }
 
-            const res = await fetch("http://localhost:5000/appointment/bookAppointment", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/appointment/bookAppointment`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -151,7 +151,7 @@ function Slots({ id }) {
 
         if (!formattedDate) return;
 
-        fetch(`http://localhost:5000/appointment/bookedSlots/${id}?date=${formattedDate}`)
+        fetch(`${import.meta.env.VITE_API_URL}/appointment/bookedSlots/${id}?date=${formattedDate}`)
             .then(res => res.json())
             .then(data => {
                 console.log("DATA:", data);
@@ -169,7 +169,7 @@ function Slots({ id }) {
     // paushed 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/doctor/details/${id}`)
+        fetch(`${import.meta.env.VITE_API_URL}/doctor/details/${id}`)
             .then(res => res.json())
             .then(data => {
                 setPausedDates(data.doctor.pausedDates || []);

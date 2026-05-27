@@ -5,29 +5,22 @@ export const verifyAdmin = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({
-      message: "No token"
-    });
+    return res.status(401).json({ message: "No token" });
   }
 
-  const token = authHeader.split(" ")[1]; 
+  const token = authHeader.split(" ")[1];
 
   try {
-    const decoded = jwt.verify(token, "secretkey123");
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     if (decoded.role !== "admin") {
-      return res.status(403).json({
-        message: "Not admin"
-      });
+      return res.status(403).json({ message: "Not admin" });
     }
 
-    req.user = decoded; 
-
+    req.user = decoded;
     next();
 
   } catch (error) {
-    return res.status(401).json({
-      message: "Invalid token"
-    });
+    return res.status(401).json({ message: "Invalid token" });
   }
 };

@@ -9,7 +9,7 @@ function Booked() {
     useEffect(() => {
         if (!userId) return;
 
-        fetch(`http://localhost:5000/appointment/booked/${userId}`)
+        fetch(`${import.meta.env.VITE_API_URL}/appointment/booked/${userId}`)
             .then(res => res.json())
             .then(data => setBook(data.bookings || []))
             .catch(err => console.log(err));

@@ -7,7 +7,7 @@ function Section2() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("http://localhost:5000/doctor/all")
+        fetch(`${import.meta.env.VITE_API_URL}/doctor/all`)
             .then(res => res.json())
             .then((data) => {
                 setAllDoctor(data.doctors);

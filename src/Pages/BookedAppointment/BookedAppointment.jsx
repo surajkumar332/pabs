@@ -10,7 +10,7 @@ function Booked() {
     const now = new Date();
     useEffect(() => {
         if (!userId) return;
-        fetch(`http://localhost:5000/appointment/booked/${userId}`)
+        fetch(`${import.meta.env.VITE_API_URL}/appointment/booked/${userId}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -45,7 +45,7 @@ function Booked() {
 
         try {
 
-            const res = await fetch(`http://localhost:5000/appointment/cancel/${id}`,{
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/appointment/cancel/${id}`,{
                     method: "DELETE"
                 }
             );

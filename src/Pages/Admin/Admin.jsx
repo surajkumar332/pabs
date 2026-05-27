@@ -52,7 +52,7 @@ function Admin() {
         formData.append("email", form.email);
         formData.append("image", image);
 
-        const res = await fetch("http://localhost:5000/doctor/addnewdoctor", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/addnewdoctor`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${token}`
@@ -79,7 +79,7 @@ function Admin() {
     const handleDelete = async (id) => {
         const token = localStorage.getItem("token");
 
-        await fetch(`http://localhost:5000/doctor/deletedoctor/${id}`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/doctor/deletedoctor/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`

@@ -8,7 +8,7 @@ function Doctors() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/doctor/all")
+    fetch(`${import.meta.env.VITE_API_URL}/doctor/all`)
       .then(res => res.json())
       .then(data => {
         const doctorData = data.doctors.filter(

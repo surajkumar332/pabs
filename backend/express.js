@@ -20,7 +20,8 @@ connectDB();
 app.use(express.json());
 // cros
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin:["http://localhost:5173",
+    "https://pabs-rho.vercel.app"],
     credentials: true
 }));
 

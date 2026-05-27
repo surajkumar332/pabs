@@ -14,7 +14,7 @@ function PaushedDate({ id }) {
         try {
 
             const res = await fetch(
-                `http://localhost:5000/doctor/paused/${id}`,
+                 `${import.meta.env.VITE_API_URL}/doctor/paused/${id}`,
                 {
                     method: "PUT",
 

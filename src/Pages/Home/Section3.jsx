@@ -15,7 +15,7 @@ function Section3() {
                   return  console.log("No token found");
                 }
 
-                const res = await fetch("http://localhost:5000/doctor/all", {
+                const res = await fetch( `${import.meta.env.VITE_API_URL}/doctor/all`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
