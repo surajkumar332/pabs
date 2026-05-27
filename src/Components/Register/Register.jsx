@@ -46,7 +46,7 @@ function Register() {
 
     } catch (error) {
       swal.fire({
-        title: "Success",
+        title: "Error",
         text: "Server Error",
         width: "fit-content",
         icon: "error"
