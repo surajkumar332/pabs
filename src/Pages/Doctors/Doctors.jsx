@@ -30,7 +30,10 @@ function Doctors() {
           <div key={index} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
 
             <div className="top">
-              <img src={item.img} alt={item.name} />
+              <img
+                src={`${import.meta.env.VITE_API_URL}/uploads/${item.image || item.img}`}
+                alt={item.name}
+              />
             </div>
 
             <div className="bottom">

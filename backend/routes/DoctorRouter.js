@@ -35,7 +35,7 @@ doctorRoute.post(
 
 
       // uploaded image
-      const image = req.file?.path;
+      const image = req.file?.filename;
 
 
       const exists = await Doctor.findOne({ mobile });

@@ -9,6 +9,7 @@ import nodemailer from "nodemailer";
 
 
 const app = express();
+app.use("/uploads", express.static("uploads"));
 
 // for env
 dotenv.config();
@@ -24,13 +25,13 @@ app.use(cors({
     "https://pabs-rho.vercel.app"],
     credentials: true
 }));
-https://pabs-git-master-suraj-kumars-projects-fd5509a4.vercel.app/
+
 
 // routes
 app.get("/", (req, res) => {
     res.send("api is running");
 });
-app.use("/images", express.static("../public/images"));
+
 app.use("/users", userRoute);
 app.use("/doctor", doctorRoute);
 app.use("/appointment", appointmentRouter);
