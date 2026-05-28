@@ -24,6 +24,7 @@ app.use(cors({
     "https://pabs-rho.vercel.app"],
     credentials: true
 }));
+https://pabs-git-master-suraj-kumars-projects-fd5509a4.vercel.app/
 
 // routes
 app.get("/", (req, res) => {
