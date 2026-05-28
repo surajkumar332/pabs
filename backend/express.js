@@ -9,7 +9,6 @@ import nodemailer from "nodemailer";
 
 
 const app = express();
-app.use("/uploads", express.static("uploads"));
 
 // for env
 dotenv.config();
@@ -26,12 +25,11 @@ app.use(cors({
     credentials: true
 }));
 
-
 // routes
 app.get("/", (req, res) => {
     res.send("api is running");
 });
-
+app.use("/images", express.static("../public/images"));
 app.use("/users", userRoute);
 app.use("/doctor", doctorRoute);
 app.use("/appointment", appointmentRouter);
@@ -47,19 +45,21 @@ const transporter = nodemailer.createTransport({
     }
     
 });
-const sendEmail = async (to, subject, text) => {
-  try {
-    const info = await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to,
-      subject,
-      text,
-    });
+const sendEmail = (to, subject, text) => {
+    const mailOptions = {
+        from: process.env.EMAIL_FROM,
+        to,
+        subject,
+        text,
+    };
 
-    console.log("Email sent:", info.response);
-  } catch (err) {
-    console.log("Email Error:", err);
-  }
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            console.log("Email Error:", err);
+        } else {
+            console.log("Email Sent:", info.response);
+        }
+    });
 };
 export { sendEmail };
 
