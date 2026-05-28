@@ -61,6 +61,8 @@ function Login() {
   };
 
   return (
+    <>
+    <div className="rc">
     <div className="login-card">
       <h2>Login</h2>
 
@@ -94,6 +96,8 @@ function Login() {
       <button onClick={handleSubmit}>Login</button>
         <p>if you are not Register then <Link to="/register">Register</Link> </p>
     </div>
+    </div>
+    </>
   );
 }
 

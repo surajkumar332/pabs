@@ -43,22 +43,21 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
     }
+    
 });
-const sendEmail = (to, subject, text) => {
-    const mailOptions = {
-        from: process.env.EMAIL_FROM,
-        to,
-        subject,
-        text,
-    };
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            console.log("Email Error:", err);
-        } else {
-            console.log("Email Sent:", info.response);
-        }
+const sendEmail = async (to, subject, text) => {
+  try {
+    const info = await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to,
+      subject,
+      text,
     });
+
+    console.log("Email sent:", info.response);
+  } catch (err) {
+    console.log("Email Error:", err);
+  }
 };
 export { sendEmail };
 

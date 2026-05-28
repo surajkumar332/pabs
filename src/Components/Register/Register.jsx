@@ -37,10 +37,9 @@ function Register() {
         navigate("/");
       } else {
         swal.fire({
-          title: "Success",
           text: data.message,
           width: "fit-content",
-          icon: "success"
+          icon: "error"
         })
       }
 
@@ -55,6 +54,8 @@ function Register() {
   };
 
   return (
+    <>
+    <div className="rc">
     <div className="register-card">
       <h2>Create Account</h2>
       <p>Please sign up to book appointment</p>
@@ -92,6 +93,8 @@ function Register() {
         Already have an account? <Link to="/login">Login</Link>
       </p>
     </div>
+    </div>
+    </>
   );
 }
 

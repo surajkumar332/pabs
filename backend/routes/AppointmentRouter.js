@@ -39,7 +39,8 @@ appointmentRouter.post("/bookAppointment", async (req, res) => {
     sendEmail(
       "roy142184@gmail.com",
       "New Appointment",
-      `Patient ${patient.name} booked appointment on ${date} at ${time} `,
+      `Patient ${patient.name} 
+      booked appointment on ${date} at ${time} `,
     );
 
     res.status(201).json({

@@ -34,7 +34,7 @@ function Navbar() {
         <>
             <div className="nav-links">
                 <span>
-                    <img src="/images/logo.png" alt="Logo" height={"120px"} />
+                    <img src="/images/logo.png" alt="Logo" height={"80px"} />
                 </span>
                 <div className="links">
                     <Link to={"/"}>Home</Link>
