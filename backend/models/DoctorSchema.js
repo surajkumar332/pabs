@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const doctorSchema = new mongoose.Schema({
     image: {
         type: String,
+        required:true
     },
     name: {
         type: String,

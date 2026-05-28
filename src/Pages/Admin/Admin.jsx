@@ -26,7 +26,7 @@ function Admin() {
     };
 
     const getDoctors = async () => {
-        const res = await fetch("http://localhost:5000/doctor/all");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`);
         const data = await res.json();
         setDoctor(data.doctors || []);
     };
