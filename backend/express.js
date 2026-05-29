@@ -5,66 +5,44 @@ import userRoute from "./routes/UserRoute.js";
 import appointmentRouter from "./routes/AppointmentRouter.js";
 import doctorRoute from "./routes/DoctorRouter.js";
 import cors from "cors";
-import nodemailer from "nodemailer";
-
+// import nodemailer from "nodemailer";
 
 const app = express();
 
-// for env
+// env
 dotenv.config();
 
-// DB Connect
+// DB connect
 connectDB();
 
 // middleware
 app.use(express.json());
-// cros
-app.use(cors({
-    origin:["http://localhost:5173",
-    "https://pabs-rho.vercel.app"],
-    credentials: true
-}));
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://pabs-rho.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 
 // routes
 app.get("/", (req, res) => {
-    res.send("api is running");
+  res.send("API is running");
 });
+
 app.use("/images", express.static("../public/images"));
 app.use("/users", userRoute);
 app.use("/doctor", doctorRoute);
 app.use("/appointment", appointmentRouter);
 
 
-// notification(nodemailer)
+// appointment/bookAppointment
+// server
+const PORT = process.env.PORT || 5000;
 
-const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    }
-    
-});
-const sendEmail = (to, subject, text) => {
-    const mailOptions = {
-        from: process.env.EMAIL_FROM,
-        to,
-        subject,
-        text,
-    };
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            console.log("Email Error:", err);
-        } else {
-            console.log("Email Sent:", info.response);
-        }
-    });
-};
-export { sendEmail };
-
-const PORT = 5000;
 app.listen(PORT, () => {
-    console.log(`Server is Running ${PORT}`);
+  console.log(`Server is Running ${PORT}`);
 });
-

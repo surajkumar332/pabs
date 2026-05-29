@@ -86,6 +86,7 @@ doctorRoute.post(
 doctorRoute.get("/all", async (req, res) => {
   try {
     const doctors = await Doctor.find();
+    console.log("doctors", doctors)
 
     res.status(200).json({
       message: "all doctors fetched successfully",

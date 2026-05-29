@@ -33,6 +33,7 @@ userRoute.post("/register", async (req, res) => {
 userRoute.post("/login", async (req, res) => {
     try {
         const { mobile, password, name } = req.body;
+        console.log(mobile, password, name)
 
        
         if (name === "admin" && password === "admin123") {
