@@ -12,7 +12,8 @@ function AllDoctors() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`);
+                // const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`);
+                const res = await fetch("https://pabs-4jen.onrender.com/doctor/all");
                 const data = await res.json();
                 console.log(data, "data");
                 setDoctor(data.doctors);
