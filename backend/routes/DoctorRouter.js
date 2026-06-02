@@ -85,7 +85,9 @@ doctorRoute.post(
 
 doctorRoute.get("/all", async (req, res) => {
   try {
+    console.log("GET /doctor/all hit");
     const doctors = await Doctor.find();
+     console.log("Doctors:", doctors.length);
     console.log("doctors", doctors)
 
     res.status(200).json({
@@ -93,6 +95,7 @@ doctorRoute.get("/all", async (req, res) => {
       doctors
     });
   } catch (error) {
+    console.log("error", error);
     res.status(500).json({
       message: "Server Error"
     });

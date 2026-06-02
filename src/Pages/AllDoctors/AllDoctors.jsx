@@ -14,7 +14,7 @@ function AllDoctors() {
             try {
                 const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`);
                 const data = await res.json();
-                   
+                console.log(data, "data");
                 setDoctor(data.doctors);
             } catch (error) {
                 Swal.fire({
