@@ -39,7 +39,6 @@ app.use("/doctor", doctorRoute);
 app.use("/appointment", appointmentRouter);
 
 
-// appointment/bookAppointment
 // server
 const PORT = process.env.PORT || 5000;
 
