@@ -1,26 +1,42 @@
 import jwt from "jsonwebtoken";
 
-export const verifyAdmin = (req, res, next) => {
+export const verifyUser = (req, res, next) => {
 
-  const authHeader = req.headers.authorization;
+    const authHeader = req.headers.authorization;
 
-  if (!authHeader) {
-    return res.status(401).json({ message: "No token" });
-  }
-
-  const token = authHeader.split(" ")[1];
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    if (decoded.role !== "admin") {
-      return res.status(403).json({ message: "Not admin" });
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return res.status(401).json({
+            message: "No token"
+        });
     }
 
-    req.user = decoded;
-    next();
+    const token = authHeader.split(" ")[1];
 
-  } catch (error) {
-    return res.status(401).json({ message: "Invalid token" });
-  }
+    try {
+        const decoded = jwt.verify(
+            token,
+            process.env.JWT_SECRET
+        );
+
+        req.user = decoded;
+
+        next();
+
+    } catch (error) {
+        return res.status(401).json({
+            message: "Invalid or expired token"
+        });
+    }
+};
+export const allowRoles = (...roles) => {
+    return (req, res, next) => {
+
+        if (!roles.includes(req.user.role)) {
+            return res.status(403).json({
+                message: "Access denied"
+            });
+        }
+
+        next();
+    };
 };
