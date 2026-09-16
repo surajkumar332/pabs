@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
   res.send("API is running");
 });
 
-// app.use("/images", express.static("../public/images"));
+app.use("/images", express.static("public/images"));
 app.use("/uploads", express.static("uploads"));
 app.use("/users", userRoute);
 app.use("/doctor", doctorRoute);
