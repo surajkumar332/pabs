@@ -6,7 +6,7 @@ body {
 .hero-container {
     min-height: 87vh;
     width: 100%;
-    background-image: url(../../../public/images/hero-section-background-image.webp);
+    background-image: url(./images/hero-section-background-image.webp);
     display: flex;
     justify-content: center;
     padding-top: 80px;
@@ -16,7 +16,7 @@ body {
 
 .hero-text-container {
     width: 40%;
-    padding: 96px 0 96px 55px ;
+    padding: 96px 0 96px 55px;
     text-align: left;
 }
 
