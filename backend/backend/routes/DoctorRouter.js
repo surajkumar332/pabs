@@ -1,8 +1,7 @@
 import express from "express";
 import Doctor from "../models/DoctorSchema.js";
 import Appointment from "../models/AppointmentSchema.js";
-// import { verifyAdmin } from "../middleware/auth.js";
-import { verifyUser, allowRoles } from "../middleware/auth.js";
+import { verifyAdmin } from "../middleware/auth.js";
 import multer from "multer";
 
 const doctorRoute = express.Router();
@@ -14,17 +13,11 @@ const upload = multer({
 });
 
 
-// doctorRoute.post(
-//   "/addnewdoctor",
-//   verifyAdmin,
-//   upload.single("image"),
-
-//   async (req, res) => {
-  doctorRoute.post(
+doctorRoute.post(
   "/addnewdoctor",
-  verifyUser,
-  allowRoles("owner", "admin"),
+  verifyAdmin,
   upload.single("image"),
+
   async (req, res) => {
 
     try {
@@ -86,9 +79,6 @@ const upload = multer({
 
   }
 );
-
-
-
 
 
 // all doctors
@@ -181,31 +171,31 @@ doctorRoute.put("/paused/:id", async (req, res) => {
 
 // delete doctor
 
-// doctorRoute.delete("/deletedoctor/:id", verifyAdmin, async (req, res) => {
-//   try {
-//     const doctor = await Doctor.findByIdAndDelete(req.params.id);
+doctorRoute.delete("/deletedoctor/:id", verifyAdmin, async (req, res) => {
+  try {
+    const doctor = await Doctor.findByIdAndDelete(req.params.id);
 
-//     if (!doctor) {
-//       return res.status(404).json({ message: "doctor not found" });
-//     }
-//     await Appointment.deleteMany({ doctorId: doctor._id });
-//     if (doctor?.email) {
-//       sendEmail(
-//         doctor.email,
-//         "Account & Appointments Removed",
-//         "Your doctor account and patient appointments has been deleted"
-//       )
-//     }
+    if (!doctor) {
+      return res.status(404).json({ message: "doctor not found" });
+    }
+    await Appointment.deleteMany({ doctorId: doctor._id });
+    if (doctor?.email) {
+      sendEmail(
+        doctor.email,
+        "Account & Appointments Removed",
+        "Your doctor account and patient appointments has been deleted"
+      )
+    }
 
-//     res.json({
-//       message: "Doctor & its appointmenet deleted Successfully",
-//       doctor
-//     });
+    res.json({
+      message: "Doctor & its appointmenet deleted Successfully",
+      doctor
+    });
 
-//   } catch (error) {
-//     res.status(500).json({ message: "Server Error" });
-//   }
-// });
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
+});
 
 
 export default doctorRoute;

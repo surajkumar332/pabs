@@ -1,0 +1,211 @@
+.navbar-parent .nav-links {
+    background-color: rgb(248, 244, 244);
+    z-index: 1;
+    scroll-behavior: smooth;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* logo */
+
+.navbar-parent .nav-links > span {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+/* links */
+
+.navbar-parent .nav-links .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-parent .nav-links .links a {
+    position: relative;
+    text-decoration: none;
+    color: rgb(76, 69, 69);
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+.navbar-parent .nav-links .links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: black;
+    transition: 0.4s ease;
+}
+
+.navbar-parent .nav-links .links a:hover::after {
+    width: 100%;
+}
+
+/* login button parent */
+
+.navbar-parent .nav-links .button-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* login button */
+
+.navbar-parent .nav-links #ca-btn {
+    padding: 12px 20px;
+    border: 1px solid #05cd9e;
+    border-radius: 40px;
+    background: #05cd9e;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-right: 30px;
+    width: 100px;
+    transition: 0.3s ease;
+}
+
+.navbar-parent .nav-links #ca-btn:hover {
+    border: 1px solid rgb(53, 177, 140);
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.navbar-parent .nav-links #ca-btn:active {
+    border: 1px solid rgb(0, 0, 0);
+    background: white;
+    color: black;
+}
+
+/* hamburger */
+
+.navbar-parent .nav-links .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: rgb(76, 69, 69);
+}
+
+
+/* 1024px */
+
+@media (max-width: 1024px) {
+
+    .navbar-parent .nav-links .links {
+        gap: 25px;
+    }
+
+    .navbar-parent .nav-links .links a {
+        font-size: 15px;
+    }
+
+    .navbar-parent .nav-links #ca-btn {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
+
+
+/* 768px */
+
+@media (max-width: 768px) {
+
+    .navbar-parent .nav-links {
+        padding: 10px 15px;
+    }
+
+    .navbar-parent .nav-links .links {
+        gap: 15px;
+    }
+
+    .navbar-parent .nav-links .links a {
+        font-size: 14px;
+    }
+
+    .navbar-parent .nav-links #ca-btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+
+/* 425px */
+
+@media (max-width: 425px) {
+
+    .navbar-parent .nav-links {
+        height: 65px;
+        width: 100%;
+        padding: 0 20px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .navbar-parent .nav-links > span {
+        display: block;
+    }
+
+    .navbar-parent .nav-links > span img {
+        height: 55px;
+        width: auto;
+    }
+
+    .navbar-parent .nav-links .links {
+        display: none;
+    }
+
+    .navbar-parent .nav-links .button-parent {
+        display: none;
+    }
+
+    .navbar-parent .nav-links .hamburger {
+        display: block;
+        font-size: 30px;
+        margin: 0;
+        padding: 5px;
+    }
+
+    .navbar-parent .nav-links .links.active {
+        display: flex;
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgb(147, 247, 177);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 25px 0;
+        margin: 0;
+        box-sizing: border-box;
+        z-index: 999;
+    }
+
+    .navbar-parent .nav-links .links.active a {
+        display: block;
+        width: auto;
+        font-size: 16px;
+    }
+}
