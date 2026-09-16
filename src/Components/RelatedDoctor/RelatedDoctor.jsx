@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./RelatedDoctor.css";
 
 function RelatedDoctor({ specialization, id }) {
   const [doctors, setDoctors] = useState([]);
@@ -26,17 +27,16 @@ function RelatedDoctor({ specialization, id }) {
 
   return (
     <>
+     <div className="Related-doctor">
       <div
         className="rd"
-        style={{ marginTop: "60px", fontSize: "20px" }}
       >
-        <h2 style={{ fontSize: "50px" }}>Related Doctors</h2>
+        <h2>Related Doctors</h2>
         <p>Simply browse through our extensive list of trusted doctors.</p>
       </div>
 
       <div
         className="fullshowdoctorcont"
-        style={{ marginLeft: "200px" }}
       >
         {doctors.map((item, index) => (
           <div
@@ -54,6 +54,7 @@ function RelatedDoctor({ specialization, id }) {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </>
   );

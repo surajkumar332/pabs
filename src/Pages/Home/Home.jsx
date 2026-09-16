@@ -3,17 +3,13 @@ import "./Home.css";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
-import Section4 from "./temp";
+import Section4 from "./Section4";
 
 import { useNavigate } from "react-router-dom";
 
 function Home() {
 
-    const navigate = useNavigate();
 
-    function nextpage(){
-        navigate("/allDoctors");
-    }
 
 
 
@@ -29,7 +25,7 @@ function Home() {
 
             {/* sectin 3 stared */}
             <Section3/>
-             <button id="more-btn" onClick={nextpage}>More</button>
+            
             {/* section 3 ended */}
             
             {/* section4 added */}

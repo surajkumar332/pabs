@@ -1,176 +1,649 @@
+body {
+    overflow-x: hidden;
+}
+
 /* section startred 1 */
-.main-container{
-    height: 80%;
-    width: 94%;
-    padding: 20px;
-    background: rgb(54, 93, 222);
-    color: white;
+.hero-container {
+    min-height: 87vh;
+    width: 100%;
+    background-image: url(../../../public/images/hero-section-background-image.webp);
     display: flex;
     justify-content: center;
-    margin: 20px;
-    border-radius: 20px;
-}
-.text{
-  width: 600px;
-  padding: 80px;
-  text-align: left;
+    padding-top: 80px;
+
 
 }
-.text h1{
-     line-height: 60px;
-     font-weight: 700;
-     
+
+.hero-text-container {
+    width: 40%;
+    padding: 96px 0 96px 55px ;
+    text-align: left;
 }
-.doctor-image{
-    position: relative;
-    top: 26px;
+
+.hero-text-container p {
+    margin-top: 40px;
+    color: #455864;
+    font: 500 18px sans-serif;
+
 }
-#ba {
-    background: white;
-    padding: 10px;
-    color: rgb(86, 81, 81);
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 400;
-    border: 2px solid white;
-    border-radius: 20px;
+
+.hero-text-container h1 {
+    line-height: 70px;
+    font-weight: 700;
+    color: #2b3942;
+    margin: 20px 0px !important;
+
+}
+
+.hero-text-container #ba {
+    border-radius: 40px;
     transition: 0.3s ease;
-    margin-top: 10px;
+    margin: 20px 0;
+    font: 500 16px sans-serif;
+    color: #ffffff;
+    display: inline-block;
+    padding: 12px 20px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    border: 1px solid #05cd9e;
+    background-color: #05cd9e;
+    cursor: pointer;
+    transition: 0.3s ease ;
 }
-#ba:hover{
-  transform: scale(1.1);
+
+.hero-text-container #ba:hover {
+    background: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid #05cd9e;
+    transform: scale(1.1);
+    padding: 12px 20px;
 }
+
+.hero-text-container #ba:active {
+    border-radius: 25px;
+    border: 2px solid rgb(84, 82, 82);
+}
+
+.hero-container .doctor-image {
+    width: 60%;
+    align-items: end;
+
+}
+
+.hero-container .doctor-image img {
+   width: 980px;
+   position: relative;
+   left: 0px;
+   top: 23px;
+
+}
+
+
 
 /* section 1 ended */
 
 
 /* section2 stated */
-.txt h2{
-    font-size: 50px;
-    margin-top: 30px;
-    color: rgb(50, 49, 49);
+.doctors-container-text {
+    padding-top: 60px;
+    background: #e5fff9;
 }
-.txt p{
-    color: rgb(50, 49, 49);
+
+.doctors-container-text h2 {
+    font-size: 60px;
+    margin-top: 30px;
+    font-weight: 700;
+    color: #2b3942;
+}
+
+.doctors-container-text p {
+    color: #2b3942;
+    margin-bottom: 40px;
+}
+
+.doctors-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #e5fff9;
+    padding: 10px 40px 90px;
+    perspective: 1000px;
+}
+
+.doctors-container .box .text-image-container {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+
 
 }
-.doctors-container{
+
+.doctors-container .box:hover .text-image-container {
+    transform: rotateY(180deg);
+}
+
+/* front and back */
+.doctors-container .card-front,
+.doctors-container .card-back {
+    top: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.doctors-container .card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+/* back side */
+.doctors-container .card-back {
+    transform: rotateY(180deg);
+    background: #e5fff9;
     display: flex;
+    border: 1px solid gray;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-    gap: 30px;
-    color: rgb(50, 49, 49);
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
 }
-.box img {
-    transition: transform 0.3s ease; 
-    display: block;
+
+.doctors-container .card-back h2 {
+    color: #05cd9e;
+    margin-bottom: 15px;
 }
-.box button:hover img {
-    transform: translateY(-10px);
+
+.doctors-container .card-back p {
+    color: #2b3942;
+    margin-bottom: 20px;
 }
+
+.doctors-container .card-back button {
+    padding: 12px 20px;
+    border: 1px solid #05cd9e;
+    font-size: 16px;
+    border-radius: 40px;
+    background: #05cd9e;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+.doctors-container .card-back button:hover {
+    border: 1px solid #05cd9e;
+    color: black;
+    background: white;
+    transform: scale(1.1);
+}
+
+.doctors-container .card-back button:active {
+    border: 1px solid #05cd9e;
+    background: white;
+    color: gray;
+}
+
 
 
 /* section2 endde */
 
 
 /* sectino 3 started */
-.section3 .txt1{
-    color: rgb(50, 49, 49);
-}
-.halfshowdoctorcon{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) ;
-    gap: 10px;
-    padding: 10px;
+.doctors-list {
+    padding: 58px 0px 60px;
 }
 
-.card{
+.doctors-list .txt1 h1 {
+    color: #2b3942;
+    font-weight: 700;
+}
+
+.doctors-list .txt1 p {
+    color: #2b3942;
+}
+
+.doctors-list .halfshowdoctorcon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 84px;
+    padding: 40px 40px;
+    justify-content: center !important;
+    align-items: center;
+}
+
+
+.doctors-list .card {
     border: 2px solid rgb(78, 106, 118);
-    width: 220px;
-    height: 270px;
-    margin-left: 50px;
-    margin-bottom: 22px;
+    width: min(220px, 100%);
+    margin: 0 !important;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    transform: translateY(30px);
-    transition: transform 0.7s ease;
     cursor: pointer;
-
+    box-sizing: border-box;
 }
-.card:hover{
-   transform: translateY(0);
-}
-.card img{
-    height: 150px;
-
-}
-.top{
-  height: 60%;
-  background: rgb(203, 232, 244);
+.doctors-list .card img{
+    height: 200px;
 }
 
-.bottom{
-  height: 40%;
-  padding: 20px;
+.doctors-list .top {
+    background-color: #bff5e9;
+    align-items: center;
 }
- /* home page button */
-#more-btn{
-    margin-top: 30px;
-    margin-left: 45%;
-    width: 100px;
-    padding: 16px; 
-    font-size: 20px;
+
+.doctors-list .bottom {
+    padding: 20px;
+    color: #2b3942;
+}
+
+/* more button */
+#more-btn {
+    margin-top: 50px;
+    /* width: 200px; */
+    padding: 15px;
+    border-radius: 40px;
+    font-size: 16px;
     color: rgb(255, 255, 255);
-    background:  rgb(53, 53, 242);
-    border: 2px solid  rgb(145, 132, 132);
-    border-radius: 50px;
+    background: #05cd9e;
+    border: 1px solid #05cd9e;
     cursor: pointer;
 
 }
-#more-btn:active{
+
+#more-btn:hover {
     background: white;
     color: black;
-    border: 2px solid rgb(53,53,242);
+    border-radius: 40px;
+    border: 2px solid #05cd9e;
 }
+
+#more-btn:active {
+    background: white;
+    color: black;
+    border-radius: 50px;
+    border: 2px solid #05cd9e;
+}
+
 /* section3 eneded */
 
 /* sectino 4 statred */
-.section4cont{
+.section4cont {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: aliceblue;
-    background-color: rgb(53,53,242);
-    padding: 40px;
-    margin-top: 30px;
+    color: rgb(25, 33, 41);
+    background-color: #e5fff9;
+    padding: 80px;
     height: 440px;
     border-radius: 30px;
+    max-width: 100%;
 }
 
-.txtandbtn{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    line-height: 1;
+.section4cont .txtandbtn {
+    width: 60%;
+    text-align: left;
+
 }
-.txtandbtn #ca{
-    margin-left: 80px;
-    background: white;
-    color: rgb(70, 69, 69);
-    padding: 10px;
-    font-size: 20px;
+
+.section4cont .txtandbtn h1 {
+    color: #05cd9e;
+    line-height: 1.1;
+    margin-top: 30px;
+
+
+}
+
+.section4cont .txtandbtn p {
+    color: #2b3942;
+    width: 100%;
+    padding-bottom: 30px;
+
+}
+
+.section4cont .txtandbtn #ca {
+    background: #05cd9e;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 16px;
     width: 30%;
     border: 2px solid white;
-    border-radius: 40px ;
+    border-radius: 40px;
     transition: 0.3s ease;
     cursor: pointer;
+    text-align: center;
 
 }
-#ca:hover{
+
+.section4cont .txtandbtn #ca:hover {
     transform: scale(1.1);
+    border-radius: 40px;
+    color: #000000;
+    background: white;
+    border: 1px solid #05cd9e;
 }
-#girl img{
-    width: 300px;
+
+.section4cont .txtandbtn #ca:active {
+    transform: scale(1.1);
+    border-radius: 40px;
+    color: rgb(255, 255, 255);
+    border: 1px solid #293230;
+}
+
+.section4cont .girl {
+    width: 40%;
+
+}
+
+.section4cont .girl img {
+    height: 550px;
+    margin-left: 40px;
+
+}
+
+
+
+
+
+
+/* responsive */
+
+@media (max-width: 1024px) {
+
+    /* section1 */
+    .hero-container .hero-text-container {
+        padding: 30px;
+    }
+
+    .hero-container .hero-text-container h1 {
+        line-height: 1.3;
+        margin: 0 !important;
+        padding: 20px 0px 40px;
+    }
+
+    .hero-container .hero-text-container #ba {
+        margin: 0 !important;
+    }
+
+    .hero-container .doctor-image {
+        padding-top: 30px;
+
+    }
+
+    .doctors-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        justify-items: center;
+        column-gap: 0px;
+        padding: 20px 100px 50px;
+
+    }
+
+    .doctors-container .text-image-container {
+        width: 300px;
+        height: 300px;
+
+    }
+
+    /* section3 */
+    .section3 .halfshowdoctorcon {
+        /* padding: 40px 70px 0; */
+        max-width: 100%;
+    }
+
+    .halfshowdoctorcon {
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-left: 40px;
+        /* max-width: 100%; */
+
+    }
+
+    .halfshowdoctorcon .card {
+        margin: 0 !important;
+    }
+
+    /* section4 */
+    .section4cont {
+        padding: 50px;
+    }
+
+    .section4cont .txtandbtn #ca {
+        width: 40%;
+    }
+
+    .card {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* section 1 */
+    .hero-container {
+        height: auto;
+        min-height: 80vh;
+        flex-direction: column;
+        /* margin-top: 60px; */
+    }
+
+    .hero-text-container {
+        width: 100%;
+        padding: 60px 30px 0px;
+        box-sizing: border-box;
+    }
+
+    .hero-text-container h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .hero-text-container p {
+        margin-top: 25px;
+        font-size: 16px;
+    }
+
+    .hero-container .doctor-image {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero-container .doctor-image img {
+        max-width: 100%;
+        max-height: 450px;
+        margin: 0 !important;
+    }
+
+    /* section 2 */
+    .doctors-container-text {
+        padding: 60px 50px 0;
+        text-align: center;
+    }
+
+    .doctors-container-text h2 {
+        font-size: 36px;
+    }
+
+    .doctors-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 0 50px 60px;
+        row-gap: 10px;
+    }
+
+    .doctors-container .box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+    }
+
+    .doctors-container .text-image-container {
+        width: min(350px, 100%);
+        height: 264px;
+    }
+
+    /* section 3 */
+
+
+    .halfshowdoctorcon {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 40px 30px 0;
+        margin-right: 0;
+    }
+
+    .card {
+        width: 220px;
+    }
+
+    /* section 4 */
+    .section4cont {
+        flex-direction: column;
+        height: auto;
+        padding: 50px 50px;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .section4cont .txtandbtn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section4cont .txtandbtn h1 {
+        font-size: 32px;
+        margin: 0;
+        padding-bottom: 20px;
+    }
+
+    .section4cont .txtandbtn p {
+        width: 100%;
+    }
+
+    .section4cont .txtandbtn #ca {
+        width: auto;
+    }
+
+    .section4cont .girl {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section4cont .girl img {
+        height: auto;
+        max-width: 100%;
+        max-height: 350px;
+    }
+}
+
+
+
+@media (max-width: 425px) {
+
+    /* section 1 */
+    .hero-container {
+        height: auto;
+        min-height: 80vh;
+        flex-direction: column;
+    }
+
+    .hero-text-container {
+        width: 100%;
+        padding: 60px 30px 0px;
+        box-sizing: border-box;
+    }
+
+    .hero-text-container h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .hero-text-container p {
+        margin-top: 25px;
+        font-size: 16px;
+    }
+
+    .hero-container .doctor-image {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero-container .doctor-image img {
+        max-width: 100%;
+        max-height: 450px;
+        margin: 0 !important;
+    }
+
+    /* section 2 */
+    .doctors-container-text {
+        padding: 60px 50px 0;
+        text-align: center;
+    }
+
+    .doctors-container-text h2 {
+        font-size: 36px;
+    }
+
+    .doctors-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+        padding: 0 50px 60px;
+        row-gap: 10px;
+    }
+
+    .doctors-container .box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .doctors-container .text-image-container {
+        width: min(350px, 100%);
+        height: 264px;
+    }
+
+    /* section 3 */
+
+    .section3 .txt1 h1 {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section3 .halfshowdoctorcon {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .section3 .halfshowdoctorcon .card {
+        margin-left: 0;
+    }
+
+    /* section 4 */
+    .section4cont .txtandbtn h1 {
+        font-size: 28px;
+    }
+
+    .section4cont .txtandbtn #ca {
+        width: 100%;
+    }
 }

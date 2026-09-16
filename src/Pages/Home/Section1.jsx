@@ -1,21 +1,22 @@
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Section1() {
     const navigate = useNavigate();
 
     return (
         <>
-            <div className="main-container">
-                <div className="text">
-                    <h1>Book Appointment
-                        With Trusted Doctors</h1>
-                    <p>Simply browse through our extensive list of trusted doctors,
-                        schedule your appointment hassle-free.</p>
-                    <button id="ba" onClick={()=> navigate("/allDoctors")}>Book Appointment →</button>
+            <div className="hero-container">
+                <div className="hero-text-container">
+                    <p>Your Health, Our Priority.</p>
+                    <h1>Personalized Healthcare for Better Health and Peace of Mind</h1>
+
+                    <button id="ba" onClick={() => navigate("/allDoctors")}>Book Appointment →</button>
                 </div>
                 <div className="doctor-image">
-                    <img src="/images/doctor-group.png" alt="" /></div>
+                    <img src="/images/doctors group.webp" alt="doctor-group" />
+                </div>
             </div>
+
         </>
     )
 };

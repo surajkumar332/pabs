@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
+import "./PaushedDate.css";
 
 function PaushedDate({ id }) {
 
@@ -56,26 +57,29 @@ function PaushedDate({ id }) {
 
             <form onSubmit={handleSubmit}>
 
+    <div className="date-form-group">
 
-                <label>Enter Date</label>
+        <label>Enter Date for Doctor's Break</label>
 
-                <input
-                    type="date"
-                    value={form.date}
-                    onChange={(e) =>
-                        setForm({
-                            ...form,
-                            date: e.target.value
-                        })
-                    }
-                    required
-                />
+        <input
+            type="date"
+            value={form.date}
+            onChange={(e) =>
+                setForm({
+                    ...form,
+                    date: e.target.value
+                })
+            }
+            required
+        />
 
-                <button type="submit">
-                    Submit
-                </button>
+    </div>
 
-            </form>
+    <button type="submit">
+        Submit
+    </button>
+
+</form>
         </>
     );
 }

@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "./Doctors.css";
 
 function Doctors() {
   const { specialization } = useParams();
@@ -22,13 +23,16 @@ function Doctors() {
   }, [specialization]);
 
   return (
-    <>
+    <div className="specialization-doctors">
       <h2>{specialization}</h2>
 
       <div className="halfshowdoctorcon">
         {doctor.map((item, index) => (
-          <div key={index} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
-
+          <div
+            key={index}
+            className="card"
+            onClick={() => navigate(`/doctor/${item._id}`)}
+          >
             <div className="top">
               <img src={item.img} alt={item.name} />
             </div>
@@ -37,11 +41,10 @@ function Doctors() {
               <p>{item.name}</p>
               <p>{item.specialization}</p>
             </div>
-
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

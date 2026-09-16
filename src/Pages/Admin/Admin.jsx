@@ -92,46 +92,141 @@ function Admin() {
     return (
         <div className="admin-container">
 
-            <div className="form-section">
-                <h2>Add Doctor</h2>
+    <div className="admin-form">
+        <div className="form-section">
 
-                <form onSubmit={handleSubmit}>
+            <h2>Add Doctor</h2>
 
-                    <input type="file" onChange={(e) => setImage(e.target.files[0])} />
+            <form onSubmit={handleSubmit}>
 
-                    <input name="name" placeholder="Name" value={form.name} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        type="file"
+                        onChange={(e) => setImage(e.target.files[0])}
+                    />
+                </div>
 
-                    <input name="mobile" placeholder="Mobile" value={form.mobile} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="name"
+                        placeholder="Name"
+                        value={form.name}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <input name="specialization" placeholder="Specialization" value={form.specialization} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="mobile"
+                        placeholder="Mobile"
+                        value={form.mobile}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <input name="degree" placeholder="Degree" value={form.degree} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="specialization"
+                        placeholder="Specialization"
+                        value={form.specialization}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <input name="experience" placeholder="Experience" value={form.experience} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="degree"
+                        placeholder="Degree"
+                        value={form.degree}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <input name="about" placeholder="About" value={form.about} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="experience"
+                        placeholder="Experience"
+                        value={form.experience}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <input name="fee" placeholder="Fee" value={form.fee} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="about"
+                        placeholder="About"
+                        value={form.about}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <input name="email" placeholder="Email" value={form.email} onChange={handleChange} />
+                <div className="form-input">
+                    <input
+                        name="fee"
+                        placeholder="Fee"
+                        value={form.fee}
+                        onChange={handleChange}
+                    />
+                </div>
 
-                    <button type="submit">Add Doctor</button>
-                </form>
-            </div>
+                <div className="form-input">
+                    <input
+                        name="email"
+                        placeholder="Email"
+                        value={form.email}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <div className="list-section">
-                <h2>Doctor List</h2>
+                <button type="submit">Add Doctor</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <div className="doctor-list">
+        <div className="list-section">
+
+            <h2>Doctor List</h2>
+
+            <div className="doctor-list-content">
 
                 {doctor.map((doc) => (
+
                     <div key={doc._id} className="doctor-card">
-                        <p>{doc.name} - {doc.specialization} - ₹{doc.fee}</p>
-                         <PaushedDate id={doc._id} />
-                        <button onClick={() => handleDelete(doc._id)}>Delete</button>
+
+                        <div className="doctor-info">
+                            <p className="doctor-name">{doc.name}</p>
+                            <p className="doctor-specialization">
+                                {doc.specialization}
+                            </p>
+                            <p className="doctor-fee">
+                                ₹{doc.fee}
+                            </p>
+                        </div>
+
+                        <div className="doctor-action">
+                            <PaushedDate id={doc._id} />
+
+                            <button
+                                onClick={() => handleDelete(doc._id)}
+                            >
+                                Delete
+                            </button>
+                        </div>
+
                     </div>
+
                 ))}
+
             </div>
 
         </div>
+    </div>
+
+</div>
     );
 }
 

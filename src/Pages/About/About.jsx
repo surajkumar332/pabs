@@ -50,8 +50,8 @@ function About() {
 
       </div>
 
-   <Footer/>
     </div>
+   <Footer/>
     </>
 
   );
