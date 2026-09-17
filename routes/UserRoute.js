@@ -171,7 +171,7 @@ userRoute.post("/login", async(req,res) => {
                 message: "Mobile & Password are Required"
             });
         }
-        const user = await user.findOne({mobile});
+        const user = await User.findOne({mobile});
 
         if(!user){
             return res.status(404).json({
@@ -207,6 +207,7 @@ userRoute.post("/login", async(req,res) => {
     });
 
     }
+
     catch (error) {
         console.log(error);
 
