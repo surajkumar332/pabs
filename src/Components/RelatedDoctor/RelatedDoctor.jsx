@@ -27,34 +27,26 @@ function RelatedDoctor({ specialization, id }) {
 
   return (
     <>
-     <div className="Related-doctor">
-      <div
-        className="rd"
-      >
-        <h2>Related Doctors</h2>
-        <p>Simply browse through our extensive list of trusted doctors.</p>
-      </div>
+      <div className="Related-doctor">
+        <div className="rd">
+          <h2>Related Doctors</h2>
+          <p>Simply browse through our extensive list of trusted doctors.</p>
+        </div>
 
-      <div
-        className="fullshowdoctorcont"
-      >
-        {doctors.map((item, index) => (
-          <div
-            key={item._id}
-            className="card"
-            onClick={() => navigate(`/doctor/${item._id}`)}
-          >
-            <div className="top">
-              <img src={item.img} alt={item.name} />
-            </div>
+        <div className="fullshowdoctorcont">
+          {doctors.map((item, index) => (
+            <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
+              <div className="top">
+                <img src={item.img} alt={item.name} />
+              </div>
 
-            <div className="bottom">
-              <p>{item.name}</p>
-              <p>{item.specialization}</p>
+              <div className="bottom">
+                <h3>{item.name}</h3>
+                <p>{item.specialization}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
     </>
   );

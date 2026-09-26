@@ -20,11 +20,8 @@ function Booked() {
     }, [userId]);
 
     const filteredBookings = book.filter(item => {
-
         const appointmentDate = new Date(item.date);
-
         appointmentDate.setHours(23, 59, 59, 999);
-
         return appointmentDate >= now;
     });
     // cnacle function
@@ -36,7 +33,12 @@ function Booked() {
             showCancelButton: true,
             width: "350px",
             confirmButtonText: "Yes, Cancel",
-            cancelButtonText: "No"
+            cancelButtonText: "No",
+            customClass: {
+                 htmlContainer: "txt",
+                 confirmButton: "cnf-btn",
+                 cancelButton: "cancle-btn" 
+            }
         });
 
         if (!result.isConfirmed) {
@@ -58,7 +60,6 @@ function Booked() {
                     title: "Error",
                     width: "fit-content",
                     text: data.message,
-                    icon: "error"
                 });
 
                 return;
@@ -71,9 +72,8 @@ function Booked() {
             Swal.fire({
                 title: "Cancelled",
                 text: "Appointment Cancelled Successfully",
-                icon: "success",
                 width: "fit-content",
-                timer: 2000,
+                timer: 5000,
                 showConfirmButton: false
             });
 
@@ -85,7 +85,6 @@ function Booked() {
                 title: "Error",
                 text: "Error cancelling appointment",
                 width: "fit-content",
-                icon: "error"
             });
 
         }

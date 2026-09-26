@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 function Section2() {
 
-    const [allDoctor, setAllDoctor] = useState([]);
+    // const [allDoctor, setAllDoctor] = useState([]);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}/doctor/all`)
-            .then(res => res.json())
-            .then((data) => {
-                setAllDoctor(data.doctors);
-            });
-    }, []);
+    // useEffect(() => {
+    //     fetch(`${import.meta.env.VITE_API_URL}/doctor/all`)
+    //         .then(res => res.json())
+    //         .then((data) => {
+    //             setAllDoctor(data.doctors);
+    //         });
+    // }, []);
 
     return (
         <>
@@ -42,11 +42,6 @@ function Section2() {
                             </div>
 
                         </div>
-
-                        {/* <button className="image-btn" onClick={() => navigate("/doctors/generalphysician")}>
-            <img src="/images/gp.svg" alt="General Physician" />
-        </button>
-        <p>General Physician</p> */}
                     </div>
 
 
@@ -55,7 +50,7 @@ function Section2() {
 
                             <div className="card-front">
                                 <img
-                                    src="/images/Dermatologist image.webp"
+                                    src="/images/dermatologist image.webp"
                                     alt="dermatologist"
                                 />
                             </div>
@@ -63,17 +58,12 @@ function Section2() {
                             <div className="card-back">
                                 <h2>Dermatologist</h2>
                                 <p>Get expert care for skin, hair and nail related concerns.</p>
-                                <button onClick={() => navigate("/doctors/dermatologist")}>
+                                <button onClick={() => navigate("/doctors/dermatology")}>
                                     View Doctors
                                 </button>
                             </div>
 
                         </div>
-
-                        {/* <button className="image-btn" onClick={() => navigate("/doctors/dermatologist")}>
-            <img src="/images/dt.svg" alt="Dermatologist" />
-        </button>
-        <p>Dermatologist</p> */}
                     </div>
 
 
@@ -82,7 +72,7 @@ function Section2() {
 
                             <div className="card-front">
                                 <img
-                                    src="/images/Pediatrician image.webp"
+                                    src="/images/pediatrician image.webp"
                                     alt="pediatrician"
                                 />
                             </div>
@@ -96,11 +86,6 @@ function Section2() {
                             </div>
 
                         </div>
-
-                        {/* <button className="image-btn" onClick={() => navigate("/doctors/pediatrician")}>
-            <img src="/images/pt.svg" alt="Pediatrician" />
-        </button>
-        <p>Pediatrician</p> */}
                     </div>
 
 
@@ -109,7 +94,7 @@ function Section2() {
 
                             <div className="card-front">
                                 <img
-                                    src="/images/Gastroenterologist image.webp"
+                                    src="/images/gastroenterologist image.webp"
                                     alt="gastroenterologist"
                                 />
                             </div>
@@ -123,11 +108,6 @@ function Section2() {
                             </div>
 
                         </div>
-
-                        {/* <button className="image-btn" onClick={() => navigate("/doctors/gastroenterologist")}>
-            <img src="/images/gt.svg" alt="Gastroenterologist" />
-        </button>
-        <p>Gastroenterologist</p> */}
                     </div>
 
                 </div>

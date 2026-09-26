@@ -1,79 +1,260 @@
+.hero-section-all-doctors {
+    width: 100%;
+    background-image: url("/images/allDoctors-herosection-image.webp");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: rgb(203, 232, 244);
+    display: flex;
+    align-items: end;
+    box-sizing: border-box;
+    background-size: 1100px auto;
+    justify-content: center;
+}
+
+.hero-all-doctors-text {
+    z-index: 0;
+    /* background: rgba(66, 69, 71, 0.8); */
+    /* background-color: rgba(167, 191, 202, 0.9); */
+    background-color: rgba(73, 82, 86, 0.9);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    padding: 130px 0px 70px;
+}
+
+.hero-all-doctors-text h1 {
+    font-size: 75px;
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-weight: 700;
+    width: 800px;
+    line-height: 90px;
+}
+.hero-all-doctors-text .green-txt{
+    color: rgb(107, 192, 107);
+    font-size: 52px;
+    font-weight: 700;
+}
+.hero-all-doctors-text p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin: 0;
+    color: #ffffff;
+    width: 800px;
+}
+
+.doctor-list-text h2 {
+    padding: 50px 20px 0;
+    font-size: 60px;
+    font-weight: 700;
+    color: #2b3942;
+}
+
 .fullshowdoctorcont {
-    display: grid;
-    grid-template-columns: repeat(4, 220px);
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
-    padding: 130px 100px 10px;
+    padding: 60px;
 }
 
 .fullshowdoctorcont .card {
-    border: 2px solid rgb(78, 106, 118);
+    position: relative;
     width: 220px;
-    height: 200px;
-    margin: 20px 0;
-    margin-bottom: 22px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    height: 290px;
+    border: 2px solid rgba(128, 128, 128, 0.2);
+    box-shadow: 0 10px 10px #ccc;
+    border-radius: 10px;
     cursor: pointer;
+    margin-bottom: 10px;
+    overflow: visible;
 }
 
-
-
-.fullshowdoctorcont .card img {
-    height: 150px;
-        transform: translateY(-30px);
-    transition: transform 0.7s ease;
-
-}
-/* .card:hover img {
-    transform: translateY(-30px);
-
-} */
 
 .fullshowdoctorcont .top {
-    height: 60%;
-    background: rgb(203, 232, 244);
-
+    position: relative;
+    height: 174px;
+    background: #e5fff9;
+    border-radius: 10px 10px 0 0;
+    overflow: visible;
 }
 
 
+.fullshowdoctorcont .top img {
+    position: absolute;
+    width: 180px;
+    height: 220px;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    z-index: 0;
+}
+
+
+.fullshowdoctorcont .bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100px;
+    padding: 15px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    z-index: 0;
+
+}
+
+.fullshowdoctorcont .bottom h3 {
+    margin: 0 !important;
+    color: #606162;
+    padding-bottom: 5px;
+}
+/* 1440 */
+@media (max-width: 1500px) {
+        .hero-section-all-doctors{
+        padding-top: 390px;
+    }
+
+}
 /* 1024px */
 
 @media (max-width: 1024px) {
+        .hero-section-all-doctors{
+        padding-top: 400px;
+    }
     .fullshowdoctorcont {
-        grid-template-columns: repeat(3, 220px);
-        justify-content: space-around;
-        padding-top: 80px;
-
+        gap: 30px;
+        row-gap: 50px;
+        padding: 60px 40px;
     }
 
+    .fullshowdoctorcont .card img {
+        width: 180px;
+        height: 220px;
+        object-fit: cover;
+        object-position: center 20%;
+        transform: translateX(-50%);
+    }
+
+    .hero-all-doctors-text h1 {
+        font-size: 60px;
+        line-height: 70px;
+        width: 80%;
+    }
+
+    .hero-all-doctors-text p {
+        width: 80%;
+    }
+
+    .doctor-list-text h2 {
+        font-size: 50px;
+    }
 }
-
-
-/* 768px */
 
 @media (max-width: 768px) {
-    .fullshowdoctorcont {
-        grid-template-columns: repeat(2, 220px);
-        justify-content: space-around;
-        padding-top: 80px;
+    .hero-section-all-doctors {
+        padding-top: 400px;
     }
 
-}
-
-
-/* 425px */
-
-@media (max-width: 425px) {
     .fullshowdoctorcont {
-        grid-template-columns: 220px;
-        justify-content: center;
-        padding-top: 80px;
+        gap: 25px;
+        row-gap: 40px;
+        padding: 60px 25px;
     }
 
     .fullshowdoctorcont .card {
         width: 220px;
-        margin-left: 0;
     }
 
+    .fullshowdoctorcont .card img {
+        width: 180px;
+        height: 220px;
+        object-fit: cover;
+        object-position: center 20%;
+        transform: translateX(-50%);
+    }
+
+    .hero-all-doctors-text {
+        height: 89vh;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    .hero-all-doctors-text h1 {
+        font-size: 48px;
+        line-height: 58px;
+        width: 100%;
+    }
+
+    .hero-all-doctors-text p {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .doctor-list-text h2 {
+        padding: 60px 20px 0;
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero-section-all-doctors {
+        padding-top: 380px;
+    }
+
+    .fullshowdoctorcont {
+        gap: 30px;
+        row-gap: 35px;
+        padding: 60px 15px;
+    }
+
+    .fullshowdoctorcont .card {
+        width: 220px;
+    }
+
+    .fullshowdoctorcont .card img {
+        width: 180px;
+        height: 220px;
+        object-fit: cover;
+        object-position: center 20%;
+        transform: translateX(-50%);
+    }
+
+    .hero-all-doctors-text {
+        height: 89vh;
+        padding: 10px 20px 0px;
+    }
+
+    .hero-all-doctors-text h1 {
+        font-size: 36px;
+        line-height: 45px;
+        width: 100%;
+    }
+
+    .hero-all-doctors-text p {
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .doctor-list-text h2 {
+        padding: 45px 15px 0;
+        font-size: 32px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px){
+        .hero-section-all-doctors {
+        padding-top: 380px;
+    }
 }

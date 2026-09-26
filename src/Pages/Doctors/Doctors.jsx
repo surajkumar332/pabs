@@ -24,7 +24,7 @@ function Doctors() {
 
   return (
     <div className="specialization-doctors">
-      <h2>{specialization}</h2>
+      <h2>{specialization.charAt(0).toUpperCase()+ specialization.slice(1)}</h2>
 
       <div className="halfshowdoctorcon">
         {doctor.map((item, index) => (
@@ -38,7 +38,7 @@ function Doctors() {
             </div>
 
             <div className="bottom">
-              <p>{item.name}</p>
+              <h3>{item.name}</h3>
               <p>{item.specialization}</p>
             </div>
           </div>

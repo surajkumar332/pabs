@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Footer from "../../Components/Footer/Footer";
+import "./Booked.css";
 
 function Booked() {
     const [book, setBook] = useState([]);
@@ -19,35 +21,63 @@ function Booked() {
 
     return (
         <>
+        <div className="booked-container">
+
             <h1>Booking Confirmed</h1>
 
             {!latest ? (
-                <p>No Booking Found</p>
+                <p className="no-booking">No Booking Found</p>
             ) : (
-                <div key={latest._id}>
+                <div className="booking-card" key={latest._id}>
 
                     {latest.doctorId ? (
                         <>
-                            <img src={latest.doctorId.img} alt="" />
-                            <h3>{latest.doctorId.name}</h3>
-                            <p>{latest.doctorId.specialization}</p>
-                            <p>Doctor's Fee: {latest.doctorId.fee}</p>
+                            <div className="booking-info">
+                                <h3>{latest.doctorId.name}</h3>
+                                <p>{latest.doctorId.specialization}</p>
+
+                                <div>
+                                    <span>Doctor's Fee-&nbsp;&nbsp;&nbsp;</span>
+                                    <strong>₹{latest.doctorId.fee}</strong>
+                                </div>
+
+                                <div>
+                                    <span>Appointment Date-&nbsp;&nbsp;&nbsp;</span>
+                                    <strong>
+                                        {new Date(latest.date).toLocaleDateString("en-GB")}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <span>Appointment Time-&nbsp;&nbsp;&nbsp;</span>
+                                    <strong>{latest.time}</strong>
+                                </div>
+
+                            </div>
+                            <div className="doctor-section">
+                                <img
+                                    className="doctor-img"
+                                    src={latest.doctorId.img}
+                                    alt=""
+                                />
+
+                                
+                            </div>
+
 
                         </>
                     ) : (
-                        <p>Doctor Not Found</p>
+                        <p className="no-booking">Doctor Not Found</p>
                     )}
-
-                    <p>
-                        Appointment Date:{" "}
-                        {new Date(latest.date).toLocaleDateString("en-GB")}
-                    </p>
-
-                    <p>Appointment Time: {latest.time}</p>
 
                 </div>
             )}
-        </>
+
+        </div>
+
+        <Footer/>
+
+</>        
     );
 }
 

@@ -12,6 +12,10 @@ import Register from './Components/Register/Register'
 import Login from './Components/Login/Login'
 import AdminRoute from './Pages/Admin/AdminRoute'
 import Admin from './Pages/Admin/Admin'
+import GeneralPhysician from './Pages/Doctors/GeneralPhysician'
+import Dermatology from './Pages/Doctors/Dermatology'
+import Pediatrician from './Pages/Doctors/Pediatrician'
+import Gastroenterologist from './Pages/Doctors/Gastroenterologist'
 
 
 function App() {
@@ -21,6 +25,10 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/alldoctors' element={<AllDoctors />} />
+        <Route path='doctors/generalphysician' element={<GeneralPhysician/> }/>
+        <Route path='doctors/dermatology' element={<Dermatology />}/>
+        <Route path='doctors/pediatrician' element={<Pediatrician/>}/>
+        <Route path='doctors/gastroenterologist' element={<Gastroenterologist/>}/>
         <Route path='/about' element={<About />} />
         <Route path='/bookedAppointment' element={<BookedAppointment />} />
         <Route path="/doctor/:id" element={<DoctorDetails />} />

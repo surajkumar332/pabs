@@ -32,23 +32,41 @@ function AllDoctors() {
 
 
     return (
-        <>
-            <div className="fullshowdoctorcont">
-            {doctor.map((item, index) => (
-                <div key={item._id} className="card" onClick={()=> navigate(`/doctor/${item._id}`)}>
-                    <div className="top">
-                    <img src={item.img} alt={item.name} />
-                    </div>
-                    <div className="bottom">
-                    <p>{item.name}</p>
-                    <p>{item.specialization}</p>
-                    </div>
-                </div>
-            ))}
-        </div >
+        <>  
+            <div className="hero-section-all-doctors">
 
-        {/* footer */}
-        <Footer/>
+                <div className="hero-all-doctors-text">
+                    <h1>Find the Right Doctor <div className="green-txt">for You</div></h1>
+                    
+                    <p>
+                        Browse through our trusted doctors and book your appointment
+                        with ease.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div className="doctor-list-text">
+                <h2>Our Specialists</h2>
+            </div>
+
+            <div className="fullshowdoctorcont">
+                {doctor.map((item, index) => (
+                    <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
+                        <div className="top">
+                            <img src={item.img} alt={item.name} />
+                        </div>
+                        <div className="bottom">
+                            <h3>{item.name}</h3>
+                            <p>{item.specialization}</p>
+                        </div>
+                    </div>
+                ))}
+            </div >
+
+            {/* footer */}
+            <Footer />
         </>
     )
 };

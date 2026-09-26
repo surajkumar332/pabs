@@ -105,11 +105,8 @@ doctorRoute.put(
 
 doctorRoute.get("/all", async (req, res) => {
   try {
-    console.log("GET /doctor/all hit");
 
     const doctors = await Doctor.find();
-
-    console.log("Doctors:", doctors.length);
 
     res.status(200).json({
       message: "all doctors fetched successfully",
@@ -158,6 +155,72 @@ doctorRoute.get("/related/:specialization/:id", async (req, res) => {
       doctors
     });
   } catch (error) {
+    res.status(500).json({
+      message: "Server Error"
+    });
+  }
+});
+
+
+doctorRoute.get("/generalphysician", async (req, res)=> {
+  
+  try{
+    const generalPhysician = await Doctor.find({
+      specialization: "General Physician"
+    });
+    res.status(200).json({
+      message: "General Physician Fetched Successfully",
+      generalPhysician
+    });
+  }catch(error){
+    res.status(500).json({
+      message: "Server Error"
+    });
+  }
+});
+
+doctorRoute.get("/dermatology", async(req, res)=> {
+  try{
+    const dermatology = await Doctor.find({
+      specialization: "Dermatologist"
+    });
+    res.status(200).json({
+      message: "Dermatology Fetched Successfully",
+      dermatology
+    });
+  }catch(error){
+    res.status(500).json({
+      message: "Server Error"
+    });
+  }
+});
+
+doctorRoute.get("/pediatrician", async(req, res)=>{
+  try{
+    const pediatrician = await Doctor.find({
+      specialization: "Pediatrician"
+    });
+    res.status(200).json({
+      message: "Pediatrician fetched Successfully",
+      pediatrician
+    });
+  }catch(error){
+    res.status(500).json({
+      message: "Server Error"
+    });
+  }
+});
+console.log("Gastroenterologist route hit");
+doctorRoute.get("/gastroenterologist", async(req, res)=> {
+  try{
+    const gastroenterologist = await Doctor.find({
+      specialization: "Gastroenterologist"
+    });
+    res.status(200).json({
+      message: "Gastroenterologist fetched Successfully",
+      gastroenterologist
+    });
+  }catch(error){
     res.status(500).json({
       message: "Server Error"
     });

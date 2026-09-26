@@ -35,6 +35,7 @@ function DoctorDetails() {
   return (
     <>
       <div className="doctordetails">
+        
         <div className="image">
           <img src={doctor.img} alt={doctor.name} />
         </div>
@@ -53,10 +54,7 @@ function DoctorDetails() {
         </div>
       </div>
 
-      <p>
-        Booking Slots
-        <br />
-      </p>
+
 
       <Slots id={id} />
 

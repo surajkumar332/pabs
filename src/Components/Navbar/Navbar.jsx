@@ -28,46 +28,49 @@ function Navbar() {
             navigate("/register");
         }
     };
+    const closeMenu = () => {
+        document.querySelector(".navbar-parent .links").classList.remove("active");
+    };
 
 
     return (
-<>
-    <div className="navbar-parent">
+        <>
+            <div className="navbar-parent">
 
-        <div className="nav-links">
+                <div className="nav-links">
 
-            <span>
-                <img src="/images/pabs-logo.png" alt="Logo" height={"80px"} />
-            </span>
+                    <span>
+                        <img src="/images/pabs-logo.webp" alt="Logo" height={"80px"} />
+                    </span>
 
-            <div className="links">
-                <Link to={"/"}>Home</Link>
-                <Link to={"/allDoctors"}>All Doctors</Link>
-                <Link to={"/bookedAppointment"}>Booked Appointment</Link>
-                <Link to={"/about"}>About</Link>
+                    <div className="links">
+                        <Link to={"/"} onClick={closeMenu}>Home</Link>
+                        <Link to={"/allDoctors"} onClick={closeMenu}>All Doctors</Link>
+                        <Link to={"/bookedAppointment"} onClick={closeMenu}>Booked Appointment</Link>
+                        <Link to={"/about"} onClick={closeMenu}>About</Link>
 
-                {isAdmin && <Link to="/admin">Admin</Link>}
+                        {isAdmin && <Link to="/admin" onClick={closeMenu}>Admin</Link>}
+                    </div>
+
+                    <div className="button-parent">
+                        <button id="ca-btn" onClick={handleButton}>
+                            {localStorage.getItem("token") ? "LogOut" : "Login"}
+                        </button>
+                    </div>
+
+                    <button
+                        className="hamburger"
+                        onClick={() =>
+                            document.querySelector(".navbar-parent .links").classList.toggle("active")
+                        }
+                    >
+                        ☰
+                    </button>
+
+                </div>
+
             </div>
-
-            <div className="button-parent">
-                <button id="ca-btn" onClick={handleButton}>
-                    {localStorage.getItem("token") ? "LogOut" : "Login"}
-                </button>
-            </div>
-
-            <button
-                className="hamburger"
-                onClick={() =>
-                    document.querySelector(".navbar-parent .links").classList.toggle("active")
-                }
-            >
-                ☰
-            </button>
-
-        </div>
-
-    </div>
-</>
+        </>
     )
 };
 

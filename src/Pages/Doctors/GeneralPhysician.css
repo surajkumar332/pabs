@@ -1,0 +1,147 @@
+.General-Physician .herosection {
+    background-image: url("/images/generalphysician herosection image.webp");
+    width: 100%;
+    min-height: 500px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* background-color: rgb(203, 232, 244); */
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    position: relative;
+    padding: 145px 60px 60px;
+
+}
+.General-Physician .herosection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.General-Physician .herosection .herosection-txt {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    z-index: 0;
+
+}
+
+.General-Physician .herosection .herosection-txt h2 {
+    font-size: 75px;
+    font-weight: 700;
+    margin: 0;
+
+
+}
+
+.General-Physician .herosection .herosection-txt h3 {
+    font-size: 42px;
+    font-size: 600;
+    color: rgb(107, 192, 107);
+    padding: 20px 0 40px;
+    margin: 0;
+
+}
+
+.General-Physician .herosection .herosection-txt p {
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.General-Physician .herosection .herosection-txt button {
+    padding: 12px 20px;
+    border: 1px solid #05cd9e;
+    border-radius: 40px;
+    background: #05cd9e;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-right: 30px;
+    width: fit-content;
+    transition: 0.3s ease;
+    margin: 30px 0;
+}
+
+.General-Physician .herosection .herosection-txt button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #05cd9e;
+    transform: scale(1.1);
+}
+
+.General-Physician .about-generalphysician {
+    padding: 60px 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 100%;
+
+}
+
+.General-Physician .about-generalphysician h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #2b3942;
+    padding-bottom: 40px;
+    margin: 0;
+}
+
+.General-Physician .about-generalphysician p {
+    text-align: justify;
+    color: #4b4f52;
+
+}
+.General-Physician .common-condtion-generalphysician{
+    padding: 60px;
+
+}
+.General-Physician .common-condtion-generalphysician h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #2b3942;
+    padding-bottom: 40px;
+    margin: 0;
+}
+.General-Physician .common-condtion-generalphysician .conditions-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.General-Physician .common-condtion-generalphysician .conditions-tags span {
+    padding: 10px 18px;
+    border-radius: 20px;
+    background-color: #e5fff9;
+    color: #2b3942;
+    border: 1px solid #05cd9e;
+}
+
+.General-Physician .ourdoctors{
+  max-width: 100%;
+  padding: 60px 60px 10px;
+}
+.General-Physician .ourdoctors h2{
+    font-size: 40px;
+    color: #2b3942;
+    margin: 0;
+
+    font-weight: 700;    
+}
+.General-Physician .ourdoctors p{
+    width: 100%;   
+    font-size: 18px;
+    /* padding: 40px 0 0px; */
+    color: #4b4f52;    
+}

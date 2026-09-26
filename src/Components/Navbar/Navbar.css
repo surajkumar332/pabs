@@ -107,6 +107,10 @@
 
 @media (max-width: 1024px) {
 
+    .navbar-parent .nav-links{
+        max-width: 100%;
+    }
+
     .navbar-parent .nav-links .links {
         gap: 25px;
     }
@@ -147,7 +151,7 @@
 
 /* 425px */
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
 
     .navbar-parent .nav-links {
         height: 65px;
@@ -191,7 +195,7 @@
         left: 0;
         width: 100%;
         height: auto;
-        background-color: rgb(147, 247, 177);
+        background-color: rgb(250, 245, 245);
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: center;

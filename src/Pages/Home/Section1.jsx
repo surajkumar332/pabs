@@ -7,7 +7,8 @@ function Section1() {
         <>
             <div className="hero-container">
                 <div className="hero-text-container">
-                    <p>Your Health, Our Priority.</p>
+                    {/* <p>Your Health, Our Priority.</p> */}
+                    <p>Connecting You With Better Healthcare.</p>
                     <h1>Personalized Healthcare for Better Health and Peace of Mind</h1>
 
                     <button id="ba" onClick={() => navigate("/allDoctors")}>Book Appointment →</button>

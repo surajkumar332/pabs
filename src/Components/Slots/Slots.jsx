@@ -54,7 +54,6 @@ function Slots({ id }) {
             const formattedDate = appointmentDate.toISOString().split("T")[0];
 
             const user = JSON.parse(localStorage.getItem("user"));
-            console.log(user, "asdfg");
             if (!user) {
 
                 Swal.fire({
@@ -86,7 +85,7 @@ function Slots({ id }) {
 
             if (selectedTime === null) {
                 Swal.fire({
-                    text:"Select Time First",
+                    text: "Select Time First",
                     timer: 2000,
                     width: "fit-content",
                     showConfirmButton: false
@@ -147,7 +146,6 @@ function Slots({ id }) {
 
         const formattedDate = appointmentDate.toISOString().split("T")[0];
 
-        console.log("DATE SEND:", formattedDate); // debug
 
         if (!formattedDate) return;
 
@@ -188,9 +186,7 @@ function Slots({ id }) {
     const isPaused =
         pausedDates.includes(formattedDate);
 
-    console.log(pausedDates);
-    console.log(formattedDate);
-    console.log(isPaused);
+
 
     if (isPaused) {
 
@@ -205,8 +201,14 @@ function Slots({ id }) {
     }
 
     return (
-        <>
+        <div className="booking-container">
             {/* Date selection */}
+            <div className="booking-slots">
+                <p>
+                    Booking Slots
+                </p>
+            </div>
+
             <div className="flex">
                 {slots.map((item, index) => (
                     <div
@@ -217,8 +219,8 @@ function Slots({ id }) {
                             setSelectedTime(null);
                         }}
                     >
-                        <p>{item.day}</p>
-                        <h3>{item.date}</h3>
+                        <p>{item.day}</p>&nbsp;
+                        <p>{item.date}</p>
                     </div>
                 ))}
             </div>
@@ -227,11 +229,8 @@ function Slots({ id }) {
             {isPaused ? (
                 <h2>Doctor is unavailable on this date</h2>
             ) : (
-
                 <div className="timeRow">
-
                     {slots[selectedDate].time.map((t, i) => {
-
                         const isBooked =
                             Array.isArray(bookedTime) &&
                             bookedTime.includes(t);
@@ -247,17 +246,14 @@ function Slots({ id }) {
                                             ? "timeBox active"
                                             : "timeBox"
                                 }
-
                                 onClick={() =>
-                                    !isBooked &&
-                                    setSelectedTime(i)
+                                    !isBooked && setSelectedTime(i)
                                 }
                             >
                                 {t}
                             </button>
                         );
                     })}
-
                 </div>
             )}
 
@@ -265,7 +261,7 @@ function Slots({ id }) {
             <button id="bookApp" onClick={sendData}>
                 Book Appointment
             </button>
-        </>
+        </div>
     );
 }
 

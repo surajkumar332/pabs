@@ -1,0 +1,36 @@
+.Cta-section{
+    background-color: #e5fff9;
+    height: fit-content;
+    max-width: 100%;
+    padding: 60px;
+
+}
+.Cta-section h2{
+    font-size: 72px;
+    color: rgb(75, 77, 86); 
+    font-weight: 700;
+
+}
+.Cta-section p{
+    color: #596169;
+    font-size: 18px;
+    padding: 20px 0 40px;
+
+}
+.Cta-section button{
+    background: #05cd9e;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    border: 1px solid #05cd9e;
+    border-radius: 40px;
+    transition: 0.3s ease;
+
+}
+.Cta-section button:hover{
+    background: white;
+    color: black;
+    border: 1px solid #05cd9e;
+    transform: scale(1.1);
+}

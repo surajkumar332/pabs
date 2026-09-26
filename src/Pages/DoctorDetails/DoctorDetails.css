@@ -4,38 +4,46 @@
     justify-content: center;
     gap: 60px;
     width: 100%;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
+    padding: 80px 80px 40px;
+    box-sizing: border-box;
 }
 
+
+
 .doctordetails .image {
-    width: 250px;
-    min-width: 250px;
-    padding: 15px;
+    width: 350px;
+    min-width: 350px;
     margin-top: 30px;
     border-radius: 25px;
-    background: linear-gradient(135deg, #05cd9e, #2b3942);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: #e5fff9;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8e6;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .doctordetails .image img {
     display: block;
-    width: 100%;
-    height: 200px;
+    width: 350px;
+    height: 250px;
     object-fit: contain;
     border-radius: 18px;
 }
 
+
+
 .doctordetails .details {
     text-align: left;
-    width: 60%;
+    width: 600px;
+    max-width: 600px;
     margin-top: 40px;
     padding: 40px 30px;
     border-radius: 20px;
     background: white;
     border: 1px solid #e2e8e6;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .doctordetails .details h2 {
@@ -55,37 +63,20 @@
     color: #05a982;
     font-weight: 600;
 }
+
 .doctordetails .details p:nth-child(4) {
     color: #05a982;
     font-weight: 600;
 }
 
+
+/* 1024px */
+
 @media (max-width: 1024px) {
+
     .doctordetails {
         gap: 35px;
-        max-width: 900px;
-    }
-
-    .doctordetails .image {
-        width: 270px;
-        min-width: 270px;
-    }
-
-    .doctordetails .image img {
-        height: 340px;
-    }
-
-    .doctordetails .details {
-        width: 60%;
-        padding: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .doctordetails {
-        flex-direction: column;
-        gap: 25px;
-        padding: 20px;
+        padding: 100px 40px 60px;
     }
 
     .doctordetails .image {
@@ -94,24 +85,61 @@
     }
 
     .doctordetails .image img {
+        width: 280px;
+        height: 300px;
+    }
+
+    .doctordetails .details {
+        width: 550px;
+        max-width: 550px;
+        padding: 30px;
+    }
+
+}
+
+
+/* 768px */
+
+@media (max-width: 768px) {
+
+    .doctordetails {
+        flex-direction: column;
+        gap: 25px;
+        padding: 100px 20px;
+    }
+
+    .doctordetails .image {
+        width: 280px;
+        min-width: 280px;
+        margin-top: 0;
+    }
+
+    .doctordetails .image img {
+        width: 280px;
         height: 350px;
     }
 
     .doctordetails .details {
         width: 100%;
         max-width: 600px;
+        margin-top: 0;
         padding: 25px;
     }
 
     .doctordetails .details h2 {
         font-size: 26px;
     }
+
 }
 
+
+/* 425px */
+
 @media (max-width: 425px) {
+
     .doctordetails {
         margin: 20px auto;
-        padding: 15px;
+        padding: 30px 15px;
         gap: 20px;
     }
 
@@ -119,9 +147,11 @@
         width: 220px;
         min-width: 220px;
         padding: 10px;
+        box-sizing: border-box;
     }
 
     .doctordetails .image img {
+        width: 200px;
         height: 280px;
     }
 
@@ -139,4 +169,5 @@
         font-size: 14px;
         line-height: 1.6;
     }
+
 }
