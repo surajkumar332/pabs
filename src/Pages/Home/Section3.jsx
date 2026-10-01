@@ -19,12 +19,7 @@ function Section3() {
         const getData = async () => {
             try {
 
-                const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-
-                });
+                const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`);
 
 
                 const data = await res.json();
@@ -32,13 +27,14 @@ function Section3() {
                     Swal.fire({
                     text: "Unauthorized - please login again",
                     width: "fit-content"
+
                    });
                     return;
                 }
 
                 setDoctor(data.doctors || []);
                 setIsLoader(false);
-                
+
             } catch (error) {
                 Swal.fire({
                     text: "Server Error",
