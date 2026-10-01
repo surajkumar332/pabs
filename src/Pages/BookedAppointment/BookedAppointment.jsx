@@ -98,6 +98,17 @@ function Booked() {
     };
     return (
         <>
+            <div className="appointment-banner">
+                <div className="herosection">
+                    <div className="herosection-txt">
+                        <h2> Stay Ready for Your</h2>
+                            <h3>Upcoming Appointment</h3>
+                        <p>Keep track of your scheduled appointments and
+                            arrive prepared for your consultation.</p>
+                    </div>
+                </div>
+
+            </div>
 
             <div className="book-container">
 

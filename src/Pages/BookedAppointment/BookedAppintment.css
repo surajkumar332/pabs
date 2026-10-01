@@ -1,6 +1,63 @@
+.appointment-banner{
+    background-image: url("/images/Booked appointment hero image.webp");
+    max-width: 100%;
+    min-height: fit-content;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.appointment-banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+.appointment-banner .herosection{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    padding: 145px 60px 60px;
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+.appointment-banner .herosection h2 {
+    margin: 12px 0;
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.appointment-banner .herosection h3{
+    font-size: 42px;
+    color: rgb(107, 192, 107);
+    padding: 20px 0 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.appointment-banner .herosection p {
+    color: #ffffff;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+
 .book-container {
     min-height: 100vh;
-    padding: 135px 30px 70px;
+    padding: 70px 30px ;
     background: linear-gradient(135deg, #f3fffc, #f4f7f8);
     box-sizing: border-box;
 }

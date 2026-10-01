@@ -119,6 +119,7 @@ doctorRoute.get("/all", async (req, res) => {
       message: "Server Error"
     });
   }
+
 });
 
 doctorRoute.get("/details/:id", async (req, res) => {

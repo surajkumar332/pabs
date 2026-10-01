@@ -1,60 +1,145 @@
 .about-container {
-  padding: 150px 80px 100px;
-  background-color: #f5f7fa;
-  min-height: 80vh;
-  text-align: center;
+    background-color: #f5f7fa;
+    min-height: fit-content;
+    text-align: center;
 }
 
-.about-title {
-  font-size: 32px;
-  margin-bottom: 20px;
+/* about hero section */
+
+.about-herosection {
+    background-image: url("/images/about herosection image.webp");
+    max-width: 100%;
+    min-height: fit-content;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.about-herosection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.about-herosection .about-herosection-txt {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    padding: 120px 60px 60px;
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+.about-herosection .about-herosection-txt h2 {
+    font-size: 75px;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.about-herosection .about-herosection-txt h3 {
+    font-size: 42px;
+    color: rgb(107, 192, 107);
+    padding: 20px 0 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.about-herosection .about-herosection-txt p {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+
+/* about css */
+
+.about-pabs{
+    padding: 60px;
+}
+.about-pabs .about-title{
+  font-size: 60px;
   color: #333;
+  margin: 0;
+  padding-bottom: 50px;
 }
 
 .about-intro {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  font-size: 18px;
-  color: #555;
+    max-width: 100%;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    color: #555;
 }
 
 .about-sections {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .about-card {
-  background: #fff;
-  padding: 20px;
-  width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: 0.3s;
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
 }
 
 .about-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .about-card h2 {
-  margin-bottom: 10px;
-  color: #0d6efd;
+    margin-bottom: 10px;
+    color: #0d6efd;
 }
 
 .about-card p {
-  font-size: 16px;
-  text-align: left;
-  color: #555;
+    font-size: 16px;
+    text-align: left;
+    color: #555;
 }
+
+
 @media (max-width: 1024px) {
-    .about-container {
-        padding: 130px 50px 80px;
+
+    .about-herosection .about-herosection-txt {
+        padding: 110px 50px 50px;
     }
 
-    .about-title {
-        font-size: 30px;
+    .about-herosection .about-herosection-txt h2 {
+        font-size: 65px;
+    }
+
+    .about-herosection .about-herosection-txt h3 {
+        font-size: 36px;
+        padding: 18px 0 35px;
+    }
+
+    .about-herosection .about-herosection-txt p {
+        font-size: 17px;
+    }
+
+    .about-pabs {
+        padding: 50px;
+    }
+
+    .about-pabs .about-title {
+        font-size: 52px;
+        padding-bottom: 40px;
     }
 
     .about-intro {
@@ -67,12 +152,31 @@
 }
 
 @media (max-width: 768px) {
-    .about-container {
-        padding: 110px 30px 70px;
+
+    .about-herosection .about-herosection-txt {
+        padding: 100px 30px 45px;
     }
 
-    .about-title {
-        font-size: 28px;
+    .about-herosection .about-herosection-txt h2 {
+        font-size: 55px;
+    }
+
+    .about-herosection .about-herosection-txt h3 {
+        font-size: 30px;
+        padding: 15px 0 30px;
+    }
+
+    .about-herosection .about-herosection-txt p {
+        font-size: 16px;
+    }
+
+    .about-pabs {
+        padding: 40px 30px;
+    }
+
+    .about-pabs .about-title {
+        font-size: 45px;
+        padding-bottom: 35px;
     }
 
     .about-intro {
@@ -95,16 +199,36 @@
 }
 
 @media (max-width: 450px) {
-    .about-container {
-        padding: 90px 15px 50px;
+
+    .about-herosection .about-herosection-txt {
+        padding: 90px 20px 40px;
     }
 
-    .about-title {
+    .about-herosection .about-herosection-txt h2 {
+        font-size: 45px;
+    }
+
+    .about-herosection .about-herosection-txt h3 {
         font-size: 25px;
+        padding: 12px 0 25px;
+    }
+
+    .about-herosection .about-herosection-txt p {
+        font-size: 15px;
+    }
+
+    .about-pabs {
+        padding: 35px 15px;
+    }
+
+    .about-pabs .about-title {
+        font-size: 35px;
+        padding-bottom: 30px;
     }
 
     .about-intro {
         font-size: 15px;
+        margin-bottom: 25px;
     }
 
     .about-card {
@@ -121,8 +245,87 @@
         font-size: 14px;
     }
 }
-@media (max-width: 320px){
-  .about-intro{
-    margin: 0;
-  }
+
+@media (max-width: 375px) {
+
+    .about-herosection .about-herosection-txt {
+        padding: 85px 15px 35px;
+    }
+
+    .about-herosection .about-herosection-txt h2 {
+        font-size: 40px;
+    }
+
+    .about-herosection .about-herosection-txt h3 {
+        font-size: 22px;
+        padding: 10px 0 20px;
+    }
+
+    .about-herosection .about-herosection-txt p {
+        font-size: 14px;
+    }
+
+    .about-pabs {
+        padding: 30px 12px;
+    }
+
+    .about-pabs .about-title {
+        font-size: 32px;
+        padding-bottom: 25px;
+    }
+
+    .about-intro {
+        font-size: 14px;
+    }
+
+    .about-card {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .about-herosection .about-herosection-txt {
+        padding: 75px 12px 30px;
+    }
+
+    .about-herosection .about-herosection-txt h2 {
+        font-size: 35px;
+    }
+
+    .about-herosection .about-herosection-txt h3 {
+        font-size: 20px;
+        padding: 8px 0 18px;
+    }
+
+    .about-herosection .about-herosection-txt p {
+        font-size: 13px;
+    }
+
+    .about-pabs {
+        padding: 25px 10px;
+    }
+
+    .about-pabs .about-title {
+        font-size: 29px;
+        padding-bottom: 20px;
+    }
+
+    .about-intro {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .about-card {
+        max-width: 260px;
+        padding: 14px;
+    }
+
+    .about-card h2 {
+        font-size: 19px;
+    }
+
+    .about-card p {
+        font-size: 13px;
+    }
 }

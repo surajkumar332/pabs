@@ -38,7 +38,7 @@ function Section3() {
                 }
                 setDoctor(data.doctors);
                 console.log(data.doctors, "hm");
-                isLoader(false);
+                setIsLoader(false);
             } catch (error) {
                 Swal.fire({
                     text: "Server Error",
@@ -64,7 +64,7 @@ function Section3() {
                     <p>Simply browse through our extensive list of trusted doctors.</p>
                 </div>
                 <div className="section3">
-                    {isLoader ? (
+                    { isLoader ? (
                         <Loader />
 
                     ) : (

@@ -6,7 +6,7 @@ body {
 .hero-container {
     min-height: fit-content;
     max-width: 100%;
-    background-image: url(./images/hero-section-background-image.webp);
+    background-image: url(/images/hero-section-background-image.webp);
     display: flex;
     justify-content: space-between;
     padding-top: 80px;
