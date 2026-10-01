@@ -18,6 +18,13 @@ function Section3() {
     useEffect(() => {
         const getData = async () => {
             try {
+                const token = localStorage.getItem("token");
+                if (!token) {
+                   Swal.fire({
+                    text: "Please Loggin for Book an Appointment",
+                    width: "fit-content"
+                   });
+                }
 
                 const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`, {
                     headers: {
@@ -29,7 +36,10 @@ function Section3() {
 
                 const data = await res.json();
                 if (res.status === 401) {
-                    console.log("Unauthorized - please login again");
+                    Swal.fire({
+                    text: "Unauthorized - please login again",
+                    width: "fit-content"
+                   });
                     return;
                 }
 
