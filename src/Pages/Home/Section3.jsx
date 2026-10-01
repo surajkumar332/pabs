@@ -18,10 +18,6 @@ function Section3() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const token = localStorage.getItem("token");
-                if (!token) {
-                    return console.log("No token found");
-                }
 
                 const res = await fetch(`${import.meta.env.VITE_API_URL}/doctor/all`, {
                     headers: {
@@ -36,8 +32,6 @@ function Section3() {
                     console.log("Unauthorized - please login again");
                     return;
                 }
-                console.log("API RESPONSE:", data);
-console.log("DOCTORS:", data.doctors);
 
                 setDoctor(data.doctors || []);
                 setIsLoader(false);

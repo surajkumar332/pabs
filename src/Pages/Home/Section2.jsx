@@ -41,7 +41,7 @@ function Section2() {
 
                             <div className="card-front">
                                 <img
-                                    src="/images/dermatologist image.webp"
+                                    src="/images/dermatologist doctor.webp"
                                     alt="dermatologist"
                                 />
                             </div>
@@ -63,7 +63,7 @@ function Section2() {
 
                             <div className="card-front">
                                 <img
-                                    src="/images/pediatrician image.webp"
+                                    src="/images/pediatrician doctor.webp"
                                     alt="pediatrician"
                                 />
                             </div>
@@ -85,7 +85,7 @@ function Section2() {
 
                             <div className="card-front">
                                 <img
-                                    src="/images/gastroenterologist image.webp"
+                                    src="/images/gastroenterologist doctor.webp"
                                     alt="gastroenterologist"
                                 />
                             </div>
