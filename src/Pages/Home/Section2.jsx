@@ -1,18 +1,9 @@
-// import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 function Section2() {
 
-    // const [allDoctor, setAllDoctor] = useState([]);
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     fetch(`${import.meta.env.VITE_API_URL}/doctor/all`)
-    //         .then(res => res.json())
-    //         .then((data) => {
-    //             setAllDoctor(data.doctors);
-    //         });
-    // }, []);
 
     return (
         <>

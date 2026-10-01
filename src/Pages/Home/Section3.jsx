@@ -36,8 +36,10 @@ function Section3() {
                     console.log("Unauthorized - please login again");
                     return;
                 }
-                setDoctor(data.doctors);
-                console.log(data.doctors, "hm");
+                console.log("API RESPONSE:", data);
+console.log("DOCTORS:", data.doctors);
+
+                setDoctor(data.doctors || []);
                 setIsLoader(false);
             } catch (error) {
                 Swal.fire({
