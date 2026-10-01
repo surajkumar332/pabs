@@ -7,7 +7,15 @@ import doctorRoute from "./routes/DoctorRouter.js";
 import cors from "cors";
 // import nodemailer from "nodemailer";
 
+import path from "path";
+import { fileURLToPath } from "url";
+
+
 const app = express();
+
+// get current file directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // env
 dotenv.config();
@@ -33,7 +41,11 @@ app.get("/", (req, res) => {
   res.send("API is running");
 });
 
-app.use("/images", express.static("public/images"));
+app.use(
+  "/images",
+  express.static(path.join(__dirname, "../public/images"))
+);
+// app.use("/images", express.static("public/images"));
 app.use("/uploads", express.static("uploads"));
 app.use("/users", userRoute);
 app.use("/doctor", doctorRoute);
