@@ -6,12 +6,14 @@ import Cta from "../../Components/CTA/Cta";
 import Faq from "../../Components/FAQ/Faq";
 import Section4 from "../Home/Section4";
 import Footer from "../../Components/Footer/Footer";
+import Loader from "../../Components/Loader/Loader";
 
 
 
 function Dermatology() {
 
     const [dermatologyDoctor, setDermatologyDoctor] = useState([]);
+    const [isLoader, setIsLoader] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,7 +23,7 @@ function Dermatology() {
                 const data = await res.json();
 
                 setDermatologyDoctor(data.dermatology);
-
+                setIsLoader(false);
             } catch (error) {
                 Swal.fire({
                     title: "Error",
@@ -36,7 +38,7 @@ function Dermatology() {
 
     return (
         <>
-        
+
             <div className="dermatology">
                 <div className="herosection">
                     <div className="herosection-txt">
@@ -107,20 +109,26 @@ function Dermatology() {
                         </p>
                     </div>
 
-                    <div className="fullshowdoctorcont">
 
-                        {dermatologyDoctor.map((item, index) => (
-                            <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
-                                <div className="top">
-                                    <img src={item.img} alt={item.name} />
+                    {isLoader ? (
+                        <Loader />
+                    ) : (
+
+                        <div className="fullshowdoctorcont">
+
+                            {dermatologyDoctor.map((item, index) => (
+                                <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
+                                    <div className="top">
+                                        <img src={item.img} alt={item.name} />
+                                    </div>
+                                    <div className="bottom">
+                                        <h3>{item.name}</h3>
+                                        <p>{item.specialization}</p>
+                                    </div>
                                 </div>
-                                <div className="bottom">
-                                    <h3>{item.name}</h3>
-                                    <p>{item.specialization}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div >
+                            ))}
+                        </div >
+                    )};
                 </section>
                 <Cta />
                 <Faq />

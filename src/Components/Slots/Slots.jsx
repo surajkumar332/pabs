@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import "./Slots.css";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2"
+import BookingLoader from "../BookingAppointmentLoader/BookingLoader";
 
 function Slots({ id }) {
     const [selectedDate, setSelectedDate] = useState(0);
     const [selectedTime, setSelectedTime] = useState(null);
     const [bookedTime, setBookedTime] = useState([]);
     const [pausedDates, setPausedDates] = useState([]);
+    const [isLoader, setIsLoader] = useState(false);
     const navigate = useNavigate();
 
     // create slots
-    const [slots] = useState(() => {
+    const [slots, setSlots] = useState(() => {
         let arr = [];
 
         for (let i = 0; i < 7; i++) {
@@ -30,14 +32,64 @@ function Slots({ id }) {
                 "5:00 PM"
             ];
 
+            // Saturday
             if (date.getDay() === 6) {
-                timeSlots = ["10:00 AM", "11:00 AM", "12:00 PM"];
+                timeSlots = [
+                    "10:00 AM",
+                    "11:00 AM",
+                    "12:00 PM"
+                ];
             }
 
+            // check today's slots
+            const today = new Date();
+
+            timeSlots = timeSlots.map(time => {
+
+                let expired = false;
+
+                if (date.toDateString() === today.toDateString()) {
+
+                    const [timePart, period] = time.split(" ");
+
+                    let [hours, minutes] = timePart
+                        .split(":")
+                        .map(Number);
+
+                    if (period === "PM" && hours !== 12) {
+                        hours += 12;
+                    }
+
+                    if (period === "AM" && hours === 12) {
+                        hours = 0;
+                    }
+
+                    const slotTime = new Date();
+
+                    slotTime.setHours(
+                        hours,
+                        minutes,
+                        0,
+                        0
+                    );
+
+                    expired = slotTime <= today;
+                }
+
+                return {
+                    time: time,
+                    expired: expired
+                };
+            });
+
             arr.push({
-                day: date.toLocaleDateString("en-US", { weekday: "short" }),
+                day: date.toLocaleDateString("en-US", {
+                    weekday: "short"
+                }),
                 date: date.getDate(),
-                month: date.toLocaleDateString("en-US", { month: "short" }),
+                month: date.toLocaleDateString("en-US", {
+                    month: "short"
+                }),
                 time: timeSlots
             });
         }
@@ -47,6 +99,7 @@ function Slots({ id }) {
 
     // booking function
     const sendData = async () => {
+        setIsLoader(true);
         try {
             const appointmentDate = new Date();
             appointmentDate.setDate(appointmentDate.getDate() + selectedDate);
@@ -103,7 +156,7 @@ function Slots({ id }) {
                     patientName: name,
                     patientId: userId,
                     date: formattedDate,
-                    time: slots[selectedDate].time[selectedTime]
+                    time: slots[selectedDate].time[selectedTime].time
                 })
             });
 
@@ -112,10 +165,8 @@ function Slots({ id }) {
             if (!res.ok) {
 
                 Swal.fire({
-                    title: "Error",
                     text: data.message,
                     width: "fit-content",
-                    icon: "error"
                 });
 
                 return;
@@ -127,13 +178,12 @@ function Slots({ id }) {
             navigate("/booked");
 
         } catch (error) {
-            console.log(error);
             Swal.fire({
-                title: "Error",
                 text: "Server Error",
                 width: "fit-content",
-                icon: "error"
             });
+        } finally {
+            setIsLoader(false);
         }
     };
 
@@ -231,36 +281,41 @@ function Slots({ id }) {
             ) : (
                 <div className="timeRow">
                     {slots[selectedDate].time.map((t, i) => {
+
                         const isBooked =
                             Array.isArray(bookedTime) &&
-                            bookedTime.includes(t);
+                            bookedTime.includes(t.time);
+
+                        const isDisabled =
+                            isBooked || t.expired;
 
                         return (
                             <button
                                 key={i}
-                                disabled={isBooked}
+                                disabled={isDisabled}
                                 className={
-                                    isBooked
+                                    isDisabled
                                         ? "timeBox disable"
                                         : selectedTime === i
                                             ? "timeBox active"
                                             : "timeBox"
                                 }
                                 onClick={() =>
-                                    !isBooked && setSelectedTime(i)
+                                    !isDisabled && setSelectedTime(i)
                                 }
                             >
-                                {t}
+                                {t.time}
                             </button>
                         );
                     })}
                 </div>
             )}
 
-            {/* Book button */}
-            <button id="bookApp" onClick={sendData}>
+            <button id="bookApp" onClick={sendData} disabled={isLoader}>
                 Book Appointment
             </button>
+
+            <BookingLoader isLoader={isLoader} />
         </div>
     );
 }

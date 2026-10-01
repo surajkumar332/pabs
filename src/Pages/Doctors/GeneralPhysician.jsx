@@ -6,10 +6,13 @@ import Footer from "../../Components/Footer/Footer";
 import Cta from "../../Components/CTA/Cta";
 import Fqa from "../../Components/FAQ/Faq";
 import Section4 from "../Home/Section4";
+import Loader from "../../Components/Loader/Loader";
+
 
 
 function GeneralPhysician() {
     const [generalPhysicianDoctor, setGeneralPhysicianDoctor] = useState([]);
+    const [isLoader, setIsLoader] = useState(true);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -19,6 +22,7 @@ function GeneralPhysician() {
 
                 const data = await res.json();
                 setGeneralPhysicianDoctor(data.generalPhysician);
+                setIsLoader(false);
             } catch (error) {
                 Swal.fire({
                     title: "Error",
@@ -68,7 +72,32 @@ function GeneralPhysician() {
                         <span>Allergies</span>
                         <span>High Blood Pressure</span>
                         <span>Diabetes</span>
-                        <span>Headaches & Migraine</span>
+                        <span>Headaches</span>
+                    </div>
+                </div>
+                <div className="chooseus">
+                    <div className="heading">
+                        <h2>Why Choose Us</h2>
+                        <p>Finding the right general physician should be simple and convenient. PABS helps you explore doctor profiles, understand their areas of expertise, and book an appointment according to your needs.</p>
+                    </div>
+
+                    <div className="content">
+                        <div className="box">
+                            <h4>Experienced Dermatologist</h4>
+                            <p>Explore profiles of Dermatologist with their qualifications, experience, and areas of specialization.</p>
+                        </div>
+                        <div className="box">
+                            <h4>Easy Appointment Booking</h4>
+                            <p>Choose a suitable doctor, select an available appointment time, and book your consultation with just a few steps.</p>
+                        </div>
+                        <div className="box">
+                            <h4>Convenient Access</h4>
+                            <p>Find Dermatologist in one place without having to search through multiple sources or Multiple Places.</p>
+                        </div>
+                        <div className="box">
+                            <h4>Clear Doctor Information</h4>
+                            <p>View important details about doctors before booking, helping you make an informed choice based on your requirements.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -79,21 +108,24 @@ function GeneralPhysician() {
                         <p>Meet our general physicians who provide care for a wide range of everyday health concerns. Explore their profiles, experience, and expertise to find a doctor who fits your healthcare needs.
                         </p>
                     </div>
+                    {isLoader ? (
+                        <Loader />
+                    ) : (
+                        <div className="fullshowdoctorcont">
 
-                    <div className="fullshowdoctorcont">
-
-                        {generalPhysicianDoctor.map((item, index) => (
-                            <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
-                                <div className="top">
-                                    <img src={item.img} alt={item.name} />
+                            {generalPhysicianDoctor.map((item, index) => (
+                                <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
+                                    <div className="top">
+                                        <img src={item.img} alt={item.name} />
+                                    </div>
+                                    <div className="bottom">
+                                        <h3>{item.name}</h3>
+                                        <p>{item.specialization}</p>
+                                    </div>
                                 </div>
-                                <div className="bottom">
-                                    <h3>{item.name}</h3>
-                                    <p>{item.specialization}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div >
+                            ))}
+                        </div >
+                    )};
                 </section>
                 <Cta />
                 <Fqa />
@@ -101,7 +133,7 @@ function GeneralPhysician() {
 
             </div>
 
-        <Footer/>   
+            <Footer />
         </>
     );
 }

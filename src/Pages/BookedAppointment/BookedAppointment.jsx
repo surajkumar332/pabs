@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import "./BookedAppintment.css"
 import Footer from "../../Components/Footer/Footer";
 import Swal from "sweetalert2";
+import BookingLoader from "../../Components/BookingAppointmentLoader/BookingLoader";
 
 function Booked() {
     const [book, setBook] = useState([]);
+    const [loadingId, setLoadingId] = useState(null);
     const user = JSON.parse(localStorage.getItem("user"));
     const userId = user?._id;
     const now = new Date();
@@ -35,9 +37,9 @@ function Booked() {
             confirmButtonText: "Yes, Cancel",
             cancelButtonText: "No",
             customClass: {
-                 htmlContainer: "txt",
-                 confirmButton: "cnf-btn",
-                 cancelButton: "cancle-btn" 
+                htmlContainer: "txt",
+                confirmButton: "cnf-btn",
+                cancelButton: "cancle-btn"
             }
         });
 
@@ -45,9 +47,13 @@ function Booked() {
             return;
         }
 
+        setLoadingId(id);
+
         try {
 
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/appointment/cancel/${id}`,{
+            const res = await fetch(
+                `${import.meta.env.VITE_API_URL}/appointment/cancel/${id}`,
+                {
                     method: "DELETE"
                 }
             );
@@ -70,10 +76,9 @@ function Booked() {
             );
 
             Swal.fire({
-                title: "Cancelled",
                 text: "Appointment Cancelled Successfully",
                 width: "fit-content",
-                timer: 5000,
+                timer: 3000,
                 showConfirmButton: false
             });
 
@@ -87,42 +92,121 @@ function Booked() {
                 width: "fit-content",
             });
 
+        } finally {
+            setLoadingId(null);
         }
-
     };
     return (
         <>
+
             <div className="book-container">
 
+                <div className="book-page-header">
+                    <h1>My Appointments</h1>
+                    <p>Manage and view your upcoming doctor appointments.</p>
+                </div>
+
                 {filteredBookings.length === 0 ? (
-                    <p>No Appointment Booked at This Time</p>
+                    <div className="no-appointment">
+                        <div className="no-appointment-icon">📅</div>
+                        <h2>No Appointments Found</h2>
+                        <p>
+                            You don't have any upcoming appointments at the moment.
+                        </p>
+                    </div>
                 ) : (
-                    filteredBookings.map((item) => (
-                        <div className="book-card" key={item._id}>
+                    <div className="appointments-list">
+                        {filteredBookings.map((item) => (
+                            <div className="book-card" key={item._id}>
 
-                            <img src={item.doctorId?.img} alt="" />
+                                <div className="doctor-image-wrapper">
+                                    <img
+                                        src={item.doctorId?.img}
+                                        alt={item.doctorId?.name || "Doctor"}
+                                    />
+                                </div>
 
-                            <div className="book-info">
-                                <h3>{item.doctorId?.name}</h3>
-                                <p>{item.doctorId?.specialization}</p>
-                                <p><strong>Doctor's Fee:</strong> {item.doctorId?.fee}</p>
+                                <div className="book-info">
 
-                                <p>
-                                    <strong>Date:</strong>{" "}
-                                    {new Date(item.date).toLocaleDateString("en-GB")}
-                                </p>
-                                <p><strong>Time:</strong> {item.time}</p>
+                                    <div className="doctor-heading">
+                                        <div>
+                                            <span className="doctor-label">
+                                                Your Doctor
+                                            </span>
+
+                                            <h3>{item.doctorId?.name}</h3>
+
+                                            <p className="specialization">
+                                                {item.doctorId?.specialization}
+                                            </p>
+                                        </div>
+
+                                        <span className="appointment-status">
+                                            Confirmed
+                                        </span>
+                                    </div>
+
+                                    <div className="appointment-details">
+
+                                        <div className="appointment-detail">
+                                            <span>Date</span>
+                                            <strong>
+                                                {new Date(item.date).toLocaleDateString(
+                                                    "en-GB",
+                                                    {
+                                                        weekday: "short",
+                                                        day: "2-digit",
+                                                        month: "short",
+                                                        year: "numeric"
+                                                    }
+                                                )}
+                                            </strong>
+                                        </div>
+
+                                        <div className="appointment-detail">
+                                            <span>Time</span>
+                                            <strong>{item.time}</strong>
+                                        </div>
+
+                                        <div className="appointment-detail">
+                                            <span>Doctor's Fee</span>
+                                            <strong className="appointment-fee">
+                                                ₹{item.doctorId?.fee}
+                                            </strong>
+                                        </div>
+
+                                    </div>
+
+                                    <div className="appointment-actions">
+
+                                        <p>
+                                            Please arrive a few minutes before your
+                                            scheduled appointment.
+                                        </p>
+
+                                        <button
+                                            id="cancle"
+                                            onClick={() => handleCancel(item._id)}
+                                            disabled={loadingId !== null}
+                                        >
+                                            Cancel Appointment
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
                             </div>
-
-                            <button id="cancle" onClick={() => handleCancel(item._id)}>
-                                Cancel
-                            </button>
-
-                        </div>
-                    ))
+                        ))}
+                    </div>
                 )}
 
             </div>
+
+            <BookingLoader isLoader={loadingId !== null} />
+
+
+
 
             <Footer />
         </>

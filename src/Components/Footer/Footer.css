@@ -1,17 +1,19 @@
 .footer {
     background: #13212e;
     color: #ffffff;
-    padding: 70px 8% 25px;
+    padding: 60px 60px 10px;
+    height: fit-content;
 }
 
 /* main footer */
 
 .footer-container {
-    max-width: 1550px;
+    max-width: 100%;
     margin: auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-    gap: 150px;
+    /* grid-template-columns: 1.9fr 1fr 1fr 1.2fr; */
+    display: flex;
+    gap: 50px;
 }
 
 
@@ -36,7 +38,7 @@
     line-height: 1.8;
     color: #b8c4cc;
     margin: 0;
-    max-width: 350px;
+    /* max-width: 80%; */
     text-align: justify;
 }
 
@@ -47,6 +49,7 @@
     padding: 0;
     margin: 0;
     text-align: left;
+    width: 300px;
 }
 
 .footer-section li {
@@ -81,11 +84,9 @@
 /* bottom */
 
 .footer-bottom {
-    max-width: 1250px;
-    margin: 50px auto 0;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-
+    max-width: 100%;
+    margin: 10px auto 0;
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,12 +121,17 @@
 @media (max-width: 1024px) {
 
     .footer {
-        padding: 60px 5% 25px;
+        padding: 60px 60px 10px;
+        height: fit-content;
     }
 
     .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         gap: 45px 30px;
+        flex-wrap: wrap;
+
     }
 
 
@@ -137,12 +143,12 @@
 @media (max-width: 768px) {
 
     .footer {
-        padding: 55px 30px 22px;
+        padding: 45px 45px 10px;
     }
 
     .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px 25px;
+        display: flex;
+        justify-content: center;
     }
 
     .footer-section h2 {
@@ -153,19 +159,24 @@
         font-size: 18px;
     }
 
+    .footer-section ul {
+        width: 225px;
+    }
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
     }
+
 }
 
 
 /* 425px */
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
 
     .footer {
-        padding: 45px 25px 20px;
+        padding: 45px 45px 10px;
     }
 
     .footer-container {
@@ -201,7 +212,8 @@
         flex-direction: column;
         gap: 10px;
     }
-        .footer-section h3 {
+
+    .footer-section h3 {
 
         text-align: center;
     }
@@ -210,7 +222,8 @@
 
         text-align: center;
     }
-    .footer-section img{
+
+    .footer-section img {
         margin-left: 100px;
     }
 }

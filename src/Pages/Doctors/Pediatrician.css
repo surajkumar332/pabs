@@ -1,19 +1,25 @@
 .pediatrician .herosection {
     background-image: url("/images/pediatrician herosection image.webp");
     width: 100%;
+    min-height: 500px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgb(203, 232, 244);
     display: flex;
     align-items: center;
     box-sizing: border-box;
     justify-content: center;
+    position: relative;
+}
 
+.pediatrician .herosection::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .pediatrician .herosection .herosection-txt {
-    background-color: rgba(73, 82, 86, 0.9);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -21,31 +27,32 @@
     flex-direction: column;
     flex-wrap: wrap;
     color: white;
-    padding-top: 130px;
-    padding-bottom: 45px;
-
+    padding: 140px 60px 60px;
+    z-index: 0;
+    box-sizing: border-box;
 }
 
 .pediatrician .herosection .herosection-txt h2 {
     font-size: 75px;
     font-weight: 700;
     margin: 0;
-
-
+    text-align: center;
 }
 
 .pediatrician .herosection .herosection-txt h3 {
     font-size: 42px;
-    font-size: 600;
+    font-weight: 600;
     color: rgb(107, 192, 107);
     margin: 20px;
-
+    text-align: center;
 }
 
 .pediatrician .herosection .herosection-txt p {
     font-size: 24px;
-    width: 900px;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
 }
 
 .pediatrician .herosection .herosection-txt button {
@@ -57,10 +64,9 @@
     font-size: 16px;
     color: white;
     cursor: pointer;
-    margin-right: 30px;
     width: fit-content;
     transition: 0.3s ease;
-    margin: 30px 0;
+    margin: 10px 0 0;
 }
 
 .pediatrician .herosection .herosection-txt button:hover {
@@ -77,7 +83,7 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-
+    box-sizing: border-box;
 }
 
 .pediatrician .about-pediatrician h2 {
@@ -86,25 +92,30 @@
     color: #2b3942;
     padding-bottom: 40px;
     margin: 0;
+    text-align: center;
 }
 
 .pediatrician .about-pediatrician p {
-    width: 1200px;
-    text-align: justify;
+    width: 100%;
+    text-align: left;
     color: #4b4f52;
-
+    margin: 0;
 }
-.pediatrician .common-condtion-pediatrician{
+
+.pediatrician .common-condtion-pediatrician {
     padding: 60px;
-
+    box-sizing: border-box;
 }
-.pediatrician .common-condtion-pediatrician h2{
+
+.pediatrician .common-condtion-pediatrician h2 {
     font-size: 40px;
     font-weight: 700;
     color: #2b3942;
     padding-bottom: 40px;
     margin: 0;
+    text-align: center;
 }
+
 .pediatrician .common-condtion-pediatrician .conditions-tags {
     display: flex;
     justify-content: center;
@@ -119,73 +130,621 @@
     color: #2b3942;
     border: 1px solid #05cd9e;
 }
-.pediatrician .chooseus{
-    padding: 60px 0 60px;
-    background: #e5fff9;
 
+.pediatrician .chooseus {
+    padding: 60px 0;
+    background: #e5fff9;
+    box-sizing: border-box;
 }
-.pediatrician .chooseus .heading{
+
+.pediatrician .chooseus .heading {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0 60px;
 }
-.pediatrician .chooseus .heading h2{
+
+.pediatrician .chooseus .heading h2 {
     font-size: 40px;
     font-weight: 700;
     color: #2b3942;
     margin: 0;
+    text-align: center;
 }
-.pediatrician .chooseus .heading p{
+
+.pediatrician .chooseus .heading p {
     width: 1200px;
+    max-width: 100%;
     font-size: 18px;
-    padding: 40px 0;
-    color: #4b4f52;    
-} 
-.pediatrician .chooseus .content{
+    padding: 20px 0 30px;
+    margin: 0;
+    color: #4b4f52;
+    text-align: center;
+}
+
+.pediatrician .chooseus .content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 10px;
-    
-}
-.pediatrician .chooseus .content .box{
-   border: 1px solid rgba(128, 128, 128, 0.6);
-   border-radius: 10px;
-   width: 300px;
-   margin: 0;
-   padding: 18px 20px 20px;
-   
-}
-.pediatrician .chooseus .content .box h4{
-  color: #595e61;
-  margin: 0;
-  padding-bottom: 10px;
-}
-.pediatrician .chooseus .content .box p{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: #4b4f52;  
+    flex-wrap: wrap;
 }
 
+.pediatrician .chooseus .content .box {
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    width: 300px;
+    height: 204px;
+    margin: 0;
+    padding: 18px 20px 20px;
+    box-sizing: border-box;
+}
 
-#book-appointment{
+.pediatrician .chooseus .content .box h4 {
+    color: #595e61;
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.pediatrician .chooseus .content .box p {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    text-align: center;
+    color: #4b4f52;
+    margin: 0;
 }
-#book-appointment .ourdoctors h2{
+
+.pediatrician .ourdoctors {
+    max-width: 100%;
+    padding: 60px 60px 0;
+    box-sizing: border-box;
+}
+
+.pediatrician .ourdoctors h2 {
     font-size: 40px;
     color: #2b3942;
-    padding: 40px 0 0px;
+    padding: 0;
     margin: 0;
-    font-weight: 700;    
+    font-weight: 700;
+    text-align: center;
 }
-#book-appointment .ourdoctors p{
-    width: 1200px;
+
+.pediatrician .ourdoctors p {
+    width: 100%;
     font-size: 18px;
-    padding: 40px 0 0px;
-    color: #4b4f52;    
+    padding: 40px 0 0;
+    color: #4b4f52;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .pediatrician .herosection {
+        min-height: fit-content;
+    }
+
+    .pediatrician .herosection .herosection-txt {
+        padding: 130px 45px 50px;
+    }
+
+    .pediatrician .herosection .herosection-txt h2 {
+        font-size: 50px;
+    }
+
+    .pediatrician .herosection .herosection-txt h3 {
+        font-size: 30px;
+        padding: 10px 0;
+        margin: 20px;
+    }
+
+    .pediatrician .herosection .herosection-txt p {
+        font-size: 18px;
+    }
+
+    .pediatrician .herosection .herosection-txt button {
+        margin-top: 20px;
+    }
+
+    .pediatrician .about-pediatrician {
+        padding: 50px 45px 0;
+    }
+
+    .pediatrician .common-condtion-pediatrician {
+        padding: 50px 45px;
+    }
+
+    .pediatrician .chooseus {
+        padding: 50px 0;
+    }
+
+    .pediatrician .chooseus .heading {
+        padding: 0 45px;
+    }
+
+    .pediatrician .chooseus .content {
+        gap: 15px;
+    }
+
+    .pediatrician .chooseus .content .box {
+        width: 280px;
+        height: 188px;
+    }
+
+    .pediatrician .ourdoctors {
+        padding: 50px 45px 0;
+    }
+
+    .pediatrician .fullshowdoctorcont {
+        display: flex;
+        justify-content: center;
+        gap: 95px 35px;
+        flex-wrap: wrap;
+        padding: 95px 60px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pediatrician .herosection {
+        height: fit-content;
+    }
+
+    .pediatrician .herosection .herosection-txt {
+        padding: 120px 45px 45px;
+    }
+
+    .pediatrician .herosection .herosection-txt h2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .pediatrician .herosection .herosection-txt h3 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 10px 0;
+        margin: 15px;
+    }
+
+    .pediatrician .herosection .herosection-txt p {
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    .pediatrician .herosection .herosection-txt button {
+        margin: 20px 0 0;
+    }
+
+    .pediatrician .about-pediatrician {
+        padding: 45px;
+    }
+
+    .pediatrician .about-pediatrician h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .pediatrician .about-pediatrician p {
+        line-height: 25px;
+    }
+
+    .pediatrician .common-condtion-pediatrician {
+        padding: 45px;
+    }
+
+    .pediatrician .common-condtion-pediatrician h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags {
+        gap: 10px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags span {
+        padding: 9px 15px;
+    }
+
+    .pediatrician .chooseus {
+        padding: 45px 0;
+    }
+
+    .pediatrician .chooseus .heading {
+        padding: 0 45px;
+    }
+
+    .pediatrician .chooseus .heading h2 {
+        font-size: 30px;
+    }
+
+    .pediatrician .chooseus .heading p {
+        font-size: 17px;
+        line-height: 25px;
+        padding: 15px 0 25px;
+    }
+
+    .pediatrician .chooseus .content {
+        gap: 12px;
+        padding: 0 45px;
+    }
+
+    .pediatrician .chooseus .content .box {
+        width: 250px;
+        height: 169px;
+        padding: 15px;
+    }
+
+    .pediatrician .chooseus .content .box p {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .pediatrician .ourdoctors {
+        padding: 45px 45px 0;
+    }
+
+    .pediatrician .ourdoctors h2 {
+        font-size: 30px;
+    }
+
+    .pediatrician .ourdoctors p {
+        font-size: 17px;
+        padding-top: 20px;
+        line-height: 25px;
+    }
+
+    .pediatrician .fullshowdoctorcont {
+        gap: 100px 3px;
+        padding: 85px 45px 45px;
+    }
+}
+
+@media (max-width: 450px) {
+    .pediatrician .herosection .herosection-txt {
+        padding: 105px 30px 40px;
+    }
+
+    .pediatrician .herosection .herosection-txt h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .pediatrician .herosection .herosection-txt h3 {
+        font-size: 23px;
+        line-height: 29px;
+        padding: 8px 0;
+        margin: 12px;
+    }
+
+    .pediatrician .herosection .herosection-txt p {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 15px 0;
+    }
+
+    .pediatrician .herosection .herosection-txt button {
+        font-size: 15px;
+        padding: 11px 18px;
+    }
+
+    .pediatrician .about-pediatrician {
+        padding: 40px 30px 0;
+    }
+
+    .pediatrician .about-pediatrician h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+    }
+
+    .pediatrician .about-pediatrician p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .pediatrician .common-condtion-pediatrician {
+        padding: 40px 30px;
+    }
+
+    .pediatrician .common-condtion-pediatrician h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags {
+        gap: 8px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags span {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .pediatrician .chooseus {
+        padding: 40px 0;
+    }
+
+    .pediatrician .chooseus .heading {
+        padding: 0 30px;
+    }
+
+    .pediatrician .chooseus .heading h2 {
+        font-size: 26px;
+    }
+
+    .pediatrician .chooseus .heading p {
+        font-size: 15px;
+        line-height: 23px;
+        padding: 15px 0 25px;
+    }
+
+    .pediatrician .chooseus .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 30px;
+    }
+
+    .pediatrician .chooseus .content .box {
+        width: 100%;
+        max-width: 300px;
+        height: 148px;
+    }
+
+    .pediatrician .ourdoctors {
+        padding: 40px 30px 0;
+    }
+
+    .pediatrician .ourdoctors h2 {
+        font-size: 26px;
+    }
+
+    .pediatrician .ourdoctors p {
+        font-size: 15px;
+        padding-top: 18px;
+        line-height: 24px;
+    }
+
+    .pediatrician .fullshowdoctorcont {
+        padding: 90px 30px 30px;
+        gap: 110px;
+    }
+    .pediatrician .fullshowdoctorcont .card{
+        width: 220px;
+    }
+}
+
+@media (max-width: 375px) {
+    .pediatrician .herosection .herosection-txt {
+        padding: 100px 22px 35px;
+    }
+
+    .pediatrician .herosection .herosection-txt h2 {
+        font-size: 27px;
+        line-height: 33px;
+    }
+
+    .pediatrician .herosection .herosection-txt h3 {
+        font-size: 21px;
+        line-height: 27px;
+        padding: 7px 0;
+        margin: 10px;
+    }
+
+    .pediatrician .herosection .herosection-txt p {
+        font-size: 15px;
+        line-height: 22px;
+        padding: 12px 0;
+    }
+
+    .pediatrician .herosection .herosection-txt button {
+        font-size: 14px;
+        padding: 10px 17px;
+    }
+
+    .pediatrician .about-pediatrician {
+        padding: 35px 22px 0;
+    }
+
+    .pediatrician .about-pediatrician h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+
+    .pediatrician .about-pediatrician p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .pediatrician .common-condtion-pediatrician {
+        padding: 35px 22px;
+    }
+
+    .pediatrician .common-condtion-pediatrician h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags {
+        gap: 7px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags span {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .pediatrician .chooseus {
+        padding: 35px 0;
+    }
+
+    .pediatrician .chooseus .heading {
+        padding: 0 22px;
+    }
+
+    .pediatrician .chooseus .heading h2 {
+        font-size: 24px;
+    }
+
+    .pediatrician .chooseus .heading p {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 12px 0 22px;
+    }
+
+    .pediatrician .chooseus .content {
+        gap: 10px;
+        padding: 0 22px;
+    }
+
+    .pediatrician .chooseus .content .box {
+        height: 120px;
+        max-width: 290px;
+    }
+
+    .pediatrician .chooseus .content .box h4 {
+        font-size: 15px;
+    }
+
+    .pediatrician .chooseus .content .box p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .pediatrician .ourdoctors {
+        padding: 35px 22px 0;
+    }
+
+    .pediatrician .ourdoctors h2 {
+        font-size: 24px;
+    }
+
+    .pediatrician .ourdoctors p {
+        font-size: 14px;
+        padding-top: 16px;
+        line-height: 22px;
+    }
+
+    .pediatrician .fullshowdoctorcont {
+        padding: 35px 22px;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .pediatrician .herosection .herosection-txt {
+        padding: 90px 18px 30px;
+    }
+
+    .pediatrician .herosection .herosection-txt h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .pediatrician .herosection .herosection-txt h3 {
+        font-size: 19px;
+        line-height: 24px;
+        padding: 6px 0;
+        margin: 8px;
+    }
+
+    .pediatrician .herosection .herosection-txt p {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 10px 0;
+    }
+
+    .pediatrician .herosection .herosection-txt button {
+        font-size: 13px;
+        padding: 9px 15px;
+    }
+
+    .pediatrician .about-pediatrician {
+        padding: 30px 18px 0;
+    }
+
+    .pediatrician .about-pediatrician h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .pediatrician .about-pediatrician p {
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .pediatrician .common-condtion-pediatrician {
+        padding: 30px 18px;
+    }
+
+    .pediatrician .common-condtion-pediatrician h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags {
+        gap: 6px;
+    }
+
+    .pediatrician .common-condtion-pediatrician .conditions-tags span {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+
+    .pediatrician .chooseus {
+        padding: 30px 0;
+    }
+
+    .pediatrician .chooseus .heading {
+        padding: 0 18px;
+    }
+
+    .pediatrician .chooseus .heading h2 {
+        font-size: 22px;
+    }
+
+    .pediatrician .chooseus .heading p {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 10px 0 20px;
+    }
+
+    .pediatrician .chooseus .content {
+        gap: 10px;
+        padding: 0 18px;
+    }
+
+    .pediatrician .chooseus .content .box {
+        height: 115px;
+        max-width: 280px;
+        padding: 13px;
+    }
+
+    .pediatrician .chooseus .content .box h4 {
+        font-size: 14px;
+        padding-bottom: 7px;
+    }
+
+    .pediatrician .chooseus .content .box p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .pediatrician .ourdoctors {
+        padding: 30px 18px 0;
+    }
+
+    .pediatrician .ourdoctors h2 {
+        font-size: 22px;
+    }
+
+    .pediatrician .ourdoctors p {
+        font-size: 13px;
+        padding-top: 14px;
+        line-height: 21px;
+    }
+
+    .pediatrician .fullshowdoctorcont {
+        padding: 100px 18px 18px;
+        row-gap: 95px;
+    }
 }

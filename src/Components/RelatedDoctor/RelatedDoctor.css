@@ -21,13 +21,13 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    padding: 40px;
+    padding: 80px 40px 40px;
 }
 
 .Related-doctor .fullshowdoctorcont .card {
     position: relative;
     width: 220px;
-    height: 290px;
+    height: 230px;
     border: 2px solid rgba(128, 128, 128, 0.2);
     box-shadow: 0 10px 10px #ccc;
     border-radius: 10px;
@@ -39,7 +39,6 @@
 
 .Related-doctor .fullshowdoctorcont .top {
     position: relative;
-    height: 174px;
     background: #e5fff9;
     border-radius: 10px 10px 0 0;
     overflow: visible;
@@ -47,8 +46,7 @@
 
 .Related-doctor .fullshowdoctorcont .top img {
     position: absolute;
-    width: 180px;
-    height: 220px;
+    width: 100%;
     left: 50%;
     bottom: 0px;
     transform: translateX(-50%);

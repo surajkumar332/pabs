@@ -6,10 +6,12 @@ import Cta from "../../Components/CTA/Cta";
 import Faq from "../../Components/FAQ/Faq";
 import Section4 from "../Home/Section4";
 import Footer from "../../Components/Footer/Footer";
+import Loader from "../../Components/Loader/Loader";
 
 function Gastroenterologist() {
 
     const [gastroenterologist, setGastroenterologist] = useState([]);
+    const [isLoader, setIsLoader] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,6 +21,7 @@ function Gastroenterologist() {
                 const data = await res.json();
 
                 setGastroenterologist(data.gastroenterologist);
+                setIsLoader(false);
             } catch (error) {
                 Swal.fire({
                     title: "Error",
@@ -33,6 +36,7 @@ function Gastroenterologist() {
 
     return (
         <>
+
             <div className="gastroenterologist">
                 <div className="herosection">
                     <div className="herosection-txt">
@@ -60,7 +64,7 @@ function Gastroenterologist() {
                 <div className="common-condtion-gastroenterologist">
                     <h2>Common Conditions</h2>
                     <div className="conditions-tags">
-                        <span>Acidity & Heartburn</span> 
+                        <span>Acidity & Heartburn</span>
                         <span>GERD</span>
                         <span>Constipation</span>
                         <span>Diarrhea</span>
@@ -95,34 +99,38 @@ function Gastroenterologist() {
                         </div>
                     </div>
                 </div>
-                {/* <ChooseUs /> */}
                 <section id="book-appointment">
                     <div className="ourdoctors">
                         <h2>Our Gastroenterologists</h2>
                         <p>Explore our gastroenterologists and find a specialist to help you manage your digestive health needs.
                         </p>
                     </div>
+                    {isLoader ? (
+                        <Loader />
+                    ) : (
+                        <div className="fullshowdoctorcont">
 
-                    <div className="fullshowdoctorcont">
+                            {gastroenterologist.map((item, index) => (
+                                <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
+                                    <div className="top">
+                                        <img src={item.img} alt={item.name} />
+                                    </div>
+                                    <div className="bottom">
+                                        <h3>{item.name}</h3>
+                                        <p>{item.specialization}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div >
+                    )} ;
 
-                        {gastroenterologist.map((item, index) => (
-                            <div key={item._id} className="card" onClick={() => navigate(`/doctor/${item._id}`)}>
-                                <div className="top">
-                                    <img src={item.img} alt={item.name} />
-                                </div>
-                                <div className="bottom">
-                                    <h3>{item.name}</h3>
-                                    <p>{item.specialization}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div >
                 </section>
                 <Cta />
                 <Faq />
                 <Section4 />
 
             </div>
+
 
             <Footer />
         </>

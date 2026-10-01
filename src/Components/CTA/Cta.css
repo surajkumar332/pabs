@@ -1,23 +1,26 @@
-.Cta-section{
+.Cta-section {
     background-color: #e5fff9;
     height: fit-content;
     max-width: 100%;
     padding: 60px;
-
+    box-sizing: border-box;
 }
-.Cta-section h2{
+
+.Cta-section h2 {
     font-size: 72px;
-    color: rgb(75, 77, 86); 
+    color: rgb(75, 77, 86);
     font-weight: 700;
-
+    margin: 0;
 }
-.Cta-section p{
+
+.Cta-section p {
     color: #596169;
-    font-size: 18px;
+    font-size: 16px;
     padding: 20px 0 40px;
-
+    margin: 0;
 }
-.Cta-section button{
+
+.Cta-section button {
     background: #05cd9e;
     padding: 12px 20px;
     cursor: pointer;
@@ -26,11 +29,112 @@
     border: 1px solid #05cd9e;
     border-radius: 40px;
     transition: 0.3s ease;
-
 }
-.Cta-section button:hover{
+
+.Cta-section button:hover {
     background: white;
     color: black;
     border: 1px solid #05cd9e;
     transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .Cta-section {
+        padding: 50px 45px;
+    }
+
+    .Cta-section h2 {
+        font-size: 52px;
+    }
+
+    .Cta-section p {
+        font-size: 16px;
+        padding: 18px 0 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Cta-section {
+        padding: 45px;
+    }
+
+    .Cta-section h2 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .Cta-section p {
+        font-size: 15px;
+        line-height: 24px;
+        padding: 15px 0 20px;
+    }
+
+    .Cta-section button {
+        font-size: 15px;
+        padding: 11px 19px;
+    }
+}
+
+@media (max-width: 450px) {
+    .Cta-section {
+        padding: 40px 30px;
+    }
+
+    .Cta-section h2 {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .Cta-section p {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 14px 0 20px;
+    }
+
+    .Cta-section button {
+        font-size: 14px;
+        padding: 10px 17px;
+    }
+}
+
+@media (max-width: 375px) {
+    .Cta-section {
+        padding: 35px 22px;
+    }
+
+    .Cta-section h2 {
+        font-size: 24px;
+    }
+
+    .Cta-section p {
+        font-size: 13px;
+        line-height: 21px;
+        padding: 12px 0 18px;
+    }
+
+    .Cta-section button {
+        font-size: 13px;
+        padding: 9px 16px;
+    }
+}
+
+@media (max-width: 320px) {
+    .Cta-section {
+        padding: 30px 18px;
+    }
+
+    .Cta-section h2 {
+        font-size: 22px;
+    }
+
+    .Cta-section p {
+        font-size: 12px;
+        line-height: 20px;
+        padding: 10px 0 16px;
+    }
+
+    .Cta-section button {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
 }

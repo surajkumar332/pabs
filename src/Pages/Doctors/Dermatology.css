@@ -1,7 +1,7 @@
 .dermatology .herosection {
     background-image: url("/images/dermatologist  herosection image.webp");
     max-width: 100%;
-    min-height: 500px;
+    min-height: fit-content;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,8 +20,8 @@
 }
 
 .dermatology .herosection .herosection-txt {
-    /* background-color: rgba(73, 82, 86, 0.9); */
     max-width: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,28 +29,28 @@
     flex-wrap: wrap;
     color: white;
     padding: 145px 60px 60px;
-    z-index: 0 ;    
-
+    z-index: 0;
+    box-sizing: border-box;
 }
 
 .dermatology .herosection .herosection-txt h2 {
     font-size: 75px;
     font-weight: 700;
     margin: 0;
+    text-align: center;
 }
+
 .dermatology .herosection .herosection-txt h3 {
     font-size: 42px;
-    font-size: 600;
     color: rgb(107, 192, 107);
-    padding-top: 20px; 
+    padding: 20px 0 40px;
     margin: 0;
-
+    text-align: center;
 }
 
 .dermatology .herosection .herosection-txt p {
     font-size: 24px;
     width: 100%;
-    padding: 40px 0px;
     text-align: center;
     margin: 0;
 }
@@ -66,7 +66,7 @@
     cursor: pointer;
     width: fit-content;
     transition: 0.3s ease;
-    margin: 0;
+    margin: 30px 0 0;
 }
 
 .dermatology .herosection .herosection-txt button:hover {
@@ -83,7 +83,7 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-
+    box-sizing: border-box;
 }
 
 .dermatology .about-dermatology h2 {
@@ -92,27 +92,32 @@
     color: #2b3942;
     padding-bottom: 40px;
     margin: 0;
+    text-align: center;
 }
 
 .dermatology .about-dermatology p {
     width: 100%;
     display: flex;
     justify-content: center;
-    text-align: justify;
+    text-align: left;
     color: #4b4f52;
-
+    margin: 0;
 }
-.dermatology .common-condtion-dermatology{
+
+.dermatology .common-condtion-dermatology {
     padding: 60px;
-
+    box-sizing: border-box;
 }
-.dermatology .common-condtion-dermatology h2{
+
+.dermatology .common-condtion-dermatology h2 {
     font-size: 40px;
     font-weight: 700;
     color: #2b3942;
     padding-bottom: 40px;
     margin: 0;
+    text-align: center;
 }
+
 .dermatology .common-condtion-dermatology .conditions-tags {
     display: flex;
     justify-content: center;
@@ -127,11 +132,13 @@
     color: #2b3942;
     border: 1px solid #05cd9e;
 }
-.dermatology .chooseus{
-    padding: 60px 60px 60px;
-    background: #e5fff9;
 
+.dermatology .chooseus {
+    padding: 60px;
+    background: #e5fff9;
+    box-sizing: border-box;
 }
+
 .dermatology .chooseus .heading {
     display: flex;
     align-items: stretch;
@@ -144,61 +151,565 @@
     font-weight: 700;
     color: #2b3942;
     margin: 0;
+    text-align: center;
 }
 
 .dermatology .chooseus .heading p {
     width: 100%;
     font-size: 18px;
-    padding:  40px 0 !important;
+    padding: 40px 0 !important;
     margin: 0;
     color: #4b4f52;
     text-align: center;
 }
-.dermatology .chooseus .content{
+
+.dermatology .chooseus .content {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-
-    
-}
-.dermatology .chooseus .content .box{
-   border: 1px solid rgba(128, 128, 128, 0.6);
-   border-radius: 10px;
-   height: 136px;   
-   width: 300px;
-   margin: 0;
-   padding: 18px 20px 20px;
-   
-}
-.dermatology .chooseus .content .box h4{
-  color: #595e61;
-  margin: 0;
-  padding-bottom: 10px;
-}
-.dermatology .chooseus .content .box p{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: #4b4f52; 
-  font-size: 16px; 
+    flex-wrap: wrap;
 }
 
-.dermatology .ourdoctors{
-   max-width: 100%;
-   padding: 60px 60px 10px;
-
+.dermatology .chooseus .content .box {
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    height: 204px;
+    width: 300px;
+    margin: 0;
+    padding: 18px 20px 20px;
+    box-sizing: border-box;
 }
-.dermatology .ourdoctors h2{
+
+.dermatology .chooseus .content .box h4 {
+    color: #595e61;
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.dermatology .chooseus .content .box p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #4b4f52;
+    font-size: 16px;
+    margin: 0;
+}
+
+.dermatology .ourdoctors {
+    max-width: 100%;
+    padding: 60px 60px 10px;
+    box-sizing: border-box;
+}
+
+.dermatology .ourdoctors h2 {
     font-size: 40px;
     color: #2b3942;
-    padding: 0px 0 40px;
+    padding: 0 0 40px;
     margin: 0;
-    font-weight: 700;    
+    font-weight: 700;
+    text-align: center;
 }
-.dermatology .ourdoctors p{
+
+.dermatology .ourdoctors p {
     font-size: 18px;
-    /* padding: 0px 60px 0px; */
     width: 100%;
-    color: #4b4f52;    
+    color: #4b4f52;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .dermatology .herosection .herosection-txt {
+        padding: 130px 45px 50px;
+    }
+
+    .dermatology .herosection .herosection-txt h2 {
+        font-size: 50px;
+    }
+
+    .dermatology .herosection .herosection-txt h3 {
+        font-size: 30px;
+        padding: 20px 0;
+    }
+
+    .dermatology .herosection .herosection-txt p {
+        font-size: 18px;
+    }
+
+    .dermatology .herosection .herosection-txt button {
+        margin-top: 20px;
+    }
+
+    .dermatology .about-dermatology {
+        padding: 50px 45px 0;
+    }
+
+    .dermatology .common-condtion-dermatology {
+        padding: 50px 45px;
+    }
+
+    .dermatology .chooseus {
+        padding: 50px 45px;
+    }
+
+    .dermatology .chooseus .content {
+        gap: 15px;
+    }
+
+    .dermatology .chooseus .content .box {
+        height: 188px;
+        width: 280px;
+    }
+
+    .dermatology .ourdoctors {
+        padding: 50px 45px 0;
+    }
+
+    .dermatology .fullshowdoctorcont {
+        display: flex;
+        justify-content: center;
+        gap: 95px 35px;
+        flex-wrap: wrap;
+        padding: 85px 60px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dermatology .herosection {
+        height: fit-content;
+    }
+
+    .dermatology .herosection .herosection-txt {
+        padding: 120px 45px 45px;
+    }
+
+    .dermatology .herosection .herosection-txt h2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .dermatology .herosection .herosection-txt h3 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 15px 0 20px;
+    }
+
+    .dermatology .herosection .herosection-txt p {
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    .dermatology .herosection .herosection-txt button {
+        margin: 20px 0 0;
+    }
+
+    .dermatology .about-dermatology {
+        padding: 45px;
+    }
+
+    .dermatology .about-dermatology h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .dermatology .about-dermatology p {
+        line-height: 25px;
+    }
+
+    .dermatology .common-condtion-dermatology {
+        padding: 45px;
+    }
+
+    .dermatology .common-condtion-dermatology h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags {
+        gap: 10px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags span {
+        padding: 9px 15px;
+    }
+
+    .dermatology .chooseus {
+        padding: 45px;
+    }
+
+    .dermatology .chooseus .heading h2 {
+        font-size: 30px;
+    }
+
+    .dermatology .chooseus .heading p {
+        font-size: 17px;
+        line-height: 25px;
+        padding: 20px 0 !important;
+    }
+
+    .dermatology .chooseus .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .dermatology .chooseus .content .box {
+        width: 250px;
+        height: 170px;
+        padding: 15px;
+    }
+
+    .dermatology .chooseus .content .box p {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .dermatology .ourdoctors {
+        padding: 45px 45px 0;
+    }
+
+    .dermatology .ourdoctors h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .dermatology .ourdoctors p {
+        font-size: 17px;
+        line-height: 25px;
+    }
+
+    .dermatology .fullshowdoctorcont {
+        gap: 100px 3px;
+        padding: 75px 45px 45px;
+    }
+}
+
+@media (max-width: 450px) {
+    .dermatology .herosection .herosection-txt {
+        padding: 105px 30px 40px;
+    }
+
+    .dermatology .herosection .herosection-txt h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .dermatology .herosection .herosection-txt h3 {
+        font-size: 23px;
+        line-height: 29px;
+        padding: 12px 0 18px;
+    }
+
+    .dermatology .herosection .herosection-txt p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .dermatology .herosection .herosection-txt button {
+        font-size: 15px;
+        padding: 11px 18px;
+    }
+
+    .dermatology .about-dermatology {
+        padding: 40px 30px 0;
+    }
+
+    .dermatology .about-dermatology h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+    }
+
+    .dermatology .about-dermatology p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .dermatology .common-condtion-dermatology {
+        padding: 40px 30px;
+    }
+
+    .dermatology .common-condtion-dermatology h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags {
+        gap: 8px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags span {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .dermatology .chooseus {
+        padding: 40px 30px;
+    }
+
+    .dermatology .chooseus .heading h2 {
+        font-size: 26px;
+    }
+
+    .dermatology .chooseus .heading p {
+        font-size: 15px;
+        line-height: 23px;
+        padding: 15px 0 25px !important;
+    }
+
+    .dermatology .chooseus .content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .dermatology .chooseus .content .box {
+        width: 100%;
+        max-width: 300px;
+        height: 123px;
+    }
+
+    .dermatology .ourdoctors {
+        padding: 40px 30px 0;
+    }
+
+    .dermatology .ourdoctors h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+    }
+
+    .dermatology .ourdoctors p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .dermatology .fullshowdoctorcont {
+        padding: 90px 30px 30px;
+        gap: 110px;
+    }
+    .dermatology .fullshowdoctorcont .card{
+        width: 220px;
+    }  
+}
+
+@media (max-width: 375px) {
+    .dermatology .herosection .herosection-txt {
+        padding: 100px 22px 35px;
+    }
+
+    .dermatology .herosection .herosection-txt h2 {
+        font-size: 27px;
+        line-height: 33px;
+    }
+
+    .dermatology .herosection .herosection-txt h3 {
+        font-size: 21px;
+        line-height: 27px;
+        padding: 10px 0 16px;
+    }
+
+    .dermatology .herosection .herosection-txt p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .dermatology .herosection .herosection-txt button {
+        font-size: 14px;
+        padding: 10px 17px;
+    }
+
+    .dermatology .about-dermatology {
+        padding: 35px 22px 0;
+    }
+
+    .dermatology .about-dermatology h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+
+    .dermatology .about-dermatology p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .dermatology .common-condtion-dermatology {
+        padding: 35px 22px;
+    }
+
+    .dermatology .common-condtion-dermatology h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags {
+        gap: 7px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags span {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .dermatology .chooseus {
+        padding: 35px 22px;
+    }
+
+    .dermatology .chooseus .heading h2 {
+        font-size: 24px;
+    }
+
+    .dermatology .chooseus .heading p {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 12px 0 22px !important;
+    }
+
+    .dermatology .chooseus .content .box {
+        height: 120px;
+        max-width: 290px;
+    }
+
+    .dermatology .chooseus .content .box h4 {
+        font-size: 15px;
+    }
+
+    .dermatology .chooseus .content .box p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .dermatology .ourdoctors {
+        padding: 35px 22px 0;
+    }
+
+    .dermatology .ourdoctors h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+
+    .dermatology .ourdoctors p {
+        font-size: 14px;
+        padding-top: 0;
+        line-height: 22px;
+    }
+
+    .dermatology .fullshowdoctorcont {
+        padding: 35px 22px;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .dermatology .herosection .herosection-txt {
+        padding: 90px 18px 30px;
+    }
+
+    .dermatology .herosection .herosection-txt h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .dermatology .herosection .herosection-txt h3 {
+        font-size: 19px;
+        line-height: 24px;
+        padding: 9px 0 14px;
+    }
+
+    .dermatology .herosection .herosection-txt p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    .dermatology .herosection .herosection-txt button {
+        font-size: 13px;
+        padding: 9px 15px;
+    }
+
+    .dermatology .about-dermatology {
+        padding: 30px 18px 0;
+    }
+
+    .dermatology .about-dermatology h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .dermatology .about-dermatology p {
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .dermatology .common-condtion-dermatology {
+        padding: 30px 18px;
+    }
+
+    .dermatology .common-condtion-dermatology h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags {
+        gap: 6px;
+    }
+
+    .dermatology .common-condtion-dermatology .conditions-tags span {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+
+    .dermatology .chooseus {
+        padding: 30px 18px;
+    }
+
+    .dermatology .chooseus .heading h2 {
+        font-size: 22px;
+    }
+
+    .dermatology .chooseus .heading p {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 10px 0 20px !important;
+    }
+
+    .dermatology .chooseus .content {
+        gap: 10px;
+    }
+
+    .dermatology .chooseus .content .box {
+        height: 115px;
+        max-width: 280px;
+        padding: 13px;
+    }
+
+    .dermatology .chooseus .content .box h4 {
+        font-size: 14px;
+        padding-bottom: 7px;
+    }
+
+    .dermatology .chooseus .content .box p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .dermatology .ourdoctors {
+        padding: 30px 18px 0;
+    }
+
+    .dermatology .ourdoctors h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .dermatology .ourdoctors p {
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .dermatology .fullshowdoctorcont {
+        padding: 100px 18px 18px;
+        row-gap: 95px;
+    }
 }

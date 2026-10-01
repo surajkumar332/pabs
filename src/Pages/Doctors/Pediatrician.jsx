@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./Pediatrician.css";
@@ -6,11 +6,13 @@ import Cta from "../../Components/CTA/Cta";
 import Faq from "../../Components/FAQ/Faq";
 import Section4 from "../Home/Section4";
 import Footer from "../../Components/Footer/Footer";
+import Loader from "../../Components/Loader/Loader";
 
 
 
 function Pediatrician() {
     const [pediatricianDoctor, setPediatricianDoctor] = useState([]);
+    const [isLoader, setIsLoader] = useState(true);
 
     useEffect(() => {
         const getPediatrician = async () => {
@@ -19,6 +21,7 @@ function Pediatrician() {
                 const data = await res.json();
 
                 setPediatricianDoctor(data.pediatrician);
+                setIsLoader(false);
             } catch (error) {
                 Swal.fire({
                     title: "Error",
@@ -101,7 +104,9 @@ function Pediatrician() {
                         <p>Meet our Dermatologist who provide care for a wide range of everyday Beauty concerns. Explore their profiles, experience, and expertise to find a doctor who fits your healthcare needs.
                         </p>
                     </div>
-
+                {isLoader ? (
+                    <Loader />
+                ) : (
                     <div className="fullshowdoctorcont">
 
                         {pediatricianDoctor.map((item, index) => (
@@ -116,6 +121,8 @@ function Pediatrician() {
                             </div>
                         ))}
                     </div >
+
+                )};                    
                 </section>
                 <Cta />
                 <Faq />

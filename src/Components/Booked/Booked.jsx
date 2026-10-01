@@ -4,8 +4,8 @@ import "./Booked.css";
 
 function Booked() {
     const [book, setBook] = useState([]);
-    const user = JSON.parse(localStorage.getItem("user"));
 
+    const user = JSON.parse(localStorage.getItem("user"));
     const userId = user?._id;
 
     useEffect(() => {
@@ -21,63 +21,132 @@ function Booked() {
 
     return (
         <>
-        <div className="booked-container">
+            <div className="booked-container">
 
-            <h1>Booking Confirmed</h1>
+                {!latest ? (
+                    <div className="no-booking">
+                        <h2>No Booking Found</h2>
+                        <p>You don't have any confirmed appointment at the moment.</p>
+                    </div>
+                ) : (
+                    <div className="confirmation-wrapper">
 
-            {!latest ? (
-                <p className="no-booking">No Booking Found</p>
-            ) : (
-                <div className="booking-card" key={latest._id}>
+                        {/* success message */}
+                        <div className="success-section">
 
-                    {latest.doctorId ? (
-                        <>
-                            <div className="booking-info">
-                                <h3>{latest.doctorId.name}</h3>
-                                <p>{latest.doctorId.specialization}</p>
+                            <div className="success-icon">
+                                ✓
+                            </div>
 
+                            <h1>Appointment Confirmed!</h1>
+
+                            <p>
+                                Your appointment has been successfully booked.
+                            </p>
+
+                            <span>
+                                Please keep your appointment details handy.
+                            </span>
+
+                        </div>
+
+                        {/* appointment card */}
+                        <div className="booking-card">
+
+                            <div className="booking-header">
                                 <div>
-                                    <span>Doctor's Fee-&nbsp;&nbsp;&nbsp;</span>
-                                    <strong>₹{latest.doctorId.fee}</strong>
+                                    <h2>Appointment Details</h2>
+                                    <p>Your booking information</p>
                                 </div>
 
-                                <div>
-                                    <span>Appointment Date-&nbsp;&nbsp;&nbsp;</span>
-                                    <strong>
-                                        {new Date(latest.date).toLocaleDateString("en-GB")}
-                                    </strong>
+                                <span className="confirmed-badge">
+                                    Confirmed
+                                </span>
+                            </div>
+
+                            <div className="booking-content">
+
+                                {/* doctor */}
+                                <div className="doctor-section">
+
+                                    <img
+                                        className="doctor-img"
+                                        src={latest.doctorId?.img}
+                                        alt={latest.doctorId?.name || "Doctor"}
+                                    />
+
+                                    <div className="doctor-details">
+                                        <span className="doctor-label">
+                                            Your Doctor
+                                        </span>
+
+                                        <h3>
+                                            {latest.doctorId?.name}
+                                        </h3>
+
+                                        <p>
+                                            {latest.doctorId?.specialization}
+                                        </p>
+                                    </div>
+
                                 </div>
 
-                                <div>
-                                    <span>Appointment Time-&nbsp;&nbsp;&nbsp;</span>
-                                    <strong>{latest.time}</strong>
+                                {/* appointment information */}
+                                <div className="booking-info">
+
+                                    <div className="info-item">
+                                        <span>Appointment Date</span>
+
+                                        <strong>
+                                            {new Date(
+                                                latest.date
+                                            ).toLocaleDateString("en-GB", {
+                                                weekday: "short",
+                                                day: "2-digit",
+                                                month: "short",
+                                                year: "numeric"
+                                            })}
+                                        </strong>
+                                    </div>
+
+                                    <div className="info-item">
+                                        <span>Appointment Time</span>
+
+                                        <strong>
+                                            {latest.time}
+                                        </strong>
+                                    </div>
+
+                                    <div className="info-item">
+                                        <span>Doctor's Fee</span>
+
+                                        <strong className="fee">
+                                            ₹{latest.doctorId?.fee}
+                                        </strong>
+                                    </div>
+
                                 </div>
 
                             </div>
-                            <div className="doctor-section">
-                                <img
-                                    className="doctor-img"
-                                    src={latest.doctorId.img}
-                                    alt=""
-                                />
 
-                                
+                            <div className="booking-note">
+                                <strong>Appointment reminder</strong>
+
+                                <p>
+                                    Please arrive a few minutes before your
+                                    scheduled appointment time.
+                                </p>
                             </div>
 
+                        </div>
 
-                        </>
-                    ) : (
-                        <p className="no-booking">Doctor Not Found</p>
-                    )}
+                    </div>
+                )}
 
-                </div>
-            )}
+            </div>
 
-        </div>
-
-        <Footer/>
-
-</>        
+            <Footer />
+        </>
     );
 }
 

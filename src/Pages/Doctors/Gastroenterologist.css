@@ -4,17 +4,22 @@
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-    background-color: rgb(203, 232, 244);
     min-height: 500px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
     justify-content: center;
+    position: relative;
+}
 
+.gastroenterologist .herosection::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
 }
 
 .gastroenterologist .herosection .herosection-txt {
-    background-color: rgba(73, 82, 86, 0.9);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,31 +27,32 @@
     flex-direction: column;
     flex-wrap: wrap;
     color: white;
-    padding-top: 130px;
-    padding-bottom: 45px;
-
+    padding: 140px 60px 60px;
+    z-index: 0;
+    box-sizing: border-box;
 }
 
 .gastroenterologist .herosection .herosection-txt h2 {
     font-size: 75px;
     font-weight: 700;
     margin: 0;
-
-
+    text-align: center;
 }
 
 .gastroenterologist .herosection .herosection-txt h3 {
     font-size: 42px;
-    font-size: 600;
+    font-weight: 600;
     color: rgb(107, 192, 107);
     margin: 20px;
-
+    text-align: center;
 }
 
 .gastroenterologist .herosection .herosection-txt p {
     font-size: 24px;
-    width: 900px;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
 }
 
 .gastroenterologist .herosection .herosection-txt button {
@@ -58,10 +64,9 @@
     font-size: 16px;
     color: white;
     cursor: pointer;
-    margin-right: 30px;
     width: fit-content;
     transition: 0.3s ease;
-    margin: 30px 0;
+    margin: 10px 0 0;
 }
 
 .gastroenterologist .herosection .herosection-txt button:hover {
@@ -78,7 +83,7 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-
+    box-sizing: border-box;
 }
 
 .gastroenterologist .about-gastroenterologist h2 {
@@ -87,25 +92,31 @@
     color: #2b3942;
     padding-bottom: 40px;
     margin: 0;
+    text-align: center;
 }
 
 .gastroenterologist .about-gastroenterologist p {
-    width: 1200px;
-    text-align: justify;
+    width: 100%;
+    text-align: left;
     color: #4b4f52;
-
+    margin: 0;
 }
-.gastroenterologist .common-condtion-gastroenterologist{
+
+.gastroenterologist .common-condtion-gastroenterologist {
     padding: 60px;
-
+    box-sizing: border-box;
 }
-.gastroenterologist .common-condtion-gastroenterologist h2{
+
+.gastroenterologist .common-condtion-gastroenterologist h2 {
     font-size: 40px;
     font-weight: 700;
     color: #2b3942;
     padding-bottom: 40px;
     margin: 0;
+    line-height: 30px;
+    text-align: center;
 }
+
 .gastroenterologist .common-condtion-gastroenterologist .conditions-tags {
     display: flex;
     justify-content: center;
@@ -120,73 +131,619 @@
     color: #2b3942;
     border: 1px solid #05cd9e;
 }
-.gastroenterologist .chooseus{
-    padding: 60px 0 60px;
-    background: #e5fff9;
 
+.gastroenterologist .chooseus {
+    padding: 60px 0;
+    background: #e5fff9;
+    max-width: 100%;
+    box-sizing: border-box;
 }
-.gastroenterologist .chooseus .heading{
+
+.gastroenterologist .chooseus .heading {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0 60px;
 }
-.gastroenterologist .chooseus .heading h2{
+
+.gastroenterologist .chooseus .heading h2 {
     font-size: 40px;
     font-weight: 700;
     color: #2b3942;
     margin: 0;
+    text-align: center;
 }
-.gastroenterologist .chooseus .heading p{
-    width: 1200px;
+
+.gastroenterologist .chooseus .heading p {
+    width: 100%;
     font-size: 18px;
-    padding: 40px 0;
-    color: #4b4f52;    
-} 
-.gastroenterologist .chooseus .content{
+    padding: 20px 0 30px;
+    color: #4b4f52;
+    margin: 0;
+    text-align: center;
+}
+
+.gastroenterologist .chooseus .content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 10px;
-    
-}
-.gastroenterologist .chooseus .content .box{
-   border: 1px solid rgba(128, 128, 128, 0.6);
-   border-radius: 10px;
-   width: 300px;
-   margin: 0;
-   padding: 18px 20px 20px;
-   
-}
-.gastroenterologist .chooseus .content .box h4{
-  color: #595e61;
-  margin: 0;
-  padding-bottom: 10px;
-}
-.gastroenterologist .chooseus .content .box p{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  color: #4b4f52;  
+    flex-wrap: wrap;
 }
 
+.gastroenterologist .chooseus .content .box {
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    border-radius: 10px;
+    width: 300px;
+    height: 204px;
+    margin: 0;
+    padding: 18px 20px 20px;
+    box-sizing: border-box;
+}
 
-#book-appointment{
+.gastroenterologist .chooseus .content .box h4 {
+    color: #595e61;
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.gastroenterologist .chooseus .content .box p {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    text-align: center;
+    color: #4b4f52;
+    margin: 0;
 }
-#book-appointment .ourdoctors h2{
+
+.gastroenterologist .ourdoctors {
+    max-width: 100%;
+    padding: 60px 60px 0;
+    box-sizing: border-box;
+}
+
+.gastroenterologist .ourdoctors h2 {
     font-size: 40px;
     color: #2b3942;
-    padding: 40px 0 0px;
     margin: 0;
-    font-weight: 700;    
+    font-weight: 700;
+    text-align: center;
 }
-#book-appointment .ourdoctors p{
-    width: 1200px;
+
+.gastroenterologist .ourdoctors p {
+    width: 100%;
     font-size: 18px;
-    padding: 40px 0 0px;
-    color: #4b4f52;    
+    padding: 20px 0 0;
+    color: #4b4f52;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .gastroenterologist .herosection {
+        min-height: fit-content;
+    }
+
+    .gastroenterologist .herosection .herosection-txt {
+        padding: 130px 45px 50px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h2 {
+        font-size: 50px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h3 {
+        font-size: 30px;
+        margin: 20px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt p {
+        font-size: 18px;
+    }
+
+    .gastroenterologist .about-gastroenterologist {
+        padding: 50px 45px 0;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist {
+        padding: 50px 45px;
+    }
+
+    .gastroenterologist .chooseus {
+        padding: 50px 0;
+    }
+
+    .gastroenterologist .chooseus .heading {
+        padding: 0 45px;
+    }
+
+    .gastroenterologist .chooseus .content {
+        gap: 15px;
+    }
+
+    .gastroenterologist .chooseus .content .box {
+        width: 280px;
+        height: 162px;
+    }
+
+    .gastroenterologist .ourdoctors {
+        padding: 50px 45px 0;
+    }
+
+    .gastroenterologist .fullshowdoctorcont {
+        display: flex;
+        justify-content: center;
+        gap: 95px 35px;
+        flex-wrap: wrap;
+        padding: 95px 60px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gastroenterologist .herosection {
+        height: fit-content;
+    }
+
+    .gastroenterologist .herosection .herosection-txt {
+        padding: 120px 45px 45px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h2 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h3 {
+        font-size: 28px;
+        line-height: 36px;
+        margin: 15px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt p {
+        font-size: 17px;
+        line-height: 26px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt button {
+        margin: 20px 0 0;
+    }
+
+    .gastroenterologist .about-gastroenterologist {
+        padding: 45px;
+    }
+
+    .gastroenterologist .about-gastroenterologist h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+
+    .gastroenterologist .about-gastroenterologist p {
+        line-height: 25px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist {
+        padding: 45px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+        line-height: 35px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags {
+        gap: 10px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags span {
+        padding: 9px 15px;
+    }
+
+    .gastroenterologist .chooseus {
+        padding: 45px 0;
+    }
+
+    .gastroenterologist .chooseus .heading {
+        padding: 0 45px;
+    }
+
+    .gastroenterologist .chooseus .heading h2 {
+        font-size: 30px;
+    }
+
+    .gastroenterologist .chooseus .heading p {
+        font-size: 17px;
+        line-height: 25px;
+        padding: 15px 0 25px;
+    }
+
+    .gastroenterologist .chooseus .content {
+        gap: 12px;
+        padding: 0 45px;
+    }
+
+    .gastroenterologist .chooseus .content .box {
+        width: 250px;
+        height: 169px;
+        padding: 15px;
+    }
+
+    .gastroenterologist .chooseus .content .box p {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .gastroenterologist .ourdoctors {
+        padding: 45px 45px 0;
+    }
+
+    .gastroenterologist .ourdoctors h2 {
+        font-size: 30px;
+    }
+
+    .gastroenterologist .ourdoctors p {
+        font-size: 17px;
+        padding-top: 20px;
+        line-height: 25px;
+    }
+
+    .gastroenterologist .fullshowdoctorcont {
+        gap: 100px 3px;
+        padding: 85px 45px 45px;
+    }
+}
+
+@media (max-width: 450px) {
+    .gastroenterologist .herosection .herosection-txt {
+        padding: 105px 30px 40px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h3 {
+        font-size: 23px;
+        line-height: 29px;
+        margin: 12px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt p {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 15px 0;
+    }
+
+    .gastroenterologist .herosection .herosection-txt button {
+        font-size: 15px;
+        padding: 11px 18px;
+    }
+
+    .gastroenterologist .about-gastroenterologist {
+        padding: 40px 30px 0;
+    }
+
+    .gastroenterologist .about-gastroenterologist h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+    }
+
+    .gastroenterologist .about-gastroenterologist p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist {
+        padding: 40px 30px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist h2 {
+        font-size: 26px;
+        padding-bottom: 18px;
+        line-height: 32px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags {
+        gap: 8px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags span {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .gastroenterologist .chooseus {
+        padding: 40px 0;
+
+    }
+    .gastroenterologist .chooseus .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gastroenterologist .chooseus .heading {
+        padding: 0 30px;
+    }
+
+    .gastroenterologist .chooseus .heading h2 {
+        font-size: 26px;
+    }
+
+    .gastroenterologist .chooseus .heading p {
+        font-size: 15px;
+        line-height: 23px;
+        padding: 15px 0 25px;
+    }
+
+    .gastroenterologist .chooseus .content {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 30px;
+    }
+
+    .gastroenterologist .chooseus .content .box {
+        width: 100%;
+        max-width: 300px;
+        height: 148px;
+    }
+
+    .gastroenterologist .ourdoctors {
+        padding: 40px 30px 0;
+    }
+
+    .gastroenterologist .ourdoctors h2 {
+        font-size: 26px;
+    }
+
+    .gastroenterologist .ourdoctors p {
+        font-size: 15px;
+        padding-top: 18px;
+        line-height: 24px;
+    }
+
+    .gastroenterologist .fullshowdoctorcont {
+        padding: 90px 30px 30px;
+        gap: 110px;
+    }
+    .gastroenterologist .fullshowdoctorcont .card{
+            width: 220px;
+    }
+}
+
+@media (max-width: 375px) {
+    .gastroenterologist .herosection .herosection-txt {
+        padding: 100px 22px 35px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h2 {
+        font-size: 27px;
+        line-height: 33px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h3 {
+        font-size: 21px;
+        line-height: 27px;
+        margin: 10px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt p {
+        font-size: 15px;
+        line-height: 22px;
+        padding: 12px 0;
+    }
+
+    .gastroenterologist .herosection .herosection-txt button {
+        font-size: 14px;
+        padding: 10px 17px;
+    }
+
+    .gastroenterologist .about-gastroenterologist {
+        padding: 35px 22px 0;
+    }
+
+    .gastroenterologist .about-gastroenterologist h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+
+    .gastroenterologist .about-gastroenterologist p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist {
+        padding: 35px 22px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist h2 {
+        font-size: 24px;
+        padding-bottom: 16px;
+        line-height: 29px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags {
+        gap: 7px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags span {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+
+    .gastroenterologist .chooseus {
+        padding: 35px 0;
+    }
+
+    .gastroenterologist .chooseus .heading {
+        padding: 0 22px;
+    }
+
+    .gastroenterologist .chooseus .heading h2 {
+        font-size: 24px;
+    }
+
+    .gastroenterologist .chooseus .heading p {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 12px 0 22px;
+    }
+
+    .gastroenterologist .chooseus .content {
+        gap: 10px;
+        padding: 0 22px;
+    }
+
+    .gastroenterologist .chooseus .content .box {
+        height: 120px;
+        max-width: 290px;
+    }
+
+    .gastroenterologist .chooseus .content .box h4 {
+        font-size: 15px;
+    }
+
+    .gastroenterologist .chooseus .content .box p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .gastroenterologist .ourdoctors {
+        padding: 35px 22px 0;
+    }
+
+    .gastroenterologist .ourdoctors h2 {
+        font-size: 24px;
+    }
+
+    .gastroenterologist .ourdoctors p {
+        font-size: 14px;
+        padding-top: 16px;
+        line-height: 22px;
+    }
+
+    .gastroenterologist .fullshowdoctorcont {
+        padding: 35px 22px;
+        row-gap: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .gastroenterologist .herosection .herosection-txt {
+        padding: 90px 18px 30px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt h3 {
+        font-size: 19px;
+        line-height: 24px;
+        margin: 8px;
+    }
+
+    .gastroenterologist .herosection .herosection-txt p {
+        font-size: 14px;
+        line-height: 21px;
+        padding: 10px 0;
+    }
+
+    .gastroenterologist .herosection .herosection-txt button {
+        font-size: 13px;
+        padding: 9px 15px;
+    }
+
+    .gastroenterologist .about-gastroenterologist {
+        padding: 30px 18px 0;
+    }
+
+    .gastroenterologist .about-gastroenterologist h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+    }
+
+    .gastroenterologist .about-gastroenterologist p {
+        font-size: 13px;
+        line-height: 21px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist {
+        padding: 30px 18px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist h2 {
+        font-size: 22px;
+        padding-bottom: 14px;
+        line-height: 27px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags {
+        gap: 6px;
+    }
+
+    .gastroenterologist .common-condtion-gastroenterologist .conditions-tags span {
+        padding: 6px 9px;
+        font-size: 12px;
+    }
+
+    .gastroenterologist .chooseus {
+        padding: 30px 0;
+    }
+
+    .gastroenterologist .chooseus .heading {
+        padding: 0 18px;
+    }
+
+    .gastroenterologist .chooseus .heading h2 {
+        font-size: 22px;
+    }
+
+    .gastroenterologist .chooseus .heading p {
+        font-size: 13px;
+        line-height: 20px;
+        padding: 10px 0 20px;
+    }
+
+    .gastroenterologist .chooseus .content {
+        gap: 10px;
+        padding: 0 18px;
+    }
+
+    .gastroenterologist .chooseus .content .box {
+        height: 115px;
+        max-width: 280px;
+        padding: 13px;
+    }
+
+    .gastroenterologist .chooseus .content .box h4 {
+        font-size: 14px;
+        padding-bottom: 7px;
+    }
+
+    .gastroenterologist .chooseus .content .box p {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .gastroenterologist .ourdoctors {
+        padding: 30px 18px 0;
+    }
+
+    .gastroenterologist .ourdoctors h2 {
+        font-size: 22px;
+    }
+
+    .gastroenterologist .ourdoctors p {
+        font-size: 13px;
+        padding-top: 14px;
+        line-height: 21px;
+    }
+
+    .gastroenterologist .fullshowdoctorcont {
+        padding: 100px 18px 18px;
+        row-gap: 95px;
+    }
 }

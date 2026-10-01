@@ -12,6 +12,8 @@ function Faq() {
   return (
     <div className="faq-section">
       <h2>Frequently Asked Questions</h2>
+      <div className="faq-image-txt-container">
+        <img src="/images/faq-img.webp" alt="" />
       <div className="faq-container">
         {faqData.map((item, index) => {
           const isOpen = openIndex === index;
@@ -30,10 +32,11 @@ function Faq() {
               <div className="faq-answer">
                 <p>{item.answer}</p>
               </div>
-              <hr />
+              {/* <hr /> */}
             </div>
           );
         })}
+      </div>
       </div>
     </div>
   );

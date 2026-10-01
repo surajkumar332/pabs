@@ -1,178 +1,617 @@
 .booked-container {
     min-height: 100vh;
-    padding: 165px 20px 60px;
+    padding: 145px 20px 70px;
     box-sizing: border-box;
-    background: linear-gradient(135deg, #e5fff9, #dcecf2);
+    background: linear-gradient(135deg, #f3fffc, #edf5f7);
 }
 
-.booked-container h1 {
-    text-align: center;
-    color: #2b3942;
-    font-size: 38px;
-    margin: 0 0 45px;
-}
 
-.booked-container .booking-card {
-    width: 750px;
+/* confirmation section */
+
+.confirmation-wrapper {
+    width: 850px;
     max-width: 100%;
     margin: auto;
-    padding: 35px;
+}
+
+.success-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
     display: flex;
     align-items: center;
-    gap: 45px;
+    justify-content: center;
+    border-radius: 50%;
+    background: #05cd9e;
+    color: white;
+    font-size: 34px;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(5, 205, 158, 0.25);
+}
+
+.success-section h1 {
+    margin: 0;
+    color: #2b3942;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.success-section p {
+    margin: 10px 0 4px;
+    color: #52636a;
+    font-size: 17px;
+}
+
+.success-section span {
+    color: #7b878b;
+    font-size: 14px;
+}
+
+
+/* booking card */
+
+.booking-card {
+    background: white;
+    border-radius: 22px;
+    padding: 32px;
     box-sizing: border-box;
-    background: #fff;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(43, 57, 66, 0.12);
+    box-shadow: 0 12px 35px rgba(43, 57, 66, 0.10);
 }
 
-.booked-container .doctor-section {
-    width: 230px;
-    min-width: 230px;
-    text-align: center;
-    padding-left: 35px;
-    border-left: 1px solid #e2e2e2;
+
+/* card header */
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #eeeeee;
 }
 
-.booked-container .doctor-img {
-    width: 220px;
-    height: 200px;
+.booking-header h2 {
+    margin: 0 0 5px;
+    color: #2b3942;
+    font-size: 23px;
+}
+
+.booking-header p {
+    margin: 0;
+    color: #8a9599;
+    font-size: 14px;
+}
+
+.confirmed-badge {
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: #e5fff9;
+    color: #05a982;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* booking content */
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 30px 0;
+}
+
+
+/* doctor */
+
+.doctor-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.doctor-img {
+    width: 125px;
+    height: 145px;
     object-fit: cover;
     object-position: top;
-    border: 5px solid #e5fff9;
+    border-radius: 15px;
+    border: 4px solid #e5fff9;
 }
 
-.booked-container .doctor-section h3 {
-    margin: 18px 0 0;
+.doctor-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.doctor-label {
+    color: #899498;
+    font-size: 13px;
+}
+
+.doctor-details h3 {
+    margin: 0;
     color: #2b3942;
     font-size: 21px;
 }
 
-.booked-container .doctor-section p {
+.doctor-details p {
     margin: 0;
-    color: #66777c;
-    font-size: 16px;
+    color: #05a982;
+    font-size: 15px;
     font-weight: 500;
 }
 
-.booked-container .booking-info {
-    flex: 1;
+
+/* appointment information */
+
+.booking-info {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 18px;
 }
 
-.booked-container .booking-info div {
+.info-item {
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding-bottom: 15px;
     border-bottom: 1px solid #eeeeee;
 }
-.booked-container .booking-info h3{
-    color: #2b3942;
-    margin: 0;
-}
 
-.booked-container .booking-info div:last-child {
+.info-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
 }
 
-.booked-container .booking-info span {
-    color: #7a8589;
+.info-item span {
+    color: #899498;
+    font-size: 13px;
+}
+
+.info-item strong {
+    color: #2b3942;
+    font-size: 17px;
+}
+
+.info-item .fee {
+    color: #05cd9e;
+    font-size: 19px;
+}
+
+
+/* reminder */
+
+.booking-note {
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #f5faf9;
+    border-left: 4px solid #05cd9e;
+}
+
+.booking-note strong {
+    color: #2b3942;
     font-size: 14px;
 }
 
-.booked-container .booking-info strong {
-    color: #2b3942;
-    font-size: 18px;
+.booking-note p {
+    margin: 5px 0 0;
+    color: #6f7c80;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-.booked-container .booking-info div:first-child strong {
-    color: #05cd9e;
-    font-size: 21px;
-}
 
-.booked-container .no-booking {
+/* no booking */
+
+.no-booking {
     text-align: center;
-    margin-top: 30px;
+    padding-top: 100px;
+}
+
+.no-booking h2 {
+    margin: 0 0 10px;
+    color: #2b3942;
+    font-size: 28px;
+}
+
+.no-booking p {
+    margin: 0;
     color: #777;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-@media (max-width: 768px) {
 
+/* responsive */
+
+@media (max-width: 1024px) {
     .booked-container {
-        padding: 100px 20px 50px;
+        padding: 135px 30px 60px;
     }
 
-    .booked-container h1 {
-        font-size: 32px;
-        margin-bottom: 35px;
+    .confirmation-wrapper {
+        width: 800px;
     }
 
-    .booked-container .booking-card {
-        width: 600px;
-        padding: 30px;
-        gap: 30px;
-    }
-
-    .booked-container .doctor-section {
-        width: 190px;
-        min-width: 190px;
-        padding-right: 25px;
-    }
-
-    .booked-container .doctor-img {
-        width: 125px;
-        height: 125px;
-    }
-}
-
-@media (max-width: 425px) {
-
-    .booked-container {
-        padding: 90px 15px 40px;
-    }
-
-    .booked-container h1 {
-        font-size: 27px;
+    .success-section {
         margin-bottom: 30px;
     }
 
-    .booked-container .booking-card {
+    .success-section h1 {
+        font-size: 34px;
+    }
+
+    .booking-card {
+        padding: 30px;
+    }
+
+    .booking-content {
+        gap: 28px;
+    }
+
+    .doctor-img {
+        width: 115px;
+        height: 135px;
+    }
+
+    .doctor-details h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .booked-container {
+        padding: 110px 25px 55px;
+    }
+
+    .confirmation-wrapper {
         width: 100%;
-        padding: 25px 20px;
-        flex-direction: column;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 31px;
+    }
+
+    .success-section h1 {
+        font-size: 30px;
+    }
+
+    .success-section p {
+        font-size: 16px;
+    }
+
+    .booking-card {
+        padding: 26px;
+    }
+
+    .booking-header {
+        padding-bottom: 20px;
+    }
+
+    .booking-header h2 {
+        font-size: 21px;
+    }
+
+    .booking-content {
         gap: 25px;
-        border-radius: 20px;
     }
 
-    .booked-container .doctor-section {
-        width: 100%;
-        min-width: 0;
-        padding-right: 0;
-        padding-bottom: 25px;
-        border-right: none;
-        border-bottom: 1px solid #e2e2e2;
+    .doctor-img {
+        width: 105px;
+        height: 125px;
     }
 
-    .booked-container .doctor-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .booked-container .doctor-section h3 {
+    .doctor-details h3 {
         font-size: 19px;
     }
 
-    .booked-container .booking-info {
-        width: 100%;
+    .booking-info {
+        gap: 16px;
+    }
+
+    .info-item strong {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .booked-container {
+        padding: 95px 15px 45px;
+    }
+
+    .success-section {
+        margin-bottom: 25px;
+    }
+
+    .success-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .success-section h1 {
+        font-size: 26px;
+    }
+
+    .success-section p {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .success-section span {
+        font-size: 12px;
+    }
+
+    .booking-card {
+        padding: 20px 17px;
+        border-radius: 18px;
+    }
+
+    .booking-header {
+        gap: 10px;
+    }
+
+    .booking-header h2 {
+        font-size: 19px;
+    }
+
+    .booking-header p {
+        font-size: 12px;
+    }
+
+    .confirmed-badge {
+        padding: 6px 10px;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .booking-content {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 23px 0;
+    }
+
+    .doctor-section {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 22px;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .doctor-img {
+        width: 90px;
+        height: 105px;
+    }
+
+    .doctor-details {
+        gap: 4px;
+    }
+
+    .doctor-label {
+        font-size: 11px;
+    }
+
+    .doctor-details h3 {
+        font-size: 17px;
+    }
+
+    .doctor-details p {
+        font-size: 13px;
+    }
+
+    .booking-info {
+        gap: 15px;
+    }
+
+    .info-item {
+        gap: 4px;
+        padding-bottom: 12px;
+    }
+
+    .info-item span {
+        font-size: 12px;
+    }
+
+    .info-item strong {
+        font-size: 15px;
+    }
+
+    .info-item .fee {
+        font-size: 17px;
+    }
+
+    .booking-note {
+        padding: 15px;
+    }
+
+    .booking-note strong {
+        font-size: 13px;
+    }
+
+    .booking-note p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .booked-container {
+        padding: 90px 12px 40px;
+    }
+
+    .success-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+
+    .success-section h1 {
+        font-size: 23px;
+    }
+
+    .success-section p {
+        font-size: 13px;
+    }
+
+    .success-section span {
+        font-size: 11px;
+    }
+
+    .booking-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+    }
+
+    .booking-header {
+        align-items: flex-start;
+    }
+
+    .booking-header h2 {
+        font-size: 17px;
+    }
+
+    .booking-header p {
+        font-size: 11px;
+    }
+
+    .confirmed-badge {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .booking-content {
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .doctor-img {
+        width: 78px;
+        height: 95px;
+    }
+
+    .doctor-details h3 {
+        font-size: 16px;
+    }
+
+    .doctor-details p {
+        font-size: 12px;
+    }
+
+    .info-item span {
+        font-size: 11px;
+    }
+
+    .info-item strong {
+        font-size: 14px;
+    }
+
+    .info-item .fee {
+        font-size: 16px;
+    }
+
+    .booking-note {
+        padding: 13px;
+    }
+
+    .booking-note strong {
+        font-size: 12px;
+    }
+
+    .booking-note p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 320px) {
+    .booked-container {
+        padding: 85px 10px 35px;
+    }
+
+    .success-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+    }
+
+    .success-section h1 {
+        font-size: 21px;
+    }
+
+    .success-section p {
+        font-size: 12px;
+    }
+
+    .success-section span {
+        font-size: 10px;
+    }
+
+    .booking-card {
+        padding: 16px 12px;
+    }
+
+    .booking-header h2 {
+        font-size: 16px;
+    }
+
+    .booking-header p {
+        font-size: 10px;
+    }
+
+    .confirmed-badge {
+        padding: 4px 7px;
+        font-size: 9px;
+    }
+
+    .doctor-img {
+        width: 70px;
+        height: 85px;
+    }
+
+    .doctor-details h3 {
+        font-size: 15px;
+    }
+
+    .doctor-details p {
+        font-size: 11px;
+    }
+
+    .doctor-label {
+        font-size: 10px;
+    }
+
+    .booking-content {
         gap: 18px;
     }
 
-    .booked-container .booking-info strong {
-        font-size: 16px;
+    .info-item span {
+        font-size: 10px;
+    }
+
+    .info-item strong {
+        font-size: 13px;
+    }
+
+    .info-item .fee {
+        font-size: 15px;
+    }
+
+    .booking-note {
+        padding: 11px;
+    }
+
+    .booking-note strong {
+        font-size: 11px;
+    }
+
+    .booking-note p {
+        font-size: 10px;
+        line-height: 1.4;
     }
 }
