@@ -11,7 +11,7 @@
     max-width: 100%;
     min-height: fit-content;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
