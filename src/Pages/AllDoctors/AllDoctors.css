@@ -144,7 +144,8 @@
         }
     .fullshowdoctorcont {
         gap: 3px;
-        row-gap: 50px;
+        row-gap: 100px;
+        margin-top: 20px;
         padding: 60px 60px;
     }
 
@@ -201,7 +202,7 @@
         /* gap: 25px; */
         display: flex;
         justify-content: center;
-        row-gap: 40px;
+        row-gap: 90px;
         padding: 60px 45px;
     }
 
@@ -249,12 +250,14 @@
 
     .fullshowdoctorcont {
         gap: 30px;
-        row-gap: 50px;
+  
+        row-gap: 80px;
         padding:  55px 60px;
     }
 
     .fullshowdoctorcont .card {
-        width: 100%;
+        width: 80%;
+      margin-top: 20px;             
     }
 
     .fullshowdoctorcont .card img {
@@ -267,7 +270,7 @@
 
     
 }
-@media (max-width: 450px) {
+@media (max-width: 375px) {
     .hero-section-all-doctors {
         padding-top: 324px;
 

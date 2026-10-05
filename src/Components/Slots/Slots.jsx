@@ -127,13 +127,14 @@ function Slots({ id }) {
 
             if (!userId) {
                 Swal.fire({
-                    text: "Please login as a Patient",
+                    text: "Please login for Booking an Appointment",
                     width: "fit-content",
                     timer: 2000,
                     showConfirmButton: false
                 });
 
-                return;
+                  navigate("/login");
+                  return;
             }
 
             if (selectedTime === null) {

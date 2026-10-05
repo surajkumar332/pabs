@@ -122,7 +122,7 @@ function Gastroenterologist() {
                                 </div>
                             ))}
                         </div >
-                    )} ;
+                    )} 
 
                 </section>
                 <Cta />

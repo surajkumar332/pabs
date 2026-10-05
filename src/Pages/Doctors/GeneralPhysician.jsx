@@ -125,7 +125,7 @@ function GeneralPhysician() {
                                 </div>
                             ))}
                         </div >
-                    )};
+                    )}
                 </section>
                 <Cta />
                 <Fqa />

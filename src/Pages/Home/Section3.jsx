@@ -25,10 +25,10 @@ function Section3() {
                 const data = await res.json();
                 if (res.status === 401) {
                     Swal.fire({
-                    text: "Unauthorized - please login again",
-                    width: "fit-content"
+                        text: "Unauthorized - please login again",
+                        width: "fit-content"
 
-                   });
+                    });
                     return;
                 }
 
@@ -48,19 +48,13 @@ function Section3() {
 
     return (
         <>
-            {/* <p style={{color: "GrayText"}}> "doctorRoute.post
-                  "/addnewdoctor",
-                  verifyUser,
-                  allowRoles("owner", "admin"),
-                  upload.single("image"),
-                  async (req, res) isko dekho doctorrouter me abhi yahi tk bna hai"</p> */}
             <div className="doctors-list">
                 <div className="txt1">
                     <h1>Top Doctors to Book</h1>
                     <p>Simply browse through our extensive list of trusted doctors.</p>
                 </div>
                 <div className="section3">
-                    { isLoader ? (
+                    {isLoader ? (
                         <Loader />
 
                     ) : (
@@ -84,12 +78,10 @@ function Section3() {
                                 </div>
                             ))}
                         </div>
-                    )};
+                    )}
                 </div>
 
-
                 <button id="more-btn" onClick={nextpage}>Meet Our All Heros</button>
-
 
             </div >
 

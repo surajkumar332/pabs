@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { jwtDecode } from "jwt-decode";
-
+import "../Login/Login.jsx"
 
 function Navbar() {
 
@@ -54,7 +54,7 @@ function Navbar() {
 
                     <div className="button-parent">
                         <button id="ca-btn" onClick={handleButton}>
-                            {localStorage.getItem("token") ? "LogOut" : "Login"}
+                            {localStorage.getItem("token") ? "LogOut" : "< Login />"}
                         </button>
                     </div>
 

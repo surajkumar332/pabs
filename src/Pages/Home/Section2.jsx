@@ -8,7 +8,7 @@ function Section2() {
     return (
         <>
                 <div className="doctors-container-text">
-                    <h2>Find by Speciality</h2>
+                    <h2>Find by Specialist</h2>
                     <p>Easily find the right doctor and book your appointment anytime.</p>
                 </div>
 

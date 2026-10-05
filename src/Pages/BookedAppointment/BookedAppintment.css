@@ -232,9 +232,8 @@
 }
 
 .no-appointment {
-    width: min(600px, 100%);
-    margin: 70px auto;
-    padding: 50px 30px;
+    max-width: 100%;
+    padding: 50px 10px;
     text-align: center;
     background: white;
     border-radius: 20px;
@@ -305,6 +304,18 @@
 }
 
 @media (max-width: 1024px) {
+    .appointment-banner .herosection .herosection-txt h2{
+        font-size: 50px;
+        margin: 0;
+    }
+
+    .appointment-banner .herosection .herosection-txt h3{
+        font-size: 30px;
+        padding: 20px;
+    }    
+    .appointment-banner .herosection .herosection-txt p{
+        font-size: 18px;
+    }    
     .book-container {
         padding: 130px 25px 60px;
     }
@@ -326,6 +337,15 @@
 }
 
 @media (max-width: 768px) {
+    .appointment-banner .herosection .herosection-txt h2{
+        font-size: 40px;
+    }
+    .appointment-banner .herosection .herosection-txt h3{
+        font-size: 28px;
+    } 
+    .appointment-banner .herosection .herosection-txt p{
+        font-size: 17px;
+    }       
     .book-container {
         padding: 115px 25px 55px;
     }
@@ -370,6 +390,19 @@
 }
 
 @media (max-width: 450px) {
+    .appointment-banner .herosection .herosection-txt h2{
+        font-size: 30px;
+    }
+    .appointment-banner .herosection .herosection-txt h3{
+        font-size: 23px;
+        max-width: 100%;
+        padding: 20px 0;        
+    }   
+    .appointment-banner .herosection .herosection-txt p{
+        font-size: 16px;
+
+
+    }     
     .book-container {
         padding: 100px 15px 45px;
     }

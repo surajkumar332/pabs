@@ -122,7 +122,7 @@ function Pediatrician() {
                         ))}
                     </div >
 
-                )};                    
+                )}                    
                 </section>
                 <Cta />
                 <Faq />

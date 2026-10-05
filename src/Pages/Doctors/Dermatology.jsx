@@ -128,7 +128,7 @@ function Dermatology() {
                                 </div>
                             ))}
                         </div >
-                    )};
+                    )}
                 </section>
                 <Cta />
                 <Faq />
