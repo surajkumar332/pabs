@@ -32,7 +32,6 @@ function Faq() {
               <div className="faq-answer">
                 <p>{item.answer}</p>
               </div>
-              {/* <hr /> */}
             </div>
           );
         })}

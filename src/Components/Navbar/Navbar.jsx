@@ -54,7 +54,7 @@ function Navbar() {
 
                     <div className="button-parent">
                         <button id="ca-btn" onClick={handleButton}>
-                            {localStorage.getItem("token") ? "LogOut" : "< Login />"}
+                            {localStorage.getItem("token") ? "LogOut" : "Login"}
                         </button>
                     </div>
 
