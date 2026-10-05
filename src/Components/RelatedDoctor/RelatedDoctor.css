@@ -1,6 +1,6 @@
 .Related-doctor .rd {
     text-align: center;
-    padding: 40px;
+    padding: 40px 40px;
 }
 
 .Related-doctor .rd h2 {
@@ -21,13 +21,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    padding: 80px 40px 40px;
+    padding: 40px;
 }
 
 .Related-doctor .fullshowdoctorcont .card {
     position: relative;
-    width: 220px;
-    height: 230px;
+
     border: 2px solid rgba(128, 128, 128, 0.2);
     box-shadow: 0 10px 10px #ccc;
     border-radius: 10px;
@@ -82,66 +81,45 @@
 
 @media (max-width: 1024px) {
     .Related-doctor .fullshowdoctorcont {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+       display: flex;
+       justify-content: center;
     }
 
-    .Related-doctor .fullshowdoctorcont .card {
-        height: 320px;
-    }
-
-    .Related-doctor .fullshowdoctorcont .top {
-        height: 235px;
-    }
 }
 
 @media (max-width: 768px) {
     .Related-doctor .rd h2 {
-        font-size: 26px;
+        font-size: 40px;
     }
 
     .Related-doctor .fullshowdoctorcont {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        justify-content: center;
         gap: 18px;
-        padding: 15px;
-    }
-
-    .Related-doctor .fullshowdoctorcont .card {
-        height: 310px;
-    }
-
-    .Related-doctor .fullshowdoctorcont .top {
-        height: 225px;
+        padding: 30px;
+        
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
     .Related-doctor .rd {
         margin: 35px auto 20px;
         padding: 0 15px;
     }
 
     .Related-doctor .rd h2 {
-        font-size: 23px;
+        font-size: 30px;
     }
 
     .Related-doctor .rd p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .Related-doctor .fullshowdoctorcont {
-        grid-template-columns: 1fr;
-        padding: 15px 25px;
+         display: flex;
+         justify-content: center;
+         padding-top: 70px;
+         row-gap: 80px;
     }
 
-    .Related-doctor .fullshowdoctorcont .card {
-        width: 100%;
-        max-width: 300px;
-        height: 330px;
-        margin: 0 auto;
-    }
-
-    .Related-doctor .fullshowdoctorcont .top {
-        height: 245px;
-    }
 }

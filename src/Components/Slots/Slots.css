@@ -1,24 +1,36 @@
+.booking-container {
+    padding: 60px 60px;
+}
+
 .booking-container .booking-slots p {
     font-size: 40px;
     color: #2b3942;
     font-weight: 700;
-    padding: 0 0 20px;
+    padding: 20px 0 20px;
+    line-height: 40px;
+    max-width: 100%;
 }
 
 .booking-container .dateBox {
-    width: 30px;
-    height: 15px;
-    padding: 20px 60px;
+    padding: 18px 40px;
     border: 1px solid #d8d8d8;
     border-radius: 30px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+    margin-left: 10px;
     cursor: pointer;
     color: #6f6d6d;
     background: #fff;
     transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-container .flex {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .booking-container .dateBox:hover {
@@ -26,12 +38,12 @@
 }
 
 .booking-container .timeRow {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
-    width: 100%;
+    max-width: 100%;
 }
 
 .booking-container .timeBox {
@@ -74,16 +86,15 @@
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 40px;
+    transition: 0.3s ease;
 }
-
-
 
 .booking-container #bookApp:hover {
     background: #fff;
     color: black;
     border: 2px solid #05cd9e;
+    transform: scale(1.1);
 }
-
 
 .booking-container .disable {
     background-color: #ccc;
@@ -93,26 +104,43 @@
     pointer-events: none;
 }
 
+
 @media (max-width: 1024px) {
+
+}
+
+
+@media (max-width: 768px) {
+
+    .booking-container {
+        padding: 50px 30px;
+    }
+
+    .booking-container .booking-slots p {
+        font-size: 34px;
+        line-height: 36px;
+    }
+
     .booking-container .dateBox {
-        width: 20px;
-        height: 10px;
+        padding: 14px 25px;
+        margin-left: 0;
+    }
+
+    .booking-container .flex {
+        gap: 10px;
+        width: 100%;
     }
 
     .booking-container .timeRow {
+        margin-top: 30px;
         gap: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .booking-container .dateBox {
-        width: 62px;
-        height: 90px;
-        margin: 7px;
+        padding: 0;
+        width: 100%;
     }
 
     .booking-container .timeBox {
         padding: 10px 18px;
+        max-width: 100%;
     }
 
     .booking-container #bookApp {
@@ -120,16 +148,34 @@
     }
 }
 
-@media (max-width: 425px) {
+
+@media (max-width: 450px) {
+
+    .booking-container {
+        padding: 40px 20px;
+    }
+
+    .booking-container .booking-slots p {
+        font-size: 30px;
+        line-height: 32px;
+    }
+
     .booking-container .dateBox {
-        width: 58px;
-        height: 82px;
-        margin: 5px;
+        padding: 12px 20px;
+        margin-left: 0;
+    }
+
+    .booking-container .flex {
+        width: 100%;
+        gap: 8px;
     }
 
     .booking-container .timeRow {
+        margin-top: 25px;
         gap: 8px;
-        padding: 0 10px;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     .booking-container .timeBox {
@@ -141,5 +187,91 @@
         width: 100%;
         max-width: 300px;
         padding: 11px;
+    }
+}
+
+
+@media (max-width: 375px) {
+
+    .booking-container {
+        padding: 35px 15px;
+    }
+
+    .booking-container .booking-slots p {
+        font-size: 28px;
+        line-height: 30px;
+        padding: 15px 0;
+    }
+
+    .booking-container .flex {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .booking-container .dateBox {
+        padding: 11px 17px;
+        margin-left: 0;
+    }
+
+    .booking-container .timeRow {
+        margin-top: 22px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        gap: 8px;
+    }
+
+    .booking-container .timeBox {
+        padding: 9px 14px;
+        font-size: 14px;
+    }
+
+    .booking-container #bookApp {
+        width: 100%;
+        max-width: 280px;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 320px) {
+
+    .booking-container {
+        padding: 30px 10px;
+    }
+
+    .booking-container .booking-slots p {
+        font-size: 25px;
+        line-height: 28px;
+        padding: 12px 0;
+    }
+
+    .booking-container .flex {
+        width: 100%;
+        gap: 6px;
+    }
+
+    .booking-container .dateBox {
+        padding: 10px 14px;
+        margin-left: 0;
+    }
+
+    .booking-container .timeRow {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        gap: 6px;
+    }
+
+    .booking-container .timeBox {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .booking-container #bookApp {
+        width: 100%;
+        max-width: 260px;
+        padding: 10px;
     }
 }
