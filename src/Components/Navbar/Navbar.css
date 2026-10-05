@@ -18,7 +18,7 @@
 .navbar-parent .nav-links > span {
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    justify-content: start;
 }
 
 /* links */
