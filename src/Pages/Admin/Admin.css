@@ -1,161 +1,416 @@
 .admin-container {
-    display: flex;
-    gap: 30px;
-    padding: 100px 40px 40px;
+    width: 100%;
     min-height: 100vh;
-    box-sizing: border-box;
-    background: linear-gradient(135deg, #dff4ed, #bcd4e4);
-    font-family: Arial, sans-serif;
+    background: #f7faf9;
+    color: #2b3942;
 }
 
+.admin-hero {
+    min-height: 500px;
+    padding: 100px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5fff9;
+    position: relative;
+    overflow: hidden;
+}
 
-/* admin form */
+.admin-hero::after {
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background: #05cd9e;
+    opacity: 0.12;
+    right: -110px;
+    top: -120px;
+}
+
+.admin-hero::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: #05cd9e;
+    opacity: 0.08;
+    right: 220px;
+    bottom: -140px;
+}
+
+.admin-hero-content {
+    max-width: 100%;
+    position: relative;
+    z-index: 0;
+
+}
+
+.admin-hero-content span {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #05cd9e;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.admin-hero-content h1 {
+    margin: 0;
+    font-size: 64px;
+    line-height: 1.08;
+    font-weight: 700;
+    color: #2b3942;
+}
+
+.admin-hero-content p {
+    max-width: 620px;
+    margin-top: 28px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64727a;
+}
+
+.admin-stats {
+    width: calc(100% - 120px);
+    max-width: 1400px;
+    margin: -65px auto 0;
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.admin-stat-card {
+    min-height: 120px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(43, 57, 66, 0.08);
+    transition: 0.3s;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-6px);
+}
+
+.admin-stat-icon {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #e5fff9;
+    color: #05cd9e;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.admin-stat-card h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: #2b3942;
+}
+
+.admin-stat-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #7a858b;
+}
+
+.admin-management {
+    padding: 120px 60px 100px;
+}
+
+.admin-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.admin-heading span,
+.add-doctor-heading span,
+.doctor-list-heading span,
+.admin-bottom span {
+    color: #05cd9e;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.admin-heading h2 {
+    margin: 15px 0;
+    font-size: 45px;
+    color: #2b3942;
+}
+
+.admin-heading p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #707c82;
+}
+
+.admin-management-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.admin-management-card {
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(43, 57, 66, 0.07);
+    transition: 0.3s;
+}
+
+.admin-management-card:hover {
+    transform: translateY(-7px);
+}
+
+.admin-card-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #e5fff9;
+    color: #05cd9e;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.admin-management-card h3 {
+    margin: 0 0 12px;
+    font-size: 21px;
+}
+
+.admin-management-card p {
+    min-height: 75px;
+    margin: 0 0 25px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #737e84;
+}
+
+.admin-management-card a,
+.admin-management-card button {
+    display: inline-block;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 7px;
+    background: #05cd9e;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-doctor-section {
+    padding: 90px 60px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+    background: #e5fff9;
+}
+
+.add-doctor-heading {
+    max-width: 500px;
+    margin-left: auto;
+    padding-top: 25px;
+}
+
+.add-doctor-heading h2 {
+    margin: 15px 0;
+    font-size: 45px;
+    line-height: 1.15;
+}
+
+.add-doctor-heading p {
+    max-width: 450px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #68757b;
+}
 
 .admin-form {
-    width: 40%;
-}
-
-.admin-form .form-section {
     width: 100%;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+    max-width: 650px;
+    padding: 40px;
     box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(43, 57, 66, 0.09);
 }
 
-.admin-form .form-section h2 {
-    margin: 0 0 25px;
-    color: #1d3b45;
-    font-size: 26px;
-}
-
-.admin-form form {
+.form-section form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 22px;
 }
 
-.admin-form .form-input {
-    width: 100%;
+.doctor-image-input {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
 }
 
-.admin-form .form-input input {
+.doctor-image-input label,
+.form-input label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2b3942;
+}
+
+.doctor-image-input input {
     width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d4dddd;
-    border-radius: 9px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #dce3e5;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-input input {
+    width: 100%;
+    padding: 14px 15px;
+    box-sizing: border-box;
+    border: 1px solid #dce3e5;
+    border-radius: 8px;
     outline: none;
     font-size: 15px;
-    color: #333;
-    background: #f8fbfb;
-    box-sizing: border-box;
-    transition: 0.3s ease;
+    color: #2b3942;
+    background-color: white;
 }
 
-.admin-form .form-input input:focus {
-    border-color: #39a98b;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(57, 169, 139, 0.12);
+.form-input input:focus,
+.doctor-image-input input:focus {
+    border-color: #05cd9e;
 }
 
-.admin-form form button {
+.add-doctor-btn {
     width: 100%;
-    padding: 13px;
-    margin-top: 8px;
+    padding: 15px;
     border: none;
-    border-radius: 9px;
-    background: #1677c8;
+    border-radius: 8px;
+    background: #05cd9e;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s ease;
 }
 
-.admin-form form button:hover {
-    background: #0d61a5;
-    transform: translateY(-1px);
+.doctor-list-section {
+    padding: 100px 60px;
 }
 
-
-/* doctor list */
-
-.doctor-list {
-    width: 60%;
+.doctor-list-heading {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-.doctor-list .list-section {
-    width: 100%;
-    height: 600px;
-    overflow-y: auto;
-    padding-right: 5px;
-    box-sizing: border-box;
+.doctor-list-heading h2 {
+    margin: 15px 0 0;
+    font-size: 45px;
 }
 
-.doctor-list .list-section h2 {
-    margin: 0 0 20px;
-    color: #1d3b45;
-    font-size: 26px;
+.doctor-list-heading p {
+    margin: 0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #e5fff9;
+    color: #05cd9e;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .doctor-list-content {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 15px;
 }
 
-
-/* doctor card */
-
-.doctor-list .doctor-card {
+.doctor-card {
+    padding: 20px 25px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 18px 20px;
+    justify-content: space-between;
+    gap: 25px;
     background: #ffffff;
     border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-    transition: 0.3s ease;
+    box-shadow: 0 6px 25px rgba(43, 57, 66, 0.07);
 }
 
-.doctor-list .doctor-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+.doctor-card-main {
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
+/* .doctor-avatar{
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5fff9;
+    color: #05cd9e;
+    font-size: 22px;
+    font-weight: 700;
+} */
 
-/* doctor information */
 
-.doctor-info {
-    flex: 1;
+.doctor-info h3 {
+    margin: 0 0 5px;
+    font-size: 19px;
 }
 
 .doctor-info p {
-    margin: 4px 0;
-}
-
-.doctor-info .doctor-name {
-    color: #1d3b45;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.doctor-info .doctor-specialization {
-    color: #66777c;
+    margin: 0 0 5px;
+    color: #68757b;
     font-size: 14px;
 }
 
-.doctor-info .doctor-fee {
-    color: #1677c8;
-    font-size: 15px;
+.doctor-info span {
+    color: #05cd9e;
+    font-size: 13px;
     font-weight: 600;
 }
-
-
-/* doctor action */
 
 .doctor-action {
     display: flex;
@@ -163,95 +418,515 @@
     gap: 15px;
 }
 
-.doctor-action button {
+.pause-action {
+    display: flex;
+    align-items: center;
+}
+
+.delete-doctor-btn {
+    padding: 10px 18px;
     border: none;
-    padding: 8px 14px;
     border-radius: 7px;
-    background: #d52b2b;
-    color: #ffffff;
+    background: #ffe9e9;
+    color: #dc4b4b;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
-.doctor-action button:hover {
-    background: #b51f1f;
+.delete-doctor-btn:hover {
+    background: #dc4b4b;
+    color: #ffffff;
 }
 
+.doctor-avatar {
+    width: 60px;
+    height: 80px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5fff9;
+}
 
-/* 1024px */
+.doctor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-bottom {
+    padding: 100px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: #2b3942;
+    color: #ffffff;
+}
+
+.admin-bottom h2 {
+    margin: 15px 0 0;
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.admin-bottom p {
+    max-width: 450px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #c4cdd1;
+}
 
 @media (max-width: 1024px) {
 
-    .admin-container {
-        gap: 20px;
-        padding: 90px 25px 30px;
+    .admin-hero {
+        min-height: 460px;
+        padding: 80px 50px;
+    }
+
+    .admin-hero-content h1 {
+        font-size: 52px;
+    }
+
+    .admin-stats {
+        width: calc(100% - 80px);
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -55px;
+    }
+
+    .admin-management {
+        padding: 100px 40px 80px;
+    }
+
+    .add-doctor-section {
+        padding: 80px 50px;
+        gap: 45px;
+    }
+
+    .add-doctor-heading h2 {
+        font-size: 38px;
     }
 
     .admin-form {
-        width: 42%;
+        padding: 30px;
     }
 
-    .doctor-list {
-        width: 58%;
+    .doctor-list-section {
+        padding: 80px 40px;
     }
 
-    .admin-form .form-section {
-        padding: 25px;
+    .admin-bottom {
+        padding: 80px 50px;
     }
-
 }
-
-
-/* 768px */
 
 @media (max-width: 768px) {
 
-    .admin-container {
+    .admin-hero {
+        min-height: 420px;
+        padding: 70px 35px;
+    }
+
+    .admin-hero-content h1 {
+        font-size: 43px;
+    }
+
+    .admin-hero-content p {
+        font-size: 16px;
+    }
+
+    .admin-stats {
+        width: calc(100% - 60px);
+        gap: 15px;
+    }
+
+    .admin-stat-card {
+        padding: 20px;
+    }
+
+    .admin-management {
+        padding: 90px 30px 70px;
+    }
+
+    .admin-heading h2 {
+        font-size: 38px;
+    }
+
+    .admin-management-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .add-doctor-section {
+        padding: 70px 30px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .add-doctor-heading {
+        margin: 0;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .add-doctor-heading p {
+        margin: auto;
+    }
+
+    .admin-form {
+        margin: auto;
+    }
+
+    .doctor-list-section {
+        padding: 70px 30px;
+    }
+
+    .doctor-list-heading {
+        align-items: flex-start;
         flex-direction: column;
-        padding: 90px 20px 30px;
+        gap: 20px;
     }
 
-    .admin-form,
-    .doctor-list {
-        width: 100%;
-    }
-
-    .doctor-list .list-section {
-        height: auto;
-        max-height: 600px;
-    }
-
-}
-
-
-/* 425px */
-
-@media (max-width: 425px) {
-
-    .admin-container {
-        padding: 85px 15px 25px;
-        gap: 25px;
-    }
-
-    .admin-form .form-section {
-        padding: 22px 18px;
-        border-radius: 14px;
-    }
-
-    .admin-form .form-section h2,
-    .doctor-list .list-section h2 {
-        font-size: 22px;
-    }
-
-    .doctor-list .doctor-card {
+    .doctor-card {
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
     }
 
     .doctor-action {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
+    .admin-bottom {
+        padding: 70px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .admin-hero {
+        min-height: 390px;
+        padding: 60px 22px;
+    }
+
+    .admin-hero-content span {
+        font-size: 11px;
+    }
+
+    .admin-hero-content h1 {
+        font-size: 35px;
+    }
+
+    .admin-hero-content p {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .admin-stats {
+        width: calc(100% - 36px);
+        grid-template-columns: 1fr;
+        margin-top: -40px;
+    }
+
+    .admin-stat-card {
+        min-height: 90px;
+    }
+
+    .admin-management {
+        padding: 70px 18px 60px;
+    }
+
+    .admin-heading {
+        margin-bottom: 35px;
+    }
+
+    .admin-heading h2 {
+        font-size: 31px;
+    }
+
+    .admin-heading p {
+        font-size: 14px;
+    }
+
+    .admin-management-card {
+        padding: 28px 22px;
+    }
+
+    .admin-management-card p {
+        min-height: auto;
+    }
+
+    .add-doctor-section {
+        padding: 60px 18px;
+    }
+
+    .add-doctor-heading h2 {
+        font-size: 32px;
+    }
+
+    .admin-form {
+        padding: 25px 20px;
+    }
+
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .doctor-list-section {
+        padding: 60px 18px;
+    }
+
+    .doctor-list-heading h2 {
+        font-size: 32px;
+    }
+
+    .doctor-card {
+        padding: 18px;
+    }
+
+    .doctor-card-main {
+        gap: 13px;
+    }
+
+    .doctor-avatar {
+        width: 52px;
+        height: 52px;
+    }
+
+    .doctor-action {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .delete-doctor-btn {
+        padding: 9px 15px;
+    }
+
+    .admin-bottom {
+        padding: 60px 20px;
+    }
+
+    .admin-bottom h2 {
+        font-size: 31px;
+    }
+
+    .admin-bottom p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .admin-hero {
+        min-height: 365px;
+        padding: 55px 18px;
+    }
+
+    .admin-hero-content h1 {
+        font-size: 31px;
+    }
+
+    .admin-hero-content p {
+        font-size: 14px;
+    }
+
+    .admin-stat-card {
+        padding: 18px;
+    }
+
+    .admin-stat-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .admin-stat-card h3 {
+        font-size: 19px;
+    }
+
+    .admin-stat-card p {
+        font-size: 12px;
+    }
+
+    .admin-management {
+        padding: 60px 15px 50px;
+    }
+
+    .admin-heading h2 {
+        font-size: 28px;
+    }
+
+    .admin-management-card {
+        padding: 25px 20px;
+    }
+
+    .add-doctor-section {
+        padding: 55px 15px;
+    }
+
+    .add-doctor-heading h2 {
+        font-size: 29px;
+    }
+
+    .admin-form {
+        padding: 22px 17px;
+    }
+
+    .doctor-list-section {
+        padding: 55px 15px;
+    }
+
+    .doctor-list-heading h2 {
+        font-size: 29px;
+    }
+    .doctor-action {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-bottom {
+        padding: 50px 18px;
+    }
+
+    .admin-bottom h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .admin-hero {
+        min-height: 345px;
+        padding: 50px 15px;
+    }
+
+    .admin-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .admin-hero-content p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .admin-stats {
+        width: calc(100% - 28px);
+    }
+
+    .admin-stat-card {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .admin-stat-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 18px;
+    }
+
+    .admin-stat-card h3 {
+        font-size: 17px;
+    }
+
+    .admin-stat-card p {
+        font-size: 11px;
+    }
+
+    .admin-management {
+        padding: 50px 12px 45px;
+    }
+
+    .admin-heading h2 {
+        font-size: 25px;
+    }
+
+    .admin-heading p {
+        font-size: 13px;
+    }
+
+    .admin-management-card {
+        padding: 22px 17px;
+    }
+
+    .admin-management-card h3 {
+        font-size: 18px;
+    }
+
+    .admin-management-card p {
+        font-size: 13px;
+    }
+
+    .add-doctor-section {
+        padding: 45px 12px;
+    }
+
+    .add-doctor-heading h2 {
+        font-size: 26px;
+    }
+
+    .add-doctor-heading p {
+        font-size: 13px;
+    }
+
+    .admin-form {
+        padding: 20px 15px;
+    }
+
+    .form-input input,
+    .doctor-image-input input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .doctor-list-section {
+        padding: 45px 12px;
+    }
+
+    .doctor-list-heading h2 {
+        font-size: 26px;
+    }
+
+    .doctor-card {
+        padding: 15px;
+    }
+
+    .doctor-avatar {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+    }
+
+    .doctor-info h3 {
+        font-size: 17px;
+    }
+
+    .doctor-info p {
+        font-size: 13px;
+    }
+    .delete-doctor-btn {
+        padding: 8px 13px;
+        font-size: 12px;
+    }    
+
+    .admin-bottom {
+        padding: 45px 15px;
+    }
+
+    .admin-bottom h2 {
+        font-size: 25px;
+    }
+
+    .admin-bottom p {
+        font-size: 13px;
+    }
 }

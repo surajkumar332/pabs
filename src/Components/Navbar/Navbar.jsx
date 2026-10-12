@@ -11,9 +11,11 @@ function Navbar() {
     const navigate = useNavigate();
     const token = localStorage.getItem("token");
     let isAdmin = false;
+    let isOwner = false;
     if (token) {
         const decode = jwtDecode(token);
         isAdmin = decode.role === "admin";
+        isOwner = decode.role === "owner";
     }
 
     const handleButton = () => {
@@ -49,7 +51,9 @@ function Navbar() {
                         <Link to={"/bookedAppointment"} onClick={closeMenu}>Booked Appointment</Link>
                         <Link to={"/about"} onClick={closeMenu}>About</Link>
 
-                        {isAdmin && <Link to="/admin" onClick={closeMenu}>Admin</Link>}
+                        {(isAdmin || isOwner) && (
+                            <Link to="/admin" onClick={closeMenu}>Admin</Link>
+                        )}                        {isOwner && <Link to="/owner" onClick={closeMenu}>Owner</Link>}
                     </div>
 
                     <div className="button-parent">

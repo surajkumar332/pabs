@@ -1,3 +1,28 @@
+.pause-date {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #e5e9e8;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.pause-date-title {
+    margin-bottom: 15px;
+}
+
+.pause-date-title span {
+    font-size: 11px;
+    color: #05cd9e;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pause-date-title h4 {
+    margin: 5px 0 0;
+    color: #2b3942;
+    font-size: 17px;
+}
+
 .date-form-group {
     display: flex;
     flex-direction: column;
@@ -5,25 +30,125 @@
 }
 
 .date-form-group label {
-    font-size: 14px;
+    color: #2b3942;
+    font-size: 13px;
     font-weight: 600;
-    color: #344b52;
 }
 
 .date-form-group input {
     width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d4dddd;
-    border-radius: 9px;
+    height: 42px;
+    border: 1px solid #dfe6e4;
+    border-radius: 7px;
     outline: none;
-    font-size: 15px;
-    color: #333;
-    background: #f8fbfb;
-    box-sizing: border-box;
+    color: #2b3942;
+    font-size: 13px;
+    background: #ffffff;
 }
 
 .date-form-group input:focus {
-    border-color: #39a98b;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(57, 169, 139, 0.12);
+    border-color: #05cd9e;
+}
+
+.pause-date-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.pause-btn,
+.delete-break-btn {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pause-btn {
+    background: #05cd9e;
+    color: #ffffff;
+}
+
+.pause-btn:hover {
+    background: #04b88e;
+}
+
+.delete-break-btn {
+    background: #ffe9e9;
+    color: #dc4b4b;
+}
+
+.delete-break-btn:hover {
+    background: #dc4b4b;
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+
+    .pause-date {
+        padding: 17px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .pause-date-actions {
+        flex-direction: column;
+    }
+
+    .pause-btn,
+    .delete-break-btn {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .pause-date {
+        padding: 15px;
+    }
+
+    .pause-date-title h4 {
+        font-size: 15px;
+    }
+
+    .date-form-group input {
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 375px) {
+
+    .pause-date {
+        padding: 13px;
+    }
+
+    .pause-date-actions {
+        gap: 7px;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    .pause-date-title h4 {
+        font-size: 14px;
+    }
+
+    .date-form-group label {
+        font-size: 12px;
+    }
+
+    .pause-btn,
+    .delete-break-btn {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
 }

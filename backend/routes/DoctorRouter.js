@@ -163,9 +163,9 @@ doctorRoute.get("/related/:specialization/:id", async (req, res) => {
 });
 
 
-doctorRoute.get("/generalphysician", async (req, res)=> {
-  
-  try{
+doctorRoute.get("/generalphysician", async (req, res) => {
+
+  try {
     const generalPhysician = await Doctor.find({
       specialization: "General Physician"
     });
@@ -173,15 +173,15 @@ doctorRoute.get("/generalphysician", async (req, res)=> {
       message: "General Physician Fetched Successfully",
       generalPhysician
     });
-  }catch(error){
+  } catch (error) {
     res.status(500).json({
       message: "Server Error"
     });
   }
 });
 
-doctorRoute.get("/dermatology", async(req, res)=> {
-  try{
+doctorRoute.get("/dermatology", async (req, res) => {
+  try {
     const dermatology = await Doctor.find({
       specialization: "Dermatologist"
     });
@@ -189,15 +189,15 @@ doctorRoute.get("/dermatology", async(req, res)=> {
       message: "Dermatology Fetched Successfully",
       dermatology
     });
-  }catch(error){
+  } catch (error) {
     res.status(500).json({
       message: "Server Error"
     });
   }
 });
 
-doctorRoute.get("/pediatrician", async(req, res)=>{
-  try{
+doctorRoute.get("/pediatrician", async (req, res) => {
+  try {
     const pediatrician = await Doctor.find({
       specialization: "Pediatrician"
     });
@@ -205,15 +205,14 @@ doctorRoute.get("/pediatrician", async(req, res)=>{
       message: "Pediatrician fetched Successfully",
       pediatrician
     });
-  }catch(error){
+  } catch (error) {
     res.status(500).json({
       message: "Server Error"
     });
   }
 });
-console.log("Gastroenterologist route hit");
-doctorRoute.get("/gastroenterologist", async(req, res)=> {
-  try{
+doctorRoute.get("/gastroenterologist", async (req, res) => {
+  try {
     const gastroenterologist = await Doctor.find({
       specialization: "Gastroenterologist"
     });
@@ -221,7 +220,7 @@ doctorRoute.get("/gastroenterologist", async(req, res)=> {
       message: "Gastroenterologist fetched Successfully",
       gastroenterologist
     });
-  }catch(error){
+  } catch (error) {
     res.status(500).json({
       message: "Server Error"
     });

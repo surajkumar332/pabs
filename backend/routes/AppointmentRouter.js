@@ -63,6 +63,25 @@ appointmentRouter.post("/bookAppointment", async (req, res) => {
   }
 });
 
+// see all appointments
+appointmentRouter.get("/get-appointment", async(req, res)=> {
+  try{
+  const appointment = await Appointment.find();
+
+  res.status(200).json({
+    message: "Appointment get successfully",
+    appointment
+  });
+  } catch (error){
+    console.log(error);
+
+    res.status(500).json({
+      message : "server error",
+    });
+  }
+});
+
+
 // booked appointments
 appointmentRouter.get("/booked/:id", async (req, res) => {
   try {

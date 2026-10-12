@@ -16,6 +16,7 @@ import GeneralPhysician from './Pages/Doctors/GeneralPhysician'
 import Dermatology from './Pages/Doctors/Dermatology'
 import Pediatrician from './Pages/Doctors/Pediatrician'
 import Gastroenterologist from './Pages/Doctors/Gastroenterologist'
+import Owner from './Pages/Owner/Owner'
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
             </AdminRoute>
           }
         />
+        <Route path="/owner" element={ <Owner />  } />
+
       </Routes>
     </>
 
